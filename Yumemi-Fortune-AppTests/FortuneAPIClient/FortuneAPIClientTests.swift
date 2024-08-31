@@ -28,9 +28,11 @@ extension FortuneAPIClientTests {
     override func setUpWithError() throws {
         let fortuneAPIResponseSample = FortuneAPIResponse.sample
 
-        guard let url = URL(string: "https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune"),
-              let data = try? JSONEncoder().encode(fortuneAPIResponseSample),
-              let response: HTTPURLResponse = .init(url: url, statusCode: 200, httpVersion: nil, headerFields: nil) else {
+        guard
+            let url = URL(string: "https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune"),
+            let data = try? JSONEncoder().encode(fortuneAPIResponseSample),
+            let response: HTTPURLResponse = .init(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        else {
             XCTFail("An issue unrelated to the test subject has occurred."); return;
         }
 
