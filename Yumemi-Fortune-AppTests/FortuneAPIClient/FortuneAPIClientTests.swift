@@ -6,21 +6,14 @@ final class FortuneAPIClientTests: XCTestCase {
     var fortuneAPIClient: FortuneAPIClient!
 
     func test_正常系_有効な引数が与えられた時に問題なく動作すること() async {
-        /// Setup
-        guard let birthday = try? Day(year: 2020, month: 1, day: 1) else {
-            XCTFail("An issue unrelated to the test subject has occurred."); return;
-        }
+        let fortuneAPIResponse = try? await fortuneAPIClient.fetchFortune(
+            name: "Sasuke",
+            birthday: .sample,
+            bloodType: .a)
 
-        /// Exercise
-        let fortuneAPIResponse = try? await fortuneAPIClient.fetchFortune(name: "Sasuke", birthday: birthday, bloodType: .a)
-
-        /// Verify
-        XCTAssertNotNil(fortuneAPIResponse)
+        XCTAssertNotNil(fortuneAPIResponse, "有効な引数が与えられたのにも関わらずFortuneAPIResponseの取得に失敗している。")
     }
-
-    func test_異常系_空文字が与えられた時に適切なエラーを投げること() async {
-
-    }
+    
 }
 
 extension FortuneAPIClientTests {
