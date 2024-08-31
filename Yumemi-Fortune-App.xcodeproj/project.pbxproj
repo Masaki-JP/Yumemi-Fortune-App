@@ -25,6 +25,7 @@
 		4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE12C82E9050066C71C /* URLSession+.swift */; };
 		4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */; };
 		4CFC3AE72C82EA320066C71C /* FortuneAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */; };
+		4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		4CFC3AE12C82E9050066C71C /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultView.swift; sourceTree = "<group>"; };
 		4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientTests.swift; sourceTree = "<group>"; };
+		4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		4CFC3ACD2C82E79A0066C71C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */,
+				4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */,
 				4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */,
 				4CFC3ADA2C82E87E0066C71C /* FortuneAPIClientStub.swift in Sources */,
 				4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */,
@@ -455,6 +459,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -510,6 +515,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

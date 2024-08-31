@@ -1,10 +1,14 @@
 import Foundation
 
 extension FortuneAPIClient {
+
     final class FortuneAPIURLProtocol: URLProtocol {
-        static var targets: [URL: (error: Swift.Error?, data: Data?, response: HTTPURLResponse?)] = .init()
+
+        /// テスト時のみ用いられることから`nonisolated(unsafe)`を付与し、Warningを回避する。
+        nonisolated(unsafe) static var targets: [URL: (error: Swift.Error?, data: Data?, response: HTTPURLResponse?)] = .init()
 
         override class func canInit(with request: URLRequest) -> Bool { true }
+
         override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
 
         override func startLoading() {
