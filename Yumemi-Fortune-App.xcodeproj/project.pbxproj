@@ -11,7 +11,6 @@
 		4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA22C82E6CE0066C71C /* ContentView.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
 		4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */; };
-		4CFC3AB22C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AB12C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift */; };
 		4CFC3ABC2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */; };
 		4CFC3ABE2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */; };
 		4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */; };
@@ -52,7 +51,6 @@
 		4CFC3AA42C82E6D00066C71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4CFC3AAD2C82E6D00066C71C /* Yumemi-Fortune-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-Fortune-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CFC3AB12C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppTests.swift; sourceTree = "<group>"; };
 		4CFC3AB72C82E6D00066C71C /* Yumemi-Fortune-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-Fortune-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppUITests.swift; sourceTree = "<group>"; };
 		4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 		4CFC3AB02C82E6D00066C71C /* Yumemi-Fortune-AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AB12C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift */,
 				4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */,
 			);
 			path = "Yumemi-Fortune-AppTests";
@@ -369,7 +366,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CFC3AB22C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift in Sources */,
 				4CFC3AE72C82EA320066C71C /* FortuneAPIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
