@@ -13,7 +13,38 @@ final class FortuneAPIClientTests: XCTestCase {
 
         XCTAssertNotNil(fortuneAPIResponse, "有効な引数が与えられたのにも関わらずFortuneAPIResponseの取得に失敗している。")
     }
-    
+
+    func test_異常系_引数nameに空文字が与えられた時に適切なエラーを投げること() async {
+        do {
+            let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+                name: "", // Empty String
+                birthday: .sample,
+                bloodType: .a)
+
+            XCTFail("エラーが投げられていない。")
+        } catch {
+            guard case FortuneAPIClient.Error.noName = error else {
+                XCTFail("適切なエラーが投げられていない。"); return;
+            }
+        }
+    }
+
+    func test_異常系_引数nameに100文字以上の文字列が与えられた時に適切なエラーを投げること() async {
+        let name: String = .init(repeating: "A", count: 101)
+
+        do {
+            let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+                name: name,
+                birthday: .sample,
+                bloodType: .a)
+
+            XCTFail("エラーが投げられていない。")
+        } catch {
+            guard case FortuneAPIClient.Error.tooLongName = error else {
+                XCTFail("適切なエラーが投げられていない。"); return;
+            }
+        }
+    }
 }
 
 extension FortuneAPIClientTests {
