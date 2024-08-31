@@ -1,11 +1,8 @@
 import Foundation
 
 extension FortuneAPIResponse {
-    /// {"name":"Naruto","birthday":{"month":10,"day":10,"year":2000},"today":{"month":10,"year":2020,"day":10},"blood_type":"a"}
-    ///
-    /// これを送って返ってきたやつ
     static var sample: Self {
-        try! .init(
+        .init(
             name: "静岡県",
             capital: "静岡市",
             citizenDay: .init(month: 8, day: 21),
