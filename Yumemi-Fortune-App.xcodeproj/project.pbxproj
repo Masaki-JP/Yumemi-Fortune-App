@@ -25,6 +25,7 @@
 		4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */; };
 		4CFC3AE72C82EA320066C71C /* FortuneAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */; };
 		4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */; };
+		4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AEB2C82FFDA0066C71C /* Day+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultView.swift; sourceTree = "<group>"; };
 		4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientTests.swift; sourceTree = "<group>"; };
 		4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		4CFC3AEB2C82FFDA0066C71C /* Day+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				4CFC3ADD2C82E8D50066C71C /* FortuneAPIResponse+.swift */,
 				4CFC3ADF2C82E8ED0066C71C /* FortuneAPIClient+.swift */,
 				4CFC3AE12C82E9050066C71C /* URLSession+.swift */,
+				4CFC3AEB2C82FFDA0066C71C /* Day+.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				4CFC3ADC2C82E8950066C71C /* FortuneAPIClient.swift in Sources */,
 				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
 				4CFC3ADE2C82E8D50066C71C /* FortuneAPIResponse+.swift in Sources */,
+				4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */,
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
 				4CFC3AD82C82E8680066C71C /* FortuneAPIClientProtocol.swift in Sources */,
 				4CFC3AE02C82E8ED0066C71C /* FortuneAPIClient+.swift in Sources */,
