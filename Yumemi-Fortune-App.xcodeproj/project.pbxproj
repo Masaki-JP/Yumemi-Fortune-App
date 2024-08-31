@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
+		4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA22C82E6CE0066C71C /* ContentView.swift */; };
+		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
+		4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */; };
+		4CFC3AB22C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AB12C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift */; };
+		4CFC3ABC2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */; };
+		4CFC3ABE2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */; };
+		4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */; };
+		4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD22C82E81A0066C71C /* Day.swift */; };
+		4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD42C82E82F0066C71C /* BloodType.swift */; };
+		4CFC3AD82C82E8680066C71C /* FortuneAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */; };
+		4CFC3ADA2C82E87E0066C71C /* FortuneAPIClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */; };
+		4CFC3ADC2C82E8950066C71C /* FortuneAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */; };
+		4CFC3ADE2C82E8D50066C71C /* FortuneAPIResponse+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADD2C82E8D50066C71C /* FortuneAPIResponse+.swift */; };
+		4CFC3AE02C82E8ED0066C71C /* FortuneAPIClient+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADF2C82E8ED0066C71C /* FortuneAPIClient+.swift */; };
+		4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE12C82E9050066C71C /* URLSession+.swift */; };
+		4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */; };
+		4CFC3AE72C82EA320066C71C /* FortuneAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CFC3AAE2C82E6D00066C71C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CFC3A952C82E6CE0066C71C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CFC3A9C2C82E6CE0066C71C;
+			remoteInfo = "Yumemi-Fortune-App";
+		};
+		4CFC3AB82C82E6D00066C71C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CFC3A952C82E6CE0066C71C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CFC3A9C2C82E6CE0066C71C;
+			remoteInfo = "Yumemi-Fortune-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppApp.swift; sourceTree = "<group>"; };
+		4CFC3AA22C82E6CE0066C71C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CFC3AA42C82E6D00066C71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CFC3AAD2C82E6D00066C71C /* Yumemi-Fortune-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-Fortune-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFC3AB12C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppTests.swift; sourceTree = "<group>"; };
+		4CFC3AB72C82E6D00066C71C /* Yumemi-Fortune-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-Fortune-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppUITests.swift; sourceTree = "<group>"; };
+		4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIResponse.swift; sourceTree = "<group>"; };
+		4CFC3AD22C82E81A0066C71C /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		4CFC3AD42C82E82F0066C71C /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
+		4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientProtocol.swift; sourceTree = "<group>"; };
+		4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientStub.swift; sourceTree = "<group>"; };
+		4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClient.swift; sourceTree = "<group>"; };
+		4CFC3ADD2C82E8D50066C71C /* FortuneAPIResponse+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FortuneAPIResponse+.swift"; sourceTree = "<group>"; };
+		4CFC3ADF2C82E8ED0066C71C /* FortuneAPIClient+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FortuneAPIClient+.swift"; sourceTree = "<group>"; };
+		4CFC3AE12C82E9050066C71C /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
+		4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultView.swift; sourceTree = "<group>"; };
+		4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CFC3A9A2C82E6CE0066C71C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFC3AAA2C82E6D00066C71C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFC3AB42C82E6D00066C71C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CFC3A942C82E6CE0066C71C = {
+			isa = PBXGroup;
+			children = (
+				4CFC3A9F2C82E6CE0066C71C /* Yumemi-Fortune-App */,
+				4CFC3AB02C82E6D00066C71C /* Yumemi-Fortune-AppTests */,
+				4CFC3ABA2C82E6D00066C71C /* Yumemi-Fortune-AppUITests */,
+				4CFC3A9E2C82E6CE0066C71C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CFC3A9E2C82E6CE0066C71C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */,
+				4CFC3AAD2C82E6D00066C71C /* Yumemi-Fortune-AppTests.xctest */,
+				4CFC3AB72C82E6D00066C71C /* Yumemi-Fortune-AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CFC3A9F2C82E6CE0066C71C /* Yumemi-Fortune-App */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3ACF2C82E7A50066C71C /* App & Views */,
+				4CFC3ACD2C82E79A0066C71C /* ViewModels */,
+				4CFC3ACC2C82E7950066C71C /* Models */,
+				4CFC3ACB2C82E7910066C71C /* Utilities */,
+				4CFC3ACA2C82E78C0066C71C /* Extentions */,
+				4CFC3AA42C82E6D00066C71C /* Assets.xcassets */,
+				4CFC3AA62C82E6D00066C71C /* Preview Content */,
+			);
+			path = "Yumemi-Fortune-App";
+			sourceTree = "<group>";
+		};
+		4CFC3AA62C82E6D00066C71C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4CFC3AB02C82E6D00066C71C /* Yumemi-Fortune-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AB12C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift */,
+				4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */,
+			);
+			path = "Yumemi-Fortune-AppTests";
+			sourceTree = "<group>";
+		};
+		4CFC3ABA2C82E6D00066C71C /* Yumemi-Fortune-AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */,
+				4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */,
+			);
+			path = "Yumemi-Fortune-AppUITests";
+			sourceTree = "<group>";
+		};
+		4CFC3ACA2C82E78C0066C71C /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3ADD2C82E8D50066C71C /* FortuneAPIResponse+.swift */,
+				4CFC3ADF2C82E8ED0066C71C /* FortuneAPIClient+.swift */,
+				4CFC3AE12C82E9050066C71C /* URLSession+.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		4CFC3ACB2C82E7910066C71C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AD62C82E84A0066C71C /* FortuneAPIClient */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4CFC3ACC2C82E7950066C71C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */,
+				4CFC3AD22C82E81A0066C71C /* Day.swift */,
+				4CFC3AD42C82E82F0066C71C /* BloodType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4CFC3ACD2C82E79A0066C71C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4CFC3ACF2C82E7A50066C71C /* App & Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */,
+				4CFC3AA22C82E6CE0066C71C /* ContentView.swift */,
+				4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */,
+			);
+			path = "App & Views";
+			sourceTree = "<group>";
+		};
+		4CFC3AD62C82E84A0066C71C /* FortuneAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */,
+				4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */,
+				4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */,
+			);
+			path = FortuneAPIClient;
+			sourceTree = "<group>";
+		};
+		4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */,
+			);
+			path = FortuneAPIClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CFC3A9C2C82E6CE0066C71C /* Yumemi-Fortune-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CFC3AC12C82E6D00066C71C /* Build configuration list for PBXNativeTarget "Yumemi-Fortune-App" */;
+			buildPhases = (
+				4CFC3A992C82E6CE0066C71C /* Sources */,
+				4CFC3A9A2C82E6CE0066C71C /* Frameworks */,
+				4CFC3A9B2C82E6CE0066C71C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yumemi-Fortune-App";
+			productName = "Yumemi-Fortune-App";
+			productReference = 4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CFC3AAC2C82E6D00066C71C /* Yumemi-Fortune-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CFC3AC42C82E6D00066C71C /* Build configuration list for PBXNativeTarget "Yumemi-Fortune-AppTests" */;
+			buildPhases = (
+				4CFC3AA92C82E6D00066C71C /* Sources */,
+				4CFC3AAA2C82E6D00066C71C /* Frameworks */,
+				4CFC3AAB2C82E6D00066C71C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CFC3AAF2C82E6D00066C71C /* PBXTargetDependency */,
+			);
+			name = "Yumemi-Fortune-AppTests";
+			productName = "Yumemi-Fortune-AppTests";
+			productReference = 4CFC3AAD2C82E6D00066C71C /* Yumemi-Fortune-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4CFC3AB62C82E6D00066C71C /* Yumemi-Fortune-AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CFC3AC72C82E6D00066C71C /* Build configuration list for PBXNativeTarget "Yumemi-Fortune-AppUITests" */;
+			buildPhases = (
+				4CFC3AB32C82E6D00066C71C /* Sources */,
+				4CFC3AB42C82E6D00066C71C /* Frameworks */,
+				4CFC3AB52C82E6D00066C71C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CFC3AB92C82E6D00066C71C /* PBXTargetDependency */,
+			);
+			name = "Yumemi-Fortune-AppUITests";
+			productName = "Yumemi-Fortune-AppUITests";
+			productReference = 4CFC3AB72C82E6D00066C71C /* Yumemi-Fortune-AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CFC3A952C82E6CE0066C71C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					4CFC3A9C2C82E6CE0066C71C = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					4CFC3AAC2C82E6D00066C71C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4CFC3A9C2C82E6CE0066C71C;
+					};
+					4CFC3AB62C82E6D00066C71C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4CFC3A9C2C82E6CE0066C71C;
+					};
+				};
+			};
+			buildConfigurationList = 4CFC3A982C82E6CE0066C71C /* Build configuration list for PBXProject "Yumemi-Fortune-App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CFC3A942C82E6CE0066C71C;
+			productRefGroup = 4CFC3A9E2C82E6CE0066C71C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CFC3A9C2C82E6CE0066C71C /* Yumemi-Fortune-App */,
+				4CFC3AAC2C82E6D00066C71C /* Yumemi-Fortune-AppTests */,
+				4CFC3AB62C82E6D00066C71C /* Yumemi-Fortune-AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CFC3A9B2C82E6CE0066C71C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */,
+				4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFC3AAB2C82E6D00066C71C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFC3AB52C82E6D00066C71C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CFC3A992C82E6CE0066C71C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */,
+				4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */,
+				4CFC3ADA2C82E87E0066C71C /* FortuneAPIClientStub.swift in Sources */,
+				4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */,
+				4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */,
+				4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */,
+				4CFC3ADC2C82E8950066C71C /* FortuneAPIClient.swift in Sources */,
+				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
+				4CFC3ADE2C82E8D50066C71C /* FortuneAPIResponse+.swift in Sources */,
+				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
+				4CFC3AD82C82E8680066C71C /* FortuneAPIClientProtocol.swift in Sources */,
+				4CFC3AE02C82E8ED0066C71C /* FortuneAPIClient+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFC3AA92C82E6D00066C71C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFC3AB22C82E6D00066C71C /* Yumemi_Fortune_AppTests.swift in Sources */,
+				4CFC3AE72C82EA320066C71C /* FortuneAPIClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CFC3AB32C82E6D00066C71C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFC3ABE2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift in Sources */,
+				4CFC3ABC2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CFC3AAF2C82E6D00066C71C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CFC3A9C2C82E6CE0066C71C /* Yumemi-Fortune-App */;
+			targetProxy = 4CFC3AAE2C82E6D00066C71C /* PBXContainerItemProxy */;
+		};
+		4CFC3AB92C82E6D00066C71C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CFC3A9C2C82E6CE0066C71C /* Yumemi-Fortune-App */;
+			targetProxy = 4CFC3AB82C82E6D00066C71C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4CFC3ABF2C82E6D00066C71C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CFC3AC02C82E6D00066C71C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CFC3AC22C82E6D00066C71C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Yumemi-Fortune-App/Preview Content\"";
+				DEVELOPMENT_TEAM = QJC45QJ28B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaki.Yumemi-Fortune-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CFC3AC32C82E6D00066C71C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Yumemi-Fortune-App/Preview Content\"";
+				DEVELOPMENT_TEAM = QJC45QJ28B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaki.Yumemi-Fortune-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4CFC3AC52C82E6D00066C71C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJC45QJ28B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaki.Yumemi-Fortune-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yumemi-Fortune-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yumemi-Fortune-App";
+			};
+			name = Debug;
+		};
+		4CFC3AC62C82E6D00066C71C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJC45QJ28B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaki.Yumemi-Fortune-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yumemi-Fortune-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yumemi-Fortune-App";
+			};
+			name = Release;
+		};
+		4CFC3AC82C82E6D00066C71C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJC45QJ28B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaki.Yumemi-Fortune-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Yumemi-Fortune-App";
+			};
+			name = Debug;
+		};
+		4CFC3AC92C82E6D00066C71C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJC45QJ28B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masaki.Yumemi-Fortune-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Yumemi-Fortune-App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CFC3A982C82E6CE0066C71C /* Build configuration list for PBXProject "Yumemi-Fortune-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFC3ABF2C82E6D00066C71C /* Debug */,
+				4CFC3AC02C82E6D00066C71C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CFC3AC12C82E6D00066C71C /* Build configuration list for PBXNativeTarget "Yumemi-Fortune-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFC3AC22C82E6D00066C71C /* Debug */,
+				4CFC3AC32C82E6D00066C71C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CFC3AC42C82E6D00066C71C /* Build configuration list for PBXNativeTarget "Yumemi-Fortune-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFC3AC52C82E6D00066C71C /* Debug */,
+				4CFC3AC62C82E6D00066C71C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CFC3AC72C82E6D00066C71C /* Build configuration list for PBXNativeTarget "Yumemi-Fortune-AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFC3AC82C82E6D00066C71C /* Debug */,
+				4CFC3AC92C82E6D00066C71C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CFC3A952C82E6CE0066C71C /* Project object */;
+}
