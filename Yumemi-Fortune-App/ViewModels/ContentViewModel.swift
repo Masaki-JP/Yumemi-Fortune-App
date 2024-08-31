@@ -42,7 +42,7 @@ final class ContentViewModel: ObservableObject {
             "入力された名前が長すぎます。名前は〇文字以上〇文字以下にしてください。"
         case .possibleNetworkError:
             "占い結果を受信できませんでした。ネットワーク状態のいい場所に移動すると、このエラーは解消される可能性があります。"
-        case .invalidBirthday, .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError:
+        case .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError:
             "予期せぬエラーが発生しました。"
         }
     }

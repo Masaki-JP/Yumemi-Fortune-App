@@ -17,7 +17,6 @@ struct FortuneAPIClient {
     enum Error: Swift.Error {
         case noName
         case tooLongName
-        case invalidBirthday
         case urlInitializeFailure
         case encodeFailure
         case possibleNetworkError
