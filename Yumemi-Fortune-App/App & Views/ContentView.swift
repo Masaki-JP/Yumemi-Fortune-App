@@ -3,6 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         NavigationStack {
@@ -28,6 +29,10 @@ struct ContentView: View {
                     Button("占う", action: viewModel.didTapFortuneButton)
                 }
             }
+        }
+        .onDisappear { viewModel.onDisAppear() }
+        .onChange(of: scenePhase) { oldValue, _ in
+            if oldValue == .active { viewModel.onChangeToNotActive() }
         }
     }
 
