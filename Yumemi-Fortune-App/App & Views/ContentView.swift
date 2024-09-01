@@ -29,9 +29,12 @@ struct ContentView: View {
             )
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("占う", action: viewModel.didTapFortuneButton)
-                        .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
-                        .disabled(viewModel.isGetFortuneButtonDisabled)
+                    Button("占う") {
+                        isFocusedNameTextField = false
+                        viewModel.didTapFortuneButton()
+                    }
+                    .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
+                    .disabled(viewModel.isGetFortuneButtonDisabled)
                 }
                 ToolbarItem(placement: .keyboard) {
                     Text("完了") // Don't replace this with Button.
