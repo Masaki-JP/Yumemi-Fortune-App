@@ -17,6 +17,10 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     @Published private var fetchFortuneTask: Task<Void, Never>? = nil
     var isFetchingFortune: Bool { fetchFortuneTask != nil }
 
+    var isGetFortuneButtonDisabled: Bool {
+        !(name.isEmpty == false && bloodType != nil)
+    }
+
     init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
         self.fortuneAPIClient = fortuneAPIClient
     }
