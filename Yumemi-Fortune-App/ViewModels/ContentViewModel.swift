@@ -1,7 +1,7 @@
 import Foundation
 
 @MainActor
-final class ContentViewModel: ObservableObject {
+final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & Sendable>: ObservableObject {
 
     @Published var name = ""
     @Published var birthday: Date = .init()
@@ -11,21 +11,21 @@ final class ContentViewModel: ObservableObject {
     @Published var unSetBloodTypeErrorAlert = false
     @Published var unexpectedErrorAlert = false
 
+    private let fortuneAPIClient: FortuneAPIClientObject
+
+    init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
+        self.fortuneAPIClient = fortuneAPIClient
+    }
+
     func didTapFortuneButton() {
         Task {
             do {
-                let apiClient = FortuneAPIClientStub(.failure(.decodeFailure))
                 let birthday = Day(birthday)
                 guard let bloodType else {
-                    unSetBloodTypeErrorAlert = true
-                    return
+                    unSetBloodTypeErrorAlert = true; return;
                 }
 
-                fortuneAPIResponse = try await apiClient.fetchFortune(
-                    name: name,
-                    birthday: birthday,
-                    bloodType: bloodType
-                )
+                fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(name: name, birthday: birthday, bloodType: bloodType)
             } catch let error as FortuneAPIClient.Error {
                 fortuneAPIClientError = error
             } catch {
