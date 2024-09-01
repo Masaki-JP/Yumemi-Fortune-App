@@ -4,6 +4,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         NavigationStack {
@@ -32,6 +33,7 @@ struct ContentView: View {
                 }
             }
         }
+        .overlay(content: backgroundContent)
         .onDisappear { viewModel.onDisAppear() }
         .onChange(of: scenePhase) { oldValue, _ in
             if oldValue == .active { viewModel.onChangeToNotActive() }
@@ -47,6 +49,24 @@ struct ContentView: View {
         ForEach(BloodType.allCases, id: \.self) { bloodType in
             Text(bloodType.rawValue)
                 .tag(BloodType?.some(bloodType))
+        }
+    }
+
+    @ViewBuilder
+    func backgroundContent() -> some View {
+        if viewModel.isFetchingFortune == true {
+            Color.black
+                .opacity(colorScheme == .light ? 0.1 : 0.3)
+                .ignoresSafeArea()
+
+            VStack {
+                ProgressView()
+                    .scaleEffect(1.5)
+                    .frame(width: 50, height: 50)
+                Text("占い結果を取得中...")
+                    .foregroundStyle(.secondary)
+                    .fontWeight(.semibold)
+            }
         }
     }
 }
