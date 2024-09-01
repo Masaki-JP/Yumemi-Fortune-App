@@ -22,8 +22,8 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     }
 
     deinit {
-        Task { @MainActor in
-            fetchFortuneTask?.cancel()
+        Task { @MainActor [weak self] in
+            self?.fetchFortuneTask?.cancel()
         }
     }
 
