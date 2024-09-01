@@ -6,33 +6,45 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     @Published var name = ""
     @Published var birthday: Date = .init()
     @Published var bloodType: BloodType? = nil
-    @Published var fortuneAPIResponse: FortuneAPIResponse? = nil
+    @Published var fortuneAPIResponse: FortuneAPIResponse? = nil {
+        didSet { fetchFortuneTask = nil }
+    }
     @Published var fortuneAPIClientError: FortuneAPIClient.Error? = nil
     @Published var unSetBloodTypeErrorAlert = false
     @Published var unexpectedErrorAlert = false
 
     private let fortuneAPIClient: FortuneAPIClientObject
+    @Published private var fetchFortuneTask: Task<Void, Never>? = nil
+    var isFetchingFortune: Bool { fetchFortuneTask != nil }
 
     init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
         self.fortuneAPIClient = fortuneAPIClient
     }
 
+    deinit {
+        Task { @MainActor in
+            fetchFortuneTask?.cancel()
+        }
+    }
+
     func didTapFortuneButton() {
-        Task {
+        fetchFortuneTask = .init {
             do {
                 let birthday = Day(birthday)
-                guard let bloodType else {
-                    unSetBloodTypeErrorAlert = true; return;
-                }
+                guard let bloodType else { unSetBloodTypeErrorAlert = true; return; }
 
                 fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(name: name, birthday: birthday, bloodType: bloodType)
             } catch let error as FortuneAPIClient.Error {
                 fortuneAPIClientError = error
             } catch {
-                fatalError()
+                unexpectedErrorAlert = true
             }
         }
     }
+
+    private func cancelFetchFortuneTask() { fetchFortuneTask?.cancel() }
+    func onChangeToNotActive() { cancelFetchFortuneTask() }
+    func onDisAppear() { cancelFetchFortuneTask() }
 
     func alertMessage(_ fortuneAPIClientError: FortuneAPIClient.Error) -> String {
         switch fortuneAPIClientError {
