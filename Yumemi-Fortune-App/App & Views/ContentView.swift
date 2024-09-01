@@ -5,11 +5,13 @@ struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) private var colorScheme
+    @FocusState private var isFocusedNameTextField
 
     var body: some View {
         NavigationStack {
             Form {
                 TextField("名前", text: $viewModel.name)
+                    .focused($isFocusedNameTextField)
                 DatePicker("誕生日", selection: $viewModel.birthday)
                 Picker("血液型", selection: $viewModel.bloodType, content: pickerContent)
             }
@@ -27,9 +29,18 @@ struct ContentView: View {
             )
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("占う", action: viewModel.didTapFortuneButton)
-                        .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
-                        .disabled(viewModel.isGetFortuneButtonDisabled)
+                    Button("占う") {
+                        isFocusedNameTextField = false
+                        viewModel.didTapFortuneButton()
+                    }
+                    .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
+                    .disabled(viewModel.isGetFortuneButtonDisabled)
+                }
+                ToolbarItem(placement: .keyboard) {
+                    Text("完了") // Don't replace this with Button.
+                        .onTapGesture { isFocusedNameTextField = false }
+                        .foregroundStyle(.blue)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
         }
