@@ -27,6 +27,8 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("占う", action: viewModel.didTapFortuneButton)
+                        .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
+                        .disabled(viewModel.isGetFortuneButtonDisabled)
                 }
             }
         }
