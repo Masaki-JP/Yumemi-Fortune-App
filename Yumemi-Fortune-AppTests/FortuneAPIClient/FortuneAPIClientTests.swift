@@ -16,7 +16,7 @@ final class FortuneAPIClientTests: XCTestCase {
 
     func test_異常系_引数nameに空文字が与えられた時に適切なエラーを投げること() async {
         do {
-            let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+            let _ = try await fortuneAPIClient.fetchFortune(
                 name: "", // Empty String
                 birthday: .sample,
                 bloodType: .a)
@@ -33,7 +33,7 @@ final class FortuneAPIClientTests: XCTestCase {
         let name: String = .init(repeating: "A", count: 101)
 
         do {
-            let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+            let _ = try await fortuneAPIClient.fetchFortune(
                 name: name,
                 birthday: .sample,
                 bloodType: .a)
