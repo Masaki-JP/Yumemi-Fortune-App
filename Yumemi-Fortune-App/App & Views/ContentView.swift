@@ -18,14 +18,11 @@ struct ContentView: View {
             .navigationTitle("Fortune")
             .toolbarTitleDisplayMode(.inlineLarge)
             .navigationDestination(item: $viewModel.fortuneAPIResponse, destination: FortuneResultView.init)
-            .alert("血液型を設定してください。", isPresented: $viewModel.unSetBloodTypeErrorAlert, actions: {})
-            .alert("予期せぬエラーが発生しました。", isPresented: $viewModel.unexpectedErrorAlert, actions: {})
-            .alert("⚠️ エラー発生",
-                   isPresented: .init(
-                    get: { viewModel.fortuneAPIClientError != nil },
-                    set: { if $0 == false { viewModel.fortuneAPIClientError = nil }}),
-                   actions: { Button("閉じる") {}},
-                   message: { if let fortuneAPIClientError = viewModel.fortuneAPIClientError { Text(viewModel.alertMessage(fortuneAPIClientError)) }}
+            .alert(
+                "Error",
+                isPresented: viewModel.alertMessageBinding,
+                actions: {},
+                message: { Text(viewModel.alertMessage ?? "予期せぬエラーが発生しました。") }
             )
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
