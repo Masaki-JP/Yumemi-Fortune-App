@@ -46,7 +46,10 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
         fetchFortuneTask = .init {
             do {
                 let birthday = Day(birthday)
-                guard let bloodType else { alertMessage = "予期せぬエラーが発生しました。"; return; }
+
+                guard birthday <= Day.today, let bloodType else {
+                    alertMessage = "予期せぬエラーが発生しました。"; return;
+                }
 
                 fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(name: name, birthday: birthday, bloodType: bloodType)
             } catch {
