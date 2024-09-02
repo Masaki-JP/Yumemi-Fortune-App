@@ -12,7 +12,7 @@ struct ContentView: View {
             Form {
                 TextField("名前", text: $viewModel.name)
                     .focused($isFocusedNameTextField)
-                DatePicker("誕生日", selection: $viewModel.birthday)
+                DatePicker("誕生日", selection: $viewModel.birthday, in: ...Date.now, displayedComponents: .date)
                 Picker("血液型", selection: $viewModel.bloodType, content: pickerContent)
             }
             .navigationTitle("Fortune")
