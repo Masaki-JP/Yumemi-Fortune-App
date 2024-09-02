@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 @MainActor
 final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & Sendable>: ObservableObject {
@@ -9,9 +9,6 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     @Published var fortuneAPIResponse: FortuneAPIResponse? = nil {
         didSet { fetchFortuneTask = nil }
     }
-    @Published var fortuneAPIClientError: FortuneAPIClient.Error? = nil
-    @Published var unSetBloodTypeErrorAlert = false
-    @Published var unexpectedErrorAlert = false
 
     private let fortuneAPIClient: FortuneAPIClientObject
     @Published private var fetchFortuneTask: Task<Void, Never>? = nil
@@ -19,6 +16,14 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
 
     var isGetFortuneButtonDisabled: Bool {
         !(name.isEmpty == false && bloodType != nil)
+    }
+
+    @Published private(set) var alertMessage: String? = nil {
+        didSet { fetchFortuneTask = nil }
+    }
+    var alertMessageBinding: Binding<Bool> {
+        .init(get: { self.alertMessage != nil },
+              set: { if $0 == false { self.alertMessage = nil }})
     }
 
     init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
@@ -35,13 +40,15 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
         fetchFortuneTask = .init {
             do {
                 let birthday = Day(birthday)
-                guard let bloodType else { unSetBloodTypeErrorAlert = true; return; }
+                guard let bloodType else { alertMessage = "予期せぬエラーが発生しました。"; return; }
 
                 fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(name: name, birthday: birthday, bloodType: bloodType)
-            } catch let error as FortuneAPIClient.Error {
-                fortuneAPIClientError = error
             } catch {
-                unexpectedErrorAlert = true
+                if case FortuneAPIClient.Error.tooLongName = error  {
+                    alertMessage = "名前は100文字未満にしてください。"
+                } else {
+                    alertMessage = "予期せぬエラーが発生しました。"
+                }
             }
         }
     }
@@ -49,17 +56,4 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     private func cancelFetchFortuneTask() { fetchFortuneTask?.cancel() }
     func onChangeToNotActive() { cancelFetchFortuneTask() }
     func onDisAppear() { cancelFetchFortuneTask() }
-
-    func alertMessage(_ fortuneAPIClientError: FortuneAPIClient.Error) -> String {
-        switch fortuneAPIClientError {
-        case .noName:
-            "名前を入力してください。"
-        case .tooLongName:
-            "入力された名前が長すぎます。名前は〇文字以上〇文字以下にしてください。"
-        case .possibleNetworkError:
-            "占い結果を受信できませんでした。ネットワーク状態のいい場所に移動すると、このエラーは解消される可能性があります。"
-        case .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError:
-            "予期せぬエラーが発生しました。"
-        }
-    }
 }
