@@ -55,8 +55,16 @@ struct FortuneResultView: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
     NavigationStack {
         FortuneResultView(.sample)
     }
+    .preferredColorScheme(.light)
+}
+
+#Preview("Dark") {
+    NavigationStack {
+        FortuneResultView(.sample)
+    }
+    .preferredColorScheme(.dark)
 }
