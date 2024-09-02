@@ -28,7 +28,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("占う") {
                         isFocusedNameTextField = false
-                        viewModel.didTapFortuneButton()
+                        viewModel.didTapGetFortuneButton()
                     }
                     .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
                     .disabled(viewModel.isGetFortuneButtonDisabled)

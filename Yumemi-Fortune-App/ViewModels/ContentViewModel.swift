@@ -42,7 +42,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
         }
     }
 
-    func didTapFortuneButton() {
+    func didTapGetFortuneButton() {
         fetchFortuneTask = .init {
             do {
                 let birthday = Day(birthday)
