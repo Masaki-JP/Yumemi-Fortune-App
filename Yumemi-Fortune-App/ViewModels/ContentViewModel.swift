@@ -19,7 +19,13 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     }
 
     @Published private(set) var alertMessage: String? = nil {
-        didSet { fetchFortuneTask = nil }
+        didSet { 
+            fetchFortuneTask = nil
+
+            if alertMessage != nil {
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
+            }
+        }
     }
     var alertMessageBinding: Binding<Bool> {
         .init(get: { self.alertMessage != nil },
