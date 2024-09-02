@@ -1,12 +1,23 @@
 import Foundation
 
-struct Day: Codable {
+struct Day: Codable, Comparable {
+
     let year, month, day: Int
 
     enum Error: Swift.Error {
         case invalidDay
         case invalidDecodedDay
         case unexpectedError(_ msg: String)
+    }
+
+    static func < (lhs: Day, rhs: Day) -> Bool {
+        if lhs.year != rhs.year {
+            lhs.year < rhs.year
+        } else if lhs.month != rhs.month {
+            lhs.month < rhs.month
+        } else {
+            lhs.day < rhs.day
+        }
     }
 
     init(year: Int, month: Int, day: Int) throws {
