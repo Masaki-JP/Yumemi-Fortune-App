@@ -64,6 +64,25 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
                 case .urlInitializeFailure, .encodeFailure, .possibleNetworkError, .unexpectedResponse, .decodeFailure, .unexpectedError:
                     alertMessage = alertMessageForUnexpectedError
                 }
+            } catch let error as URLError {
+                switch error.code {
+                case .networkConnectionLost:
+                    alertMessage = "ネットワーク接続が失われました。"
+                case .notConnectedToInternet:
+                    alertMessage = "ネットワークに接続されていません。"
+                case .timedOut:
+                    alertMessage = "リクエストがタイムアウトしました。"
+                case .cannotFindHost:
+                    alertMessage = "ホストが見つかりませんでした。"
+                case .cannotConnectToHost:
+                    alertMessage = "ホストに接続できませんでした。"
+                case .dataNotAllowed:
+                    alertMessage = "データ通信は許可されていません。"
+                case .cancelled:
+                    alertMessage = "リクエストがキャンセルされました。"
+                default:
+                    alertMessage = alertMessageForUnexpectedError
+                }
             } catch {
                 alertMessage = alertMessageForUnexpectedError
             }
