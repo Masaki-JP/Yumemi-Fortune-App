@@ -6,9 +6,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     @Published var name = ""
     @Published var birthday: Date = .init()
     @Published var bloodType: BloodType? = nil
-    @Published var fortuneAPIResponse: FortuneAPIResponse? = nil {
-        didSet { fetchFortuneTask = nil }
-    }
+    @Published var fortuneAPIResponse: FortuneAPIResponse? = nil
 
     private let fortuneAPIClient: FortuneAPIClientObject
     @Published private var fetchFortuneTask: Task<Void, Never>? = nil
@@ -19,9 +17,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     }
 
     @Published private(set) var alertMessage: String? = nil {
-        didSet { 
-            fetchFortuneTask = nil
-
+        didSet {
             if alertMessage != nil {
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
             }
@@ -59,6 +55,8 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
                     alertMessage = "予期せぬエラーが発生しました。"
                 }
             }
+
+            fetchFortuneTask = nil
         }
     }
 
