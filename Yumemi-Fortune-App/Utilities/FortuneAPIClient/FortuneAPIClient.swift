@@ -17,6 +17,7 @@ struct FortuneAPIClient: FortuneAPIClientProtocol {
     enum Error: Swift.Error {
         case noName
         case tooLongName
+        case invalidBirthday
         case urlInitializeFailure
         case encodeFailure
         case possibleNetworkError
@@ -26,9 +27,10 @@ struct FortuneAPIClient: FortuneAPIClientProtocol {
     }
 
     func fetchFortune(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneAPIResponse {
-        /// 引数nameのバリデーション
+        /// 引数のバリデーション
         guard name.isEmpty == false else { throw Self.Error.noName }
         guard name.count < 100 else { throw Self.Error.tooLongName }
+        guard birthday <= Day.today else { throw Self.Error.invalidBirthday }
 
         /// URLインスタンスの作成
         let baseURLStr = "https://ios-junior-engineer-codecheck.yumemi.jp"
