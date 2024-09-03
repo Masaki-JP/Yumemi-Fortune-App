@@ -1,8 +1,8 @@
 import SwiftUI
 
+@MainActor struct ContentView: View {
 
-struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    @State private var viewModel = ContentViewModel()
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) private var colorScheme
     @FocusState private var isFocusedNameTextField
