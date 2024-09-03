@@ -42,13 +42,15 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     func didTapGetFortuneButton() {
         fetchFortuneTask = .init {
             do {
-                let birthday = Day(birthday)
-
-                guard birthday <= Day.today, let bloodType else {
+                guard let bloodType else {
                     alertMessage = "予期せぬエラーが発生しました。"; return;
                 }
 
-                fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(name: name, birthday: birthday, bloodType: bloodType)
+                fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+                    name: name,
+                    birthday: .init(birthday),
+                    bloodType: bloodType
+                )
             } catch {
                 if case FortuneAPIClient.Error.tooLongName = error  {
                     alertMessage = "名前は100文字未満にしてください。"
