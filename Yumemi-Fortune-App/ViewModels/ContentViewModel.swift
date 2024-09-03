@@ -28,8 +28,8 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
         }
     }
     var alertMessageBinding: Binding<Bool> {
-        .init(get: { self.alertMessage != nil },
-              set: { if $0 == false { self.alertMessage = nil }})
+        .init(get: { [weak self] in self?.alertMessage != nil },
+              set: { [weak self] in if $0 == false { self?.alertMessage = nil }})
     }
 
     init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
