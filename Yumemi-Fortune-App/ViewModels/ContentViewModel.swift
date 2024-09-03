@@ -1,4 +1,5 @@
 import SwiftUI
+import Observation
 
 @MainActor @Observable
 final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & Sendable> {
