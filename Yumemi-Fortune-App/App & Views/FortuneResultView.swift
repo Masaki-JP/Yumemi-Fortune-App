@@ -50,6 +50,7 @@ struct FortuneResultView: View {
                     fatalError()
                 }
             }
+            .frame(maxWidth: .infinity)
         }
         .navigationTitle("占い結果")
     }
