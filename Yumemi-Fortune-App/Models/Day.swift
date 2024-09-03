@@ -24,7 +24,7 @@ struct Day: Codable, Comparable {
         self.year = year
         self.month = month
         self.day = day
-        try validate(self)
+        try self.validate()
     }
 
     init(_ date: Date) {
@@ -35,7 +35,7 @@ struct Day: Codable, Comparable {
         self.year = year
         self.month = month
         self.day = day
-        try! validate(self)
+        try! self.validate()
     }
 
     init(from decoder: any Decoder) throws {
@@ -45,7 +45,7 @@ struct Day: Codable, Comparable {
         self.day = try container.decode(Int.self, forKey: .day)
 
         do {
-            try validate(self)
+            try self.validate()
         } catch {
             throw Self.Error.invalidDecodedDay
         }
@@ -64,22 +64,5 @@ struct Day: Codable, Comparable {
         let day = calendar.component(.day, from: now)
 
         return try! Day(year: year, month: month, day: day)
-    }
-
-    private func validate(_ day: Day) throws {
-        let dateComponents = DateComponents(calendar: Self.calendar, timeZone: Self.calendar.timeZone, year: day.year, month: day.month, day: day.day)
-
-        guard dateComponents.isValidDate else {
-            throw Self.Error.invalidDay
-        }
-
-        guard let date = dateComponents.date else {
-            let msg = "\(#function): 有効なDateComponentからDateを生成できませんでした。"
-            throw Self.Error.unexpectedError(msg)
-        }
-
-        guard date < .now else {
-            throw Self.Error.invalidDay
-        }
     }
 }
