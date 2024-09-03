@@ -41,9 +41,12 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
 
     func didTapGetFortuneButton() {
         fetchFortuneTask = .init {
+            let alertMessageForUnexpectedError = "予期せぬエラーが発生しました。"
+
             do {
                 guard let bloodType else {
-                    alertMessage = "予期せぬエラーが発生しました。"; return;
+                    /// bloodTypeがnilの場合に占うボタンは押せないため、bloodTypeのアンラップに失敗することは理論上ない。
+                    alertMessage = alertMessageForUnexpectedError; return;
                 }
 
                 fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
@@ -51,12 +54,17 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
                     birthday: .init(birthday),
                     bloodType: bloodType
                 )
-            } catch {
-                if case FortuneAPIClient.Error.tooLongName = error  {
+            } catch let error as FortuneAPIClient.Error {
+                switch error {
+                case .tooLongName:
                     alertMessage = "名前は100文字未満にしてください。"
-                } else {
-                    alertMessage = "予期せぬエラーが発生しました。"
+                case .noName, .invalidBirthday: // ※1
+                    alertMessage = alertMessageForUnexpectedError
+                case .urlInitializeFailure, .encodeFailure, .possibleNetworkError, .unexpectedResponse, .decodeFailure, .unexpectedError:
+                    alertMessage = alertMessageForUnexpectedError
                 }
+            } catch {
+                alertMessage = alertMessageForUnexpectedError
             }
 
             fetchFortuneTask = nil
@@ -67,3 +75,5 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
     func onChangeToNotActive() { cancelFetchFortuneTask() }
     func onDisAppear() { cancelFetchFortuneTask() }
 }
+
+/// ※1: 空文字の場合に占うボタンは押せないため、noNameが投げられることは理論上ない。また、DatePickerで指定できる日付を当日以前に限定しているため、invalidBirthdayも投げられることは理論上ない。
