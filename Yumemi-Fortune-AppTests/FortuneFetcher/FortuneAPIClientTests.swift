@@ -54,7 +54,7 @@ final class FortuneAPIClientTests: XCTestCase {
         let fortuneFetcher = FortuneFetcher()
         let day = try Day(year: 2000, month: 1, day: 1)
 
-        let fortuneAPIResponse = try await fortuneFetcher.fetch(
+        let _ = try await fortuneFetcher.fetch(
             name: "XXXXX",
             birthday: day,
             bloodType: .a
