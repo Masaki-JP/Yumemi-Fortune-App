@@ -1,6 +1,6 @@
 import Foundation
 
-struct FortuneAPIClient: FortuneAPIClientProtocol {
+struct FortuneAPIClient: FortuneFetcherProtocol {
     private let urlSession: URLSession
 
     init(_ urlSession: URLSession = .shared) {

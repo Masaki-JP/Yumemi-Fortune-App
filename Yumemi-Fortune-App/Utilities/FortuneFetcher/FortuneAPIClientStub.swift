@@ -1,6 +1,6 @@
 import Foundation
 
-struct FortuneAPIClientStub: FortuneAPIClientProtocol {
+struct FortuneAPIClientStub: FortuneFetcherProtocol {
     var fetchResult: Result<FortuneAPIResponse, FortuneAPIClient.Error>
 
     init(_ fetchResult: Result<FortuneAPIResponse, FortuneAPIClient.Error>) {

@@ -2,7 +2,7 @@ import SwiftUI
 import Observation
 
 @MainActor @Observable
-final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & Sendable> {
+final class ContentViewModel<FortuneAPIClientObject: FortuneFetcherProtocol & Sendable> {
 
     var name = ""
     var birthday: Date = .init()
