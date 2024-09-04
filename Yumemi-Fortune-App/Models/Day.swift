@@ -10,16 +10,6 @@ struct Day: Codable, Comparable {
         case unexpectedError(_ msg: String)
     }
 
-    static func < (lhs: Day, rhs: Day) -> Bool {
-        if lhs.year != rhs.year {
-            lhs.year < rhs.year
-        } else if lhs.month != rhs.month {
-            lhs.month < rhs.month
-        } else {
-            lhs.day < rhs.day
-        }
-    }
-
     init(year: Int, month: Int, day: Int) throws {
         self.year = year
         self.month = month
@@ -64,5 +54,15 @@ struct Day: Codable, Comparable {
         let day = calendar.component(.day, from: now)
 
         return try! Day(year: year, month: month, day: day)
+    }
+
+    static func < (lhs: Day, rhs: Day) -> Bool {
+        if lhs.year != rhs.year {
+            lhs.year < rhs.year
+        } else if lhs.month != rhs.month {
+            lhs.month < rhs.month
+        } else {
+            lhs.day < rhs.day
+        }
     }
 }
