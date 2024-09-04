@@ -7,7 +7,7 @@ struct FortuneFetcherStub: FortuneFetcherProtocol {
         self.fetchResult = fetchResult
     }
 
-    func fetchFortune(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneAPIResponse {
+    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneAPIResponse {
         switch fetchResult {
         case .success(let value): return value
         case .failure(let error): throw error

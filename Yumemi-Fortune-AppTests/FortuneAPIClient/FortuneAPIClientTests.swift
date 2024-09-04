@@ -10,7 +10,7 @@ final class FortuneAPIClientTests: XCTestCase {
     }
 
     func test_正常系_有効な引数が与えられた時に問題なく動作すること() async {
-        let fortuneAPIResponse = try? await fortuneAPIClient.fetchFortune(
+        let fortuneAPIResponse = try? await fortuneAPIClient.fetch(
             name: "Sasuke",
             birthday: .sample,
             bloodType: .a)
@@ -20,7 +20,7 @@ final class FortuneAPIClientTests: XCTestCase {
 
     func test_異常系_引数nameに空文字が与えられた時に適切なエラーを投げること() async {
         do {
-            let _ = try await fortuneAPIClient.fetchFortune(
+            let _ = try await fortuneAPIClient.fetch(
                 name: "", // Empty String
                 birthday: .sample,
                 bloodType: .a)
@@ -37,7 +37,7 @@ final class FortuneAPIClientTests: XCTestCase {
         let name: String = .init(repeating: "A", count: 101)
 
         do {
-            let _ = try await fortuneAPIClient.fetchFortune(
+            let _ = try await fortuneAPIClient.fetch(
                 name: name,
                 birthday: .sample,
                 bloodType: .a)
@@ -54,7 +54,7 @@ final class FortuneAPIClientTests: XCTestCase {
         let fortuneAPIClient = FortuneFetcher()
         let day = try Day(year: 2000, month: 1, day: 1)
 
-        let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+        let fortuneAPIResponse = try await fortuneAPIClient.fetch(
             name: "XXXXX",
             birthday: day,
             bloodType: .a

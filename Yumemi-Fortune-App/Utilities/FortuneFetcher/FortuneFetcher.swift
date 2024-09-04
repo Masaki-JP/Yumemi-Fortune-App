@@ -26,7 +26,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         case unexpectedError(_ messege: String)
     }
 
-    func fetchFortune(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneAPIResponse {
+    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneAPIResponse {
         /// 引数のバリデーション
         guard name.isEmpty == false else { throw Self.Error.noName }
         guard name.count < 100 else { throw Self.Error.tooLongName }

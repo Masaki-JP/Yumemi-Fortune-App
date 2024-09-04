@@ -50,7 +50,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneFetcherProtocol & Se
                     alertMessage = alertMessageForUnexpectedError; return;
                 }
 
-                fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+                fortuneAPIResponse = try await fortuneAPIClient.fetch(
                     name: name,
                     birthday: .init(birthday),
                     bloodType: bloodType
