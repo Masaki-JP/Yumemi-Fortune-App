@@ -2,14 +2,14 @@ import SwiftUI
 import Observation
 
 @MainActor @Observable
-final class ContentViewModel<FortuneAPIClientObject: FortuneFetcherProtocol & Sendable> {
+final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Sendable> {
 
     var name = ""
     var birthday: Date = .init()
     var bloodType: BloodType? = nil
     var fortuneAPIResponse: FortuneAPIResponse? = nil
 
-    private let fortuneAPIClient: FortuneAPIClientObject
+    private let fortuneAPIClient: FortuneFetcherObject
     private var fetchFortuneTask: Task<Void, Never>? = nil
     var isFetchingFortune: Bool { fetchFortuneTask != nil }
 
@@ -30,7 +30,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneFetcherProtocol & Se
               set: { [weak self] in if $0 == false { self?.alertMessage = nil }})
     }
 
-    nonisolated init(fortuneAPIClient: FortuneAPIClientObject = FortuneFetcher()) {
+    nonisolated init(fortuneAPIClient: FortuneFetcherObject = FortuneFetcher()) {
         self.fortuneAPIClient = fortuneAPIClient
     }
 
