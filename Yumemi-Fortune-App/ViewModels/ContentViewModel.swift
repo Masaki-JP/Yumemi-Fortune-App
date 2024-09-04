@@ -2,14 +2,14 @@ import SwiftUI
 import Observation
 
 @MainActor @Observable
-final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & Sendable> {
+final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Sendable> {
 
     var name = ""
     var birthday: Date = .init()
     var bloodType: BloodType? = nil
     var fortuneAPIResponse: FortuneAPIResponse? = nil
 
-    private let fortuneAPIClient: FortuneAPIClientObject
+    private let fortuneFetcher: FortuneFetcherObject
     private var fetchFortuneTask: Task<Void, Never>? = nil
     var isFetchingFortune: Bool { fetchFortuneTask != nil }
 
@@ -30,8 +30,8 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
               set: { [weak self] in if $0 == false { self?.alertMessage = nil }})
     }
 
-    nonisolated init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
-        self.fortuneAPIClient = fortuneAPIClient
+    nonisolated init(fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
+        self.fortuneFetcher = fortuneFetcher
     }
 
     deinit {
@@ -50,12 +50,12 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneAPIClientProtocol & 
                     alertMessage = alertMessageForUnexpectedError; return;
                 }
 
-                fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+                fortuneAPIResponse = try await fortuneFetcher.fetch(
                     name: name,
                     birthday: .init(birthday),
                     bloodType: bloodType
                 )
-            } catch let error as FortuneAPIClient.Error {
+            } catch let error as FortuneFetcher.Error {
                 switch error {
                 case .tooLongName:
                     alertMessage = "名前は100文字未満にしてください。"

@@ -16,9 +16,9 @@
 		4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */; };
 		4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD22C82E81A0066C71C /* Day.swift */; };
 		4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD42C82E82F0066C71C /* BloodType.swift */; };
-		4CFC3AD82C82E8680066C71C /* FortuneAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */; };
-		4CFC3ADA2C82E87E0066C71C /* FortuneAPIClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */; };
-		4CFC3ADC2C82E8950066C71C /* FortuneAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */; };
+		4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD72C82E8680066C71C /* FortuneFetcherProtocol.swift */; };
+		4CFC3ADA2C82E87E0066C71C /* FortuneFetcherStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD92C82E87E0066C71C /* FortuneFetcherStub.swift */; };
+		4CFC3ADC2C82E8950066C71C /* FortuneFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADB2C82E8950066C71C /* FortuneFetcher.swift */; };
 		4CFC3ADE2C82E8D50066C71C /* FortuneAPIResponse+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADD2C82E8D50066C71C /* FortuneAPIResponse+.swift */; };
 		4CFC3AE02C82E8ED0066C71C /* FortuneAPIClient+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADF2C82E8ED0066C71C /* FortuneAPIClient+.swift */; };
 		4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE12C82E9050066C71C /* URLSession+.swift */; };
@@ -58,9 +58,9 @@
 		4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIResponse.swift; sourceTree = "<group>"; };
 		4CFC3AD22C82E81A0066C71C /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4CFC3AD42C82E82F0066C71C /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
-		4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientProtocol.swift; sourceTree = "<group>"; };
-		4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClientStub.swift; sourceTree = "<group>"; };
-		4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIClient.swift; sourceTree = "<group>"; };
+		4CFC3AD72C82E8680066C71C /* FortuneFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetcherProtocol.swift; sourceTree = "<group>"; };
+		4CFC3AD92C82E87E0066C71C /* FortuneFetcherStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetcherStub.swift; sourceTree = "<group>"; };
+		4CFC3ADB2C82E8950066C71C /* FortuneFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetcher.swift; sourceTree = "<group>"; };
 		4CFC3ADD2C82E8D50066C71C /* FortuneAPIResponse+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FortuneAPIResponse+.swift"; sourceTree = "<group>"; };
 		4CFC3ADF2C82E8ED0066C71C /* FortuneAPIClient+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FortuneAPIClient+.swift"; sourceTree = "<group>"; };
 		4CFC3AE12C82E9050066C71C /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		4CFC3AB02C82E6D00066C71C /* Yumemi-Fortune-AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */,
+				4CFC3AE52C82E9E90066C71C /* FortuneFetcher */,
 			);
 			path = "Yumemi-Fortune-AppTests";
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 		4CFC3ACB2C82E7910066C71C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AD62C82E84A0066C71C /* FortuneAPIClient */,
+				4CFC3AD62C82E84A0066C71C /* FortuneFetcher */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -201,22 +201,22 @@
 			path = "App & Views";
 			sourceTree = "<group>";
 		};
-		4CFC3AD62C82E84A0066C71C /* FortuneAPIClient */ = {
+		4CFC3AD62C82E84A0066C71C /* FortuneFetcher */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */,
-				4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */,
-				4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */,
+				4CFC3AD72C82E8680066C71C /* FortuneFetcherProtocol.swift */,
+				4CFC3AD92C82E87E0066C71C /* FortuneFetcherStub.swift */,
+				4CFC3ADB2C82E8950066C71C /* FortuneFetcher.swift */,
 			);
-			path = FortuneAPIClient;
+			path = FortuneFetcher;
 			sourceTree = "<group>";
 		};
-		4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */ = {
+		4CFC3AE52C82E9E90066C71C /* FortuneFetcher */ = {
 			isa = PBXGroup;
 			children = (
 				4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */,
 			);
-			path = FortuneAPIClient;
+			path = FortuneFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,16 +352,16 @@
 				4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */,
 				4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */,
 				4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */,
-				4CFC3ADA2C82E87E0066C71C /* FortuneAPIClientStub.swift in Sources */,
+				4CFC3ADA2C82E87E0066C71C /* FortuneFetcherStub.swift in Sources */,
 				4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */,
 				4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */,
 				4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */,
-				4CFC3ADC2C82E8950066C71C /* FortuneAPIClient.swift in Sources */,
+				4CFC3ADC2C82E8950066C71C /* FortuneFetcher.swift in Sources */,
 				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
 				4CFC3ADE2C82E8D50066C71C /* FortuneAPIResponse+.swift in Sources */,
 				4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */,
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
-				4CFC3AD82C82E8680066C71C /* FortuneAPIClientProtocol.swift in Sources */,
+				4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */,
 				4CFC3AE02C82E8ED0066C71C /* FortuneAPIClient+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
