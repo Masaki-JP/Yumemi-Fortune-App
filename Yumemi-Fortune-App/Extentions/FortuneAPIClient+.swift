@@ -1,6 +1,6 @@
 import Foundation
 
-extension FortuneAPIClient {
+extension FortuneFetcher {
 
     final class FortuneAPIURLProtocol: URLProtocol {
 

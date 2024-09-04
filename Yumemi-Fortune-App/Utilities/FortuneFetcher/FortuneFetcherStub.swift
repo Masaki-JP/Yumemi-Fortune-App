@@ -1,9 +1,9 @@
 import Foundation
 
 struct FortuneFetcherStub: FortuneFetcherProtocol {
-    var fetchResult: Result<FortuneAPIResponse, FortuneAPIClient.Error>
+    var fetchResult: Result<FortuneAPIResponse, FortuneFetcher.Error>
 
-    init(_ fetchResult: Result<FortuneAPIResponse, FortuneAPIClient.Error>) {
+    init(_ fetchResult: Result<FortuneAPIResponse, FortuneFetcher.Error>) {
         self.fetchResult = fetchResult
     }
 

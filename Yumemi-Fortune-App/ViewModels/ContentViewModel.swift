@@ -30,7 +30,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneFetcherProtocol & Se
               set: { [weak self] in if $0 == false { self?.alertMessage = nil }})
     }
 
-    nonisolated init(fortuneAPIClient: FortuneAPIClientObject = FortuneAPIClient()) {
+    nonisolated init(fortuneAPIClient: FortuneAPIClientObject = FortuneFetcher()) {
         self.fortuneAPIClient = fortuneAPIClient
     }
 
@@ -55,7 +55,7 @@ final class ContentViewModel<FortuneAPIClientObject: FortuneFetcherProtocol & Se
                     birthday: .init(birthday),
                     bloodType: bloodType
                 )
-            } catch let error as FortuneAPIClient.Error {
+            } catch let error as FortuneFetcher.Error {
                 switch error {
                 case .tooLongName:
                     alertMessage = "名前は100文字未満にしてください。"

@@ -24,10 +24,10 @@ extension URLSession {
         var targets: [URL: (error: Swift.Error?, data: Data?, response: HTTPURLResponse?)] = .init()
         targets[url] = (error: nil, data: data, response: response)
 
-        FortuneAPIClient.FortuneAPIURLProtocol.targets = targets
+        FortuneFetcher.FortuneAPIURLProtocol.targets = targets
 
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [FortuneAPIClient.FortuneAPIURLProtocol.self]
+        config.protocolClasses = [FortuneFetcher.FortuneAPIURLProtocol.self]
 
         return .init(configuration: config)
     }

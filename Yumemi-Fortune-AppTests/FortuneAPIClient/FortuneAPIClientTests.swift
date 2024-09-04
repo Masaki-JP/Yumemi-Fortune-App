@@ -3,7 +3,7 @@ import XCTest
 
 final class FortuneAPIClientTests: XCTestCase {
 
-    var fortuneAPIClient: FortuneAPIClient!
+    var fortuneAPIClient: FortuneFetcher!
 
     override func setUpWithError() throws {
         fortuneAPIClient = .init(.mock(for: .fortuneAPI))
@@ -27,7 +27,7 @@ final class FortuneAPIClientTests: XCTestCase {
 
             XCTFail("エラーが投げられていない。")
         } catch {
-            guard case FortuneAPIClient.Error.noName = error else {
+            guard case FortuneFetcher.Error.noName = error else {
                 XCTFail("適切なエラーが投げられていない。"); return;
             }
         }
@@ -44,14 +44,14 @@ final class FortuneAPIClientTests: XCTestCase {
 
             XCTFail("エラーが投げられていない。")
         } catch {
-            guard case FortuneAPIClient.Error.tooLongName = error else {
+            guard case FortuneFetcher.Error.tooLongName = error else {
                 XCTFail("適切なエラーが投げられていない。"); return;
             }
         }
     }
 
     func test_フレイキーテスト_実際にFortuneAPIClientを使用してテストする() async throws {
-        let fortuneAPIClient = FortuneAPIClient()
+        let fortuneAPIClient = FortuneFetcher()
         let day = try Day(year: 2000, month: 1, day: 1)
 
         let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
