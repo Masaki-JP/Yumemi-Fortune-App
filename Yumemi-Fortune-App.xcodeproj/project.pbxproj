@@ -168,7 +168,7 @@
 		4CFC3ACB2C82E7910066C71C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AD62C82E84A0066C71C /* FortuneAPIClient */,
+				4CFC3AD62C82E84A0066C71C /* FortuneFetcher */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -201,14 +201,14 @@
 			path = "App & Views";
 			sourceTree = "<group>";
 		};
-		4CFC3AD62C82E84A0066C71C /* FortuneAPIClient */ = {
+		4CFC3AD62C82E84A0066C71C /* FortuneFetcher */ = {
 			isa = PBXGroup;
 			children = (
 				4CFC3AD72C82E8680066C71C /* FortuneAPIClientProtocol.swift */,
 				4CFC3AD92C82E87E0066C71C /* FortuneAPIClientStub.swift */,
 				4CFC3ADB2C82E8950066C71C /* FortuneAPIClient.swift */,
 			);
-			path = FortuneAPIClient;
+			path = FortuneFetcher;
 			sourceTree = "<group>";
 		};
 		4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */ = {
