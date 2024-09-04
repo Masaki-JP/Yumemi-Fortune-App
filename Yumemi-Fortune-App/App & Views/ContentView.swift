@@ -19,12 +19,7 @@ import SwiftUI
             .navigationTitle("Fortune")
             .toolbarTitleDisplayMode(.inlineLarge)
             .navigationDestination(item: $viewModel.fortuneAPIResponse, destination: FortuneResultView.init)
-            .alert(
-                "Error",
-                isPresented: viewModel.alertMessageBinding,
-                actions: {},
-                message: { Text(viewModel.alertMessage ?? "予期せぬエラーが発生しました。") }
-            )
+            .alert("Error", isPresented: viewModel.alertMessageBinding, actions: {}, message: { Text(viewModel.alertMessage ?? "予期せぬエラーが発生しました。")})
             .toolbar(content: toolbarContent)
         }
         .overlay(content: backgroundContent)
