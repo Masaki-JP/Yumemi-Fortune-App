@@ -140,7 +140,7 @@
 		4CFC3AB02C82E6D00066C71C /* Yumemi-Fortune-AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */,
+				4CFC3AE52C82E9E90066C71C /* FortuneFetcher */,
 			);
 			path = "Yumemi-Fortune-AppTests";
 			sourceTree = "<group>";
@@ -211,12 +211,12 @@
 			path = FortuneFetcher;
 			sourceTree = "<group>";
 		};
-		4CFC3AE52C82E9E90066C71C /* FortuneAPIClient */ = {
+		4CFC3AE52C82E9E90066C71C /* FortuneFetcher */ = {
 			isa = PBXGroup;
 			children = (
 				4CFC3AE62C82EA320066C71C /* FortuneAPIClientTests.swift */,
 			);
-			path = FortuneAPIClient;
+			path = FortuneFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
