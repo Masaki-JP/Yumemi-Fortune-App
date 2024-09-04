@@ -9,7 +9,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
     var bloodType: BloodType? = nil
     var fortuneAPIResponse: FortuneAPIResponse? = nil
 
-    private let fortuneAPIClient: FortuneFetcherObject
+    private let fortuneFetcher: FortuneFetcherObject
     private var fetchFortuneTask: Task<Void, Never>? = nil
     var isFetchingFortune: Bool { fetchFortuneTask != nil }
 
@@ -30,8 +30,8 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
               set: { [weak self] in if $0 == false { self?.alertMessage = nil }})
     }
 
-    nonisolated init(fortuneAPIClient: FortuneFetcherObject = FortuneFetcher()) {
-        self.fortuneAPIClient = fortuneAPIClient
+    nonisolated init(fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
+        self.fortuneFetcher = fortuneFetcher
     }
 
     deinit {
@@ -50,7 +50,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
                     alertMessage = alertMessageForUnexpectedError; return;
                 }
 
-                fortuneAPIResponse = try await fortuneAPIClient.fetch(
+                fortuneAPIResponse = try await fortuneFetcher.fetch(
                     name: name,
                     birthday: .init(birthday),
                     bloodType: bloodType
