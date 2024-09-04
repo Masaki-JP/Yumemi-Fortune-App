@@ -49,4 +49,15 @@ final class FortuneAPIClientTests: XCTestCase {
             }
         }
     }
+
+    func test_フレイキーテスト_実際にFortuneAPIClientを使用してテストする() async throws {
+        let fortuneAPIClient = FortuneAPIClient()
+        let day = try Day(year: 2000, month: 1, day: 1)
+
+        let fortuneAPIResponse = try await fortuneAPIClient.fetchFortune(
+            name: "XXXXX",
+            birthday: day,
+            bloodType: .a
+        )
+    }
 }
