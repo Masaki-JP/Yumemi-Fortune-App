@@ -1,7 +1,7 @@
 import XCTest
 @testable import Yumemi_Fortune_App
 
-final class FortuneAPIClientTests: XCTestCase {
+final class FortuneFetcherTests: XCTestCase {
 
     var fortuneFetcher: FortuneFetcher!
 

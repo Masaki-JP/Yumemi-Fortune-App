@@ -19,28 +19,8 @@ import SwiftUI
             .navigationTitle("Fortune")
             .toolbarTitleDisplayMode(.inlineLarge)
             .navigationDestination(item: $viewModel.fortuneAPIResponse, destination: FortuneResultView.init)
-            .alert(
-                "Error",
-                isPresented: viewModel.alertMessageBinding,
-                actions: {},
-                message: { Text(viewModel.alertMessage ?? "予期せぬエラーが発生しました。") }
-            )
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("占う") {
-                        isFocusedNameTextField = false
-                        viewModel.didTapGetFortuneButton()
-                    }
-                    .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
-                    .disabled(viewModel.isGetFortuneButtonDisabled)
-                }
-                ToolbarItem(placement: .keyboard) {
-                    Text("完了") // Don't replace this with Button.
-                        .onTapGesture { isFocusedNameTextField = false }
-                        .foregroundStyle(.blue)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-            }
+            .alert("Error", isPresented: viewModel.alertMessageBinding, actions: {}, message: { Text(viewModel.alertMessage ?? "予期せぬエラーが発生しました。")})
+            .toolbar(content: toolbarContent)
         }
         .overlay(content: backgroundContent)
         .onDisappear { viewModel.onDisAppear() }
@@ -76,6 +56,24 @@ import SwiftUI
                     .foregroundStyle(.secondary)
                     .fontWeight(.semibold)
             }
+        }
+    }
+
+    @ToolbarContentBuilder
+    func toolbarContent() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button("占う") {
+                isFocusedNameTextField = false
+                viewModel.didTapGetFortuneButton()
+            }
+            .fontWeight(viewModel.isGetFortuneButtonDisabled ? nil : .bold)
+            .disabled(viewModel.isGetFortuneButtonDisabled)
+        }
+        ToolbarItem(placement: .keyboard) {
+            Text("完了") // Don't replace this with Button.
+                .onTapGesture { isFocusedNameTextField = false }
+                .foregroundStyle(.blue)
+                .frame(maxWidth: .infinity, alignment: .trailing)
         }
     }
 }

@@ -33,9 +33,9 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         guard birthday <= Day.today else { throw Self.Error.invalidBirthday }
 
         /// URLインスタンスの作成
-        let baseURLStr = "https://ios-junior-engineer-codecheck.yumemi.jp"
-        let endPointPathStr = "/my_fortune"
-        guard let url = URL(string: baseURLStr + endPointPathStr) else {
+        let baseURLString = "https://ios-junior-engineer-codecheck.yumemi.jp"
+        let endPointPathString = "/my_fortune"
+        guard let url = URL(string: baseURLString + endPointPathString) else {
             throw Self.Error.urlInitializeFailure
         }
 
