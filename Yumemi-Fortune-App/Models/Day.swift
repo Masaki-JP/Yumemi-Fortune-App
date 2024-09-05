@@ -56,7 +56,7 @@ struct Day: Codable, Comparable {
         }
     }
 
-    static let calendar = {
+    private static let calendar = {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = .init(identifier: "Asia/Tokyo")!
         return calendar
