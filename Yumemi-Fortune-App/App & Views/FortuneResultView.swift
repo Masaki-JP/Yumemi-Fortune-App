@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct FortuneResultView: View {
-    private let fortuneAPIResponse: FortuneAPIResponse
+    private let fortuneResult: FortuneResult
 
-    init(_ fortuneAPIResponse: FortuneAPIResponse) {
-        self.fortuneAPIResponse = fortuneAPIResponse
+    init(_ fortuneResult: FortuneResult) {
+        self.fortuneResult = fortuneResult
     }
 
     var body: some View {
@@ -23,7 +23,7 @@ struct FortuneResultView: View {
         HStack(spacing: 0) {
             Text("相性のいい都道府県：")
             Spacer()
-            Text(fortuneAPIResponse.name)
+            Text(fortuneResult.name)
         }
     }
 
@@ -31,13 +31,13 @@ struct FortuneResultView: View {
         HStack(spacing: 0) {
             Text("首都：")
             Spacer()
-            Text(fortuneAPIResponse.capital)
+            Text(fortuneResult.capital)
         }
     }
 
     @ViewBuilder
     var citizenDayRow: some View {
-        if let citizenDay = fortuneAPIResponse.citizenDay {
+        if let citizenDay = fortuneResult.citizenDay {
             HStack(spacing: 0) {
                 Text("市民の日：")
                 Spacer()
@@ -51,17 +51,17 @@ struct FortuneResultView: View {
         HStack(spacing: 0) {
             Text("内陸県：")
             Spacer()
-            Text(fortuneAPIResponse.hasCoastLine == false ? "はい" : "いいえ")
+            Text(fortuneResult.hasCoastLine == false ? "はい" : "いいえ")
         }
     }
 
     var briefRow: some View {
-        Text(fortuneAPIResponse.brief)
+        Text(fortuneResult.brief)
     }
 
     var logoImageRow: some View {
         AsyncImage(
-            url: fortuneAPIResponse.logoURL,
+            url: fortuneResult.logoURL,
             transaction: .init(animation: .bouncy)
         ) { asyncImagePhase in
             switch asyncImagePhase {

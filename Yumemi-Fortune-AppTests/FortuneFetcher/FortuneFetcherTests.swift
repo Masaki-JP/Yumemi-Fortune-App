@@ -10,12 +10,12 @@ final class FortuneFetcherTests: XCTestCase {
     }
 
     func test_正常系_有効な引数が与えられた時に問題なく動作すること() async {
-        let fortuneAPIResponse = try? await fortuneFetcher.fetch(
+        let fortuneResult = try? await fortuneFetcher.fetch(
             name: "Sasuke",
             birthday: .sample,
             bloodType: .a)
 
-        XCTAssertNotNil(fortuneAPIResponse, "有効な引数が与えられたのにも関わらずFortuneAPIResponseの取得に失敗している。")
+        XCTAssertNotNil(fortuneResult, "有効な引数が与えられたのにも関わらずFortuneResultの取得に失敗している。")
     }
 
     func test_異常系_引数nameに空文字が与えられた時に適切なエラーを投げること() async {

@@ -26,7 +26,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         case unexpectedError(_ messege: String)
     }
 
-    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneAPIResponse {
+    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneResult {
         /// 引数のバリデーション
         guard name.isEmpty == false else { throw Self.Error.noName }
         guard name.count < 100 else { throw Self.Error.tooLongName }
@@ -61,13 +61,13 @@ struct FortuneFetcher: FortuneFetcherProtocol {
             throw Self.Error.unexpectedResponse
         }
 
-        /// DataからFortuneAPIResponseを生成
-        guard let fortuneAPIResponse = try? JSONDecoder().decode(FortuneAPIResponse.self, from: data) else {
+        /// DataからFortuneResultを生成
+        guard let fortuneResult = try? JSONDecoder().decode(FortuneResult.self, from: data) else {
             throw Self.Error.decodeFailure
         }
 
-        /// FortuneAPIResponseをリターン
-        return fortuneAPIResponse
+        /// FortuneResultをリターン
+        return fortuneResult
     }
 
     private func makeURLRequest(_ url: URL, httpBody: Data) -> URLRequest {
