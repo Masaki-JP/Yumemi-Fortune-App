@@ -1,7 +1,7 @@
 import Foundation
 
 struct FortuneResult: Codable, Hashable {
-    let name: String
+    let compatiblePrefectureName: String
     let capital: String
     let citizenDay: CitizenDay?
     let hasCoastLine: Bool
@@ -13,10 +13,11 @@ struct FortuneResult: Codable, Hashable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case name, capital, brief
+        case compatiblePrefectureName = "name"
         case citizenDay = "citizen_day"
         case hasCoastLine = "has_coast_line"
         case logoURL = "logo_url"
+        case capital, brief
     }
 
     init(
@@ -27,7 +28,7 @@ struct FortuneResult: Codable, Hashable {
         logoURL: URL,
         brief: String
     ) {
-        self.name = name
+        self.compatiblePrefectureName = name
         self.capital = capital
         self.citizenDay = citizenDay
         self.hasCoastLine = hasCoastLine
