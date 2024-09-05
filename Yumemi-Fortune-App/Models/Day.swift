@@ -4,7 +4,7 @@ struct Day: Codable, Comparable {
 
     let year, month, day: Int
 
-    enum Error: Swift.Error {
+    enum initializeError: Swift.Error {
         case invalidDay
         case invalidDecodedDay
         case unexpectedError(_ msg: String)
@@ -37,7 +37,7 @@ struct Day: Codable, Comparable {
         do {
             try self.validate()
         } catch {
-            throw Self.Error.invalidDecodedDay
+            throw Self.initializeError.invalidDecodedDay
         }
     }
 
