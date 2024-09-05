@@ -12,7 +12,7 @@ extension FortuneResult {
     ///
     static var sample: Self {
         .init(
-            name: "静岡県",
+            compatiblePrefecture: "静岡県",
             capital: "静岡市",
             citizenDay: .init(month: 8, day: 21),
             hasCoastLine: true,

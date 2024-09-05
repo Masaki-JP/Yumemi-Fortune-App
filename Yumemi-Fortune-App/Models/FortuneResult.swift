@@ -3,7 +3,7 @@ import Foundation
 /// 占い結果を表すオブジェクト。
 struct FortuneResult: Codable, Hashable {
     /// 相性のいい都道府県を表す。
-    let compatiblePrefectureName: String
+    let compatiblePrefecture: String
     /// 相性のいい都道府県の首都を表す。
     let capital: String
     /// 相性のいい都道府県の県民日を表す。県民日が制定されていない都道府県の場合は`nil`になる。
@@ -21,7 +21,7 @@ struct FortuneResult: Codable, Hashable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case compatiblePrefectureName = "name"
+        case compatiblePrefecture = "name"
         case citizenDay = "citizen_day"
         case hasCoastLine = "has_coast_line"
         case logoURL = "logo_url"
@@ -29,14 +29,14 @@ struct FortuneResult: Codable, Hashable {
     }
 
     init(
-        name: String,
+        compatiblePrefecture: String,
         capital: String,
         citizenDay: CitizenDay?,
         hasCoastLine: Bool,
         logoURL: URL,
         brief: String
     ) {
-        self.compatiblePrefectureName = name
+        self.compatiblePrefecture = compatiblePrefecture
         self.capital = capital
         self.citizenDay = citizenDay
         self.hasCoastLine = hasCoastLine

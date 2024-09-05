@@ -23,7 +23,7 @@ struct FortuneResultView: View {
         HStack(spacing: 0) {
             Text("相性のいい都道府県：")
             Spacer()
-            Text(fortuneResult.compatiblePrefectureName)
+            Text(fortuneResult.compatiblePrefecture)
         }
     }
 
