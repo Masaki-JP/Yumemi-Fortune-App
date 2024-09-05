@@ -56,7 +56,7 @@ struct Day: Codable, Comparable {
         }
     }
 
-    static let calendar = {
+    private static let calendar = {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = .init(identifier: "Asia/Tokyo")!
         return calendar
@@ -79,6 +79,23 @@ struct Day: Codable, Comparable {
             lhs.month < rhs.month
         } else {
             lhs.day < rhs.day
+        }
+    }
+
+    private func validate() throws {
+        let dateComponents = DateComponents(calendar: Self.calendar, timeZone: Self.calendar.timeZone, year: self.year, month: self.month, day: self.day)
+
+        guard dateComponents.isValidDate else {
+            throw Self.InitializeError.invalidDay
+        }
+
+        guard let date = dateComponents.date else {
+            let msg = "\(#function): 有効なDateComponentからDateを生成できませんでした。"
+            throw Self.InitializeError.unexpectedError(msg)
+        }
+
+        guard date < .now else {
+            throw Self.InitializeError.invalidDay
         }
     }
 }
