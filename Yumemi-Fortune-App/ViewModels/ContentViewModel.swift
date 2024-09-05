@@ -7,7 +7,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
     var name = ""
     var birthday: Date = .init()
     var bloodType: BloodType? = nil
-    var fortuneAPIResponse: FortuneResult? = nil
+    var fortuneResult: FortuneResult? = nil
 
     private let fortuneFetcher: FortuneFetcherObject
     private var fetchFortuneTask: Task<Void, Never>? = nil
@@ -50,7 +50,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
                     alertMessage = alertMessageForUnexpectedError; return;
                 }
 
-                fortuneAPIResponse = try await fortuneFetcher.fetch(
+                fortuneResult = try await fortuneFetcher.fetch(
                     name: name,
                     birthday: .init(birthday),
                     bloodType: bloodType

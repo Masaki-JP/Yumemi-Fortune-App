@@ -61,13 +61,13 @@ struct FortuneFetcher: FortuneFetcherProtocol {
             throw Self.Error.unexpectedResponse
         }
 
-        /// DataからFortuneAPIResponseを生成
-        guard let fortuneAPIResponse = try? JSONDecoder().decode(FortuneResult.self, from: data) else {
+        /// DataからFortuneResultを生成
+        guard let fortuneResult = try? JSONDecoder().decode(FortuneResult.self, from: data) else {
             throw Self.Error.decodeFailure
         }
 
-        /// FortuneAPIResponseをリターン
-        return fortuneAPIResponse
+        /// FortuneResultをリターン
+        return fortuneResult
     }
 
     private func makeURLRequest(_ url: URL, httpBody: Data) -> URLRequest {
