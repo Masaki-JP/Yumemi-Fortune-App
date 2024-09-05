@@ -14,7 +14,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         let today: Day
     }
 
-    enum Error: Swift.Error {
+    enum FetchError: Swift.Error {
         case noName
         case tooLongName
         case invalidBirthday
@@ -28,15 +28,15 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
     func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneResult {
         /// 引数のバリデーション
-        guard name.isEmpty == false else { throw Self.Error.noName }
-        guard name.count < 100 else { throw Self.Error.tooLongName }
-        guard birthday <= Day.today else { throw Self.Error.invalidBirthday }
+        guard name.isEmpty == false else { throw Self.FetchError.noName }
+        guard name.count < 100 else { throw Self.FetchError.tooLongName }
+        guard birthday <= Day.today else { throw Self.FetchError.invalidBirthday }
 
         /// URLインスタンスの作成
         let baseURLString = "https://ios-junior-engineer-codecheck.yumemi.jp"
         let endPointPathString = "/my_fortune"
         guard let url = URL(string: baseURLString + endPointPathString) else {
-            throw Self.Error.urlInitializeFailure
+            throw Self.FetchError.urlInitializeFailure
         }
 
         /// RequestBodyの生成
@@ -44,7 +44,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
         /// RequestBodyからDataを生成
         guard let encodedJsonData = try? JSONEncoder().encode(requestBody) else {
-            throw Self.Error.encodeFailure
+            throw Self.FetchError.encodeFailure
         }
 
         /// URLReuestの作成
@@ -52,18 +52,18 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
         /// DataとURLResponseの取得
         guard let (data, urlResponse) = try? await urlSession.data(for: request) else {
-            throw Self.Error.possibleNetworkError
+            throw Self.FetchError.possibleNetworkError
         }
 
         /// 有効なレスポンスであるか確認
         guard let httpURLResponse = urlResponse as? HTTPURLResponse,
               (200...299).contains(httpURLResponse.statusCode) else {
-            throw Self.Error.unexpectedResponse
+            throw Self.FetchError.unexpectedResponse
         }
 
         /// DataからFortuneResultを生成
         guard let fortuneResult = try? JSONDecoder().decode(FortuneResult.self, from: data) else {
-            throw Self.Error.decodeFailure
+            throw Self.FetchError.decodeFailure
         }
 
         /// FortuneResultをリターン

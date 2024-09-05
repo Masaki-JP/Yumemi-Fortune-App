@@ -55,7 +55,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
                     birthday: .init(birthday),
                     bloodType: bloodType
                 )
-            } catch let error as FortuneFetcher.Error {
+            } catch let error as FortuneFetcher.FetchError {
                 switch error {
                 case .tooLongName:
                     alertMessage = "名前は100文字未満にしてください。"

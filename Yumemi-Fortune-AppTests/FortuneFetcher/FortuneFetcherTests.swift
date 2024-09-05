@@ -27,7 +27,7 @@ final class FortuneFetcherTests: XCTestCase {
 
             XCTFail("エラーが投げられていない。")
         } catch {
-            guard case FortuneFetcher.Error.noName = error else {
+            guard case FortuneFetcher.FetchError.noName = error else {
                 XCTFail("適切なエラーが投げられていない。"); return;
             }
         }
@@ -44,7 +44,7 @@ final class FortuneFetcherTests: XCTestCase {
 
             XCTFail("エラーが投げられていない。")
         } catch {
-            guard case FortuneFetcher.Error.tooLongName = error else {
+            guard case FortuneFetcher.FetchError.tooLongName = error else {
                 XCTFail("適切なエラーが投げられていない。"); return;
             }
         }
