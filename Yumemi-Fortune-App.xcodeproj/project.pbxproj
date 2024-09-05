@@ -204,9 +204,9 @@
 		4CFC3AD62C82E84A0066C71C /* FortuneFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC3ADB2C82E8950066C71C /* FortuneFetcher.swift */,
 				4CFC3AD72C82E8680066C71C /* FortuneFetcherProtocol.swift */,
 				4CFC3AD92C82E87E0066C71C /* FortuneFetcherStub.swift */,
-				4CFC3ADB2C82E8950066C71C /* FortuneFetcher.swift */,
 			);
 			path = FortuneFetcher;
 			sourceTree = "<group>";
