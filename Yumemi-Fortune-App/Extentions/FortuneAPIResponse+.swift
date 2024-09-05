@@ -1,6 +1,6 @@
 import Foundation
 
-extension FortuneAPIResponse {
+extension FortuneResult {
     static var sample: Self {
         .init(
             name: "静岡県",

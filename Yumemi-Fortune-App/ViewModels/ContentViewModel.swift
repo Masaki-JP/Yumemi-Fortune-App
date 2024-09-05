@@ -7,7 +7,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
     var name = ""
     var birthday: Date = .init()
     var bloodType: BloodType? = nil
-    var fortuneAPIResponse: FortuneAPIResponse? = nil
+    var fortuneAPIResponse: FortuneResult? = nil
 
     private let fortuneFetcher: FortuneFetcherObject
     private var fetchFortuneTask: Task<Void, Never>? = nil

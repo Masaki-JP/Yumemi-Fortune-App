@@ -15,7 +15,7 @@ extension URLSession {
     private static func createMockForFortuneAPI() -> URLSession {
         guard
             let url = URL(string: "https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune"),
-            let data = try? JSONEncoder().encode(FortuneAPIResponse.sample),
+            let data = try? JSONEncoder().encode(FortuneResult.sample),
             let response: HTTPURLResponse = .init(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
         else {
             fatalError()

@@ -13,7 +13,7 @@
 		4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */; };
 		4CFC3ABC2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */; };
 		4CFC3ABE2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */; };
-		4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */; };
+		4CFC3AD12C82E8000066C71C /* FortuneResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD02C82E8000066C71C /* FortuneResult.swift */; };
 		4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD22C82E81A0066C71C /* Day.swift */; };
 		4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD42C82E82F0066C71C /* BloodType.swift */; };
 		4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AD72C82E8680066C71C /* FortuneFetcherProtocol.swift */; };
@@ -55,7 +55,7 @@
 		4CFC3AB72C82E6D00066C71C /* Yumemi-Fortune-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-Fortune-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppUITests.swift; sourceTree = "<group>"; };
 		4CFC3ABD2C82E6D00066C71C /* Yumemi_Fortune_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneAPIResponse.swift; sourceTree = "<group>"; };
+		4CFC3AD02C82E8000066C71C /* FortuneResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResult.swift; sourceTree = "<group>"; };
 		4CFC3AD22C82E81A0066C71C /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4CFC3AD42C82E82F0066C71C /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
 		4CFC3AD72C82E8680066C71C /* FortuneFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetcherProtocol.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		4CFC3ACC2C82E7950066C71C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC3AD02C82E8000066C71C /* FortuneAPIResponse.swift */,
+				4CFC3AD02C82E8000066C71C /* FortuneResult.swift */,
 				4CFC3AD22C82E81A0066C71C /* Day.swift */,
 				4CFC3AD42C82E82F0066C71C /* BloodType.swift */,
 			);
@@ -351,7 +351,7 @@
 			files = (
 				4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */,
 				4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */,
-				4CFC3AD12C82E8000066C71C /* FortuneAPIResponse.swift in Sources */,
+				4CFC3AD12C82E8000066C71C /* FortuneResult.swift in Sources */,
 				4CFC3ADA2C82E87E0066C71C /* FortuneFetcherStub.swift in Sources */,
 				4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */,
 				4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */,

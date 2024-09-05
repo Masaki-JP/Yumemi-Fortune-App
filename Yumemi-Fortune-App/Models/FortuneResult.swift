@@ -1,6 +1,6 @@
 import Foundation
 
-struct FortuneAPIResponse: Codable, Hashable {
+struct FortuneResult: Codable, Hashable {
     let name: String
     let capital: String
     let citizenDay: CitizenDay?

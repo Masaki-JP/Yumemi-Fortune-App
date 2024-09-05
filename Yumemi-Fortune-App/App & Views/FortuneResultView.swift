@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct FortuneResultView: View {
-    private let fortuneAPIResponse: FortuneAPIResponse
+    private let fortuneAPIResponse: FortuneResult
 
-    init(_ fortuneAPIResponse: FortuneAPIResponse) {
+    init(_ fortuneAPIResponse: FortuneResult) {
         self.fortuneAPIResponse = fortuneAPIResponse
     }
 
