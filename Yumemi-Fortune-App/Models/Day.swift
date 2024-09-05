@@ -16,7 +16,7 @@ struct Day: Codable, Comparable {
     /// ``Day``のイニシャライザ。
     ///
     /// 2020年20月20日など存在しない日付は作成することができない。
-    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみである。
+    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみ。
     ///
     init(year: Int, month: Int, day: Int) throws {
         self.year = year
@@ -28,7 +28,7 @@ struct Day: Codable, Comparable {
     /// ``Day``のイニシャライザ。
     ///
     /// `Date`から``Day``を生成する。
-    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみである。
+    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみ。
     ///
     /// - Parameter date: ``Day``に変換する`Date`。
     ///

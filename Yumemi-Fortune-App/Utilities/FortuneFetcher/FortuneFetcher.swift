@@ -40,7 +40,9 @@ struct FortuneFetcher: FortuneFetcherProtocol {
     
     /// ``FortuneResult``を取得するメソッド。
     ///
-    /// ``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetcher/FetchError``のみである。
+    /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetcher/FetchError``のみで。
+    ///
+    /// FortuneAPI: [https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune](https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune)
     ///
     /// - Parameters:
     ///   - name: ユーザーの名前を指定する。
