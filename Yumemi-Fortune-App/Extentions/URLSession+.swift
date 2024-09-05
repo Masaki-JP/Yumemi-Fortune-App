@@ -1,10 +1,16 @@
 import Foundation
 
 extension URLSession {
+
+    /// ``URLSession``のモックを作成できるケース群。
     enum Mock {
         case fortuneAPI
     }
 
+    /// ``URLSession``のモックを作成するメソッド。
+    /// - Parameter mock: 通信先を``Mock``を用いて指定する。
+    /// - Returns: 作成された``URLSession``のモックを返す。
+    ///
     static func mock(for mock: Mock) -> URLSession {
         switch mock {
         case .fortuneAPI:
