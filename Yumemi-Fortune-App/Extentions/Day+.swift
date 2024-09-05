@@ -5,16 +5,16 @@ extension Day {
         let dateComponents = DateComponents(calendar: Self.calendar, timeZone: Self.calendar.timeZone, year: self.year, month: self.month, day: self.day)
 
         guard dateComponents.isValidDate else {
-            throw Self.Error.invalidDay
+            throw Self.initializeError.invalidDay
         }
 
         guard let date = dateComponents.date else {
             let msg = "\(#function): 有効なDateComponentからDateを生成できませんでした。"
-            throw Self.Error.unexpectedError(msg)
+            throw Self.initializeError.unexpectedError(msg)
         }
 
         guard date < .now else {
-            throw Self.Error.invalidDay
+            throw Self.initializeError.invalidDay
         }
     }
 
