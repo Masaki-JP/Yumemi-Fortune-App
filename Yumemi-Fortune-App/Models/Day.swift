@@ -27,10 +27,10 @@ struct Day: Codable, Comparable {
     
     /// ``Day``のイニシャライザ。
     ///
-    /// ``Foundation/Date``から``Day``を生成する。
+    /// `Date`から``Day``を生成する。
     /// このイニシャライザが投げる可能性のあるエラーは現状``Day/initializeError``のみである。
     ///
-    /// - Parameter date: ``Day``に変換する``Foundation/Date``。
+    /// - Parameter date: ``Day``に変換する`Date`。
     ///
     init(_ date: Date) {
         let year = Self.calendar.component(.year, from: date)
