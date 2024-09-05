@@ -30,7 +30,7 @@ final class ContentViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Send
               set: { [weak self] in if $0 == false { self?.alertMessage = nil }})
     }
 
-    nonisolated init(fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
+    init(fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
         self.fortuneFetcher = fortuneFetcher
     }
 
