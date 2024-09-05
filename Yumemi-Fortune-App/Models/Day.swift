@@ -7,7 +7,7 @@ struct Day: Codable, Comparable {
 
     /// 初期化時に発生することのあるエラー。
     ///
-    enum initializeError: Swift.Error {
+    enum InitializeError: Swift.Error {
         case invalidDay
         case invalidDecodedDay
         case unexpectedError(_ msg: String)
@@ -16,7 +16,7 @@ struct Day: Codable, Comparable {
     /// ``Day``のイニシャライザ。
     ///
     /// 2020年20月20日など存在しない日付は作成することができない。
-    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/initializeError``のみである。
+    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみである。
     ///
     init(year: Int, month: Int, day: Int) throws {
         self.year = year
@@ -28,7 +28,7 @@ struct Day: Codable, Comparable {
     /// ``Day``のイニシャライザ。
     ///
     /// `Date`から``Day``を生成する。
-    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/initializeError``のみである。
+    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみである。
     ///
     /// - Parameter date: ``Day``に変換する`Date`。
     ///
@@ -52,7 +52,7 @@ struct Day: Codable, Comparable {
         do {
             try self.validate()
         } catch {
-            throw Self.initializeError.invalidDecodedDay
+            throw Self.InitializeError.invalidDecodedDay
         }
     }
 
