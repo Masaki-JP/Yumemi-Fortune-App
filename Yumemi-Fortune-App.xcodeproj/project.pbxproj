@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
 		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
 		4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA22C82E6CE0066C71C /* ContentView.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppApp.swift; sourceTree = "<group>"; };
 		4CFC3AA22C82E6CE0066C71C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		4CFC3ACC2C82E7950066C71C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4CA5495D2C9472CD00D435F7 /* User.swift */,
 				4CFC3AD02C82E8000066C71C /* FortuneResult.swift */,
 				4CFC3AD22C82E81A0066C71C /* Day.swift */,
 				4CFC3AD42C82E82F0066C71C /* BloodType.swift */,
@@ -357,6 +360,7 @@
 				4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */,
 				4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */,
 				4CFC3ADC2C82E8950066C71C /* FortuneFetcher.swift in Sources */,
+				4CA5495E2C9472CD00D435F7 /* User.swift in Sources */,
 				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
 				4CFC3ADE2C82E8D50066C71C /* FortuneResult+.swift in Sources */,
 				4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */,
