@@ -4,7 +4,7 @@ import SwiftUI
 struct Yumemi_Fortune_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("Hello, world.")
         }
     }
 }
