@@ -7,14 +7,14 @@ struct FortuneFetcherStub: FortuneFetcherProtocol {
     /// ``fetch(name:birthday:bloodType:)``の実行時に返される``FortuneResult``、もしくは失敗時に投げられる``FortuneFetcher/FetchError``。
     ///
     var result: Result<FortuneResult, FortuneFetcher.FetchError>
-    
+
     /// ``FortuneFetcherStub``のイニシャライザ。
     /// - Parameter result: ``fetch(name:birthday:bloodType:)``の実行時に返される``FortuneResult``、もしくは失敗時に投げられる``FortuneFetcher/FetchError``を指定する。
     ///
     init(_ result: Result<FortuneResult, FortuneFetcher.FetchError>) {
         self.result = result
     }
-    
+
     /// ``FortuneResult``を取得するメソッド。
     ///
     /// ``FortuneFetcherStub/result``が`.success(:)`であれば、設定されている``FortuneResult``を返し、`.failure(:)`であれば、設定されている``FortuneFetcher/FetchError``を投げる。

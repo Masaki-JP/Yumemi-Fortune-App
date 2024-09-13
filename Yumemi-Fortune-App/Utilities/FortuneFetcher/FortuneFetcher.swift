@@ -9,7 +9,7 @@ import Foundation
 ///
 struct FortuneFetcher: FortuneFetcherProtocol {
     private let urlSession: URLSession
-    
+
     /// ``FortuneFetcher``のイニシャライザ。
     /// - Parameter urlSession: 内部で使用する``Foundation/URLSession``を指定する。デフォルト引数として`.shared`が設定されている。
     ///
@@ -23,7 +23,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         let blood_type: BloodType
         let today: Day
     }
-    
+
     /// ``fetch(name:birthday:bloodType:)``メソッドの実行時に発生することのあるエラー。
     ///
     enum FetchError: Swift.Error {
@@ -37,7 +37,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         case decodeFailure
         case unexpectedError(_ messege: String)
     }
-    
+
     /// ``FortuneResult``を取得するメソッド。
     ///
     /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetcher/FetchError``のみで。
@@ -49,7 +49,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
     ///   - birthday: ユーザーの誕生日を指定する。
     ///   - bloodType: ユーザーの血液型を指定する。
     /// - Returns: 取得した``FortuneResult``を返す。
-    /// 
+    ///
     func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneResult {
         /// 引数のバリデーション
         guard name.isEmpty == false else { throw Self.FetchError.noName }

@@ -12,7 +12,7 @@ struct Day: Codable, Comparable, Hashable {
         case invalidDecodedDay
         case unexpectedError(_ msg: String)
     }
-    
+
     /// ``Day``のイニシャライザ。
     ///
     /// 2020年20月20日など存在しない日付は作成することができない。
@@ -24,7 +24,7 @@ struct Day: Codable, Comparable, Hashable {
         self.day = day
         try self.validate()
     }
-    
+
     /// ``Day``のイニシャライザ。
     ///
     /// `Date`から``Day``を生成する。
@@ -61,7 +61,7 @@ struct Day: Codable, Comparable, Hashable {
         calendar.timeZone = .init(identifier: "Asia/Tokyo")!
         return calendar
     }()
-    
+
     /// アクセス時の``Day``を返す静的計算型プロパティ。
     static var today: Self {
         let now = Date.now
