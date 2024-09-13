@@ -82,14 +82,14 @@ struct FortuneResultView: View {
 
 #Preview("Light") {
     NavigationStack {
-        FortuneResultView(.sample)
+        FortuneResultView(.sample1)
     }
     .preferredColorScheme(.light)
 }
 
 #Preview("Dark") {
     NavigationStack {
-        FortuneResultView(.sample)
+        FortuneResultView(.sample1)
     }
     .preferredColorScheme(.dark)
 }

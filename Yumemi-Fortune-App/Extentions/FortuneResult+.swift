@@ -10,7 +10,7 @@ extension FortuneResult {
     /// - 海岸の有無：有り
     /// - ロゴURL：[https://japan-map.com/wp-content/uploads/shizuoka.png](https://japan-map.com/wp-content/uploads/shizuoka.png)
     ///
-    static var sample: Self {
+    static var sample1: Self {
         .init(
             compatiblePrefecture: "静岡県",
             capital: "静岡市",
