@@ -14,7 +14,23 @@ struct FortuneResult: Codable, Hashable {
     let logoURL: URL
     /// 相性のいい都道府県の概要。
     let brief: String
-    
+
+    private let briefSourceString = "※出典: フリー百科事典『ウィキペディア（Wikipedia）』"
+
+    /// ソースを除いた相性のいい都道府県の概要。
+    var briefWithoutSource: String {
+        if brief.hasSuffix("\n" + briefSourceString) {
+            .init(brief.dropLast(briefSourceString.count + 2))
+        } else {
+            brief
+        }
+    }
+
+    /// 相性のいい都道府県の概要のソース。
+    var briefSource: String? {
+        brief.hasSuffix(briefSourceString) ? briefSourceString : nil
+    }
+
     /// 県民日を表すオブジェクト。
     struct CitizenDay: Codable, Hashable {
         let month, day: Int
