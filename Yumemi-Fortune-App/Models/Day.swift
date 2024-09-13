@@ -1,7 +1,7 @@
 import Foundation
 
 /// 日付を表すオプジェクト。
-struct Day: Codable, Comparable {
+struct Day: Codable, Comparable, Hashable {
 
     let year, month, day: Int
 
