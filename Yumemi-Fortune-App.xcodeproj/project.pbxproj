@@ -14,6 +14,7 @@
 		4C40A3F02C9588CB0079A02D /* ProfileRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */; };
 		4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3F12C958AB20079A02D /* SettingListViewModel.swift */; };
 		4C40A3F42C958ACB0079A02D /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3F32C958ACB0079A02D /* SettingListView.swift */; };
+		4C40A3FA2C958C810079A02D /* FortunePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3F92C958C810079A02D /* FortunePromptView.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
 		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterView.swift; sourceTree = "<group>"; };
 		4C40A3F12C958AB20079A02D /* SettingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewModel.swift; sourceTree = "<group>"; };
 		4C40A3F32C958ACB0079A02D /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
+		4C40A3F92C958C810079A02D /* FortunePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortunePromptView.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppApp.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				4C40A3F32C958ACB0079A02D /* SettingListView.swift */,
 				4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */,
 				4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */,
+				4C40A3F92C958C810079A02D /* FortunePromptView.swift */,
 			);
 			path = "App & Views";
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */,
 				4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */,
 				4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */,
+				4C40A3FA2C958C810079A02D /* FortunePromptView.swift in Sources */,
 				4CFC3AE02C82E8ED0066C71C /* FortuneFetcher+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
