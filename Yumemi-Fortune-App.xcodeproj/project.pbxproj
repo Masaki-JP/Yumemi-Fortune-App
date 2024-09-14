@@ -10,6 +10,8 @@
 		4C40A3E72C9584560079A02D /* FortuneResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3E62C9584560079A02D /* FortuneResultView.swift */; };
 		4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */; };
 		4C40A3EC2C95873D0079A02D /* GetFortuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */; };
+		4C40A3EE2C9588A60079A02D /* ProfileRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */; };
+		4C40A3F02C9588CB0079A02D /* ProfileRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
 		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		4C40A3E62C9584560079A02D /* FortuneResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultView.swift; sourceTree = "<group>"; };
 		4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFortuneViewModel.swift; sourceTree = "<group>"; };
 		4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFortuneView.swift; sourceTree = "<group>"; };
+		4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterViewModel.swift; sourceTree = "<group>"; };
+		4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterView.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppApp.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		4C40A3E82C9584E60079A02D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */,
 				4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */,
 			);
 			path = ViewModels;
@@ -199,6 +204,7 @@
 			children = (
 				4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */,
 				4C40A3E62C9584560079A02D /* FortuneResultView.swift */,
+				4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */,
 				4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */,
 			);
 			path = "App & Views";
@@ -359,10 +365,12 @@
 				4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */,
 				4CFC3ADC2C82E8950066C71C /* FortuneFetcher.swift in Sources */,
 				4CA5495E2C9472CD00D435F7 /* User.swift in Sources */,
+				4C40A3F02C9588CB0079A02D /* ProfileRegisterView.swift in Sources */,
 				4C40A3E72C9584560079A02D /* FortuneResultView.swift in Sources */,
 				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
 				4CFC3ADE2C82E8D50066C71C /* FortuneResult+.swift in Sources */,
 				4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */,
+				4C40A3EE2C9588A60079A02D /* ProfileRegisterViewModel.swift in Sources */,
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
 				4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */,
 				4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */,
