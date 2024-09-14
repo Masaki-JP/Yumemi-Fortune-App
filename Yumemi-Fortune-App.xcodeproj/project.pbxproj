@@ -24,6 +24,7 @@
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
 		4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */; };
 		4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660F2C960FE50074FCCD /* WaveTextView.swift */; };
+		4CE466172C9611210074FCCD /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE466162C9611210074FCCD /* Pow */; };
 		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
 		4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */; };
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE466172C9611210074FCCD /* Pow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +287,9 @@
 			dependencies = (
 			);
 			name = "Yumemi-Fortune-App";
+			packageProductDependencies = (
+				4CE466162C9611210074FCCD /* Pow */,
+			);
 			productName = "Yumemi-Fortune-App";
 			productReference = 4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +362,9 @@
 				Base,
 			);
 			mainGroup = 4CFC3A942C82E6CE0066C71C;
+			packageReferences = (
+				4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */,
+			);
 			productRefGroup = 4CFC3A9E2C82E6CE0066C71C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -758,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EmergeTools/Pow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CE466162C9611210074FCCD /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = Pow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CFC3A952C82E6CE0066C71C /* Project object */;
 }
