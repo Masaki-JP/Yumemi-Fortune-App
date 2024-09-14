@@ -13,9 +13,24 @@ struct HomeView: View {
         NavigationStack {
             VStack {
                 if let todayFortune = viewModel.user.todayFortune {
-                    Text("今日のラッキー都道府県は")
-                    Text(todayFortune.compatiblePrefecture + "です！")
-                    Button("詳しく見る") {}
+                    VStack(spacing: 5) {
+                        Text("今日のラッキー都道府県は")
+                        Image(.fortuneTeller)
+                            .resizable().scaledToFit()
+                            .frame(width: 250, height: 250)
+                        Text(todayFortune.compatiblePrefecture + "です！")
+                    }
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .overlay(alignment: .bottom) {
+                        NavigationLink("詳しい情報を見る") {
+                            FortuneResultView(todayFortune)
+                                .navigationTitle(Day.today.japaneseFormatted)
+                                .navigationBarTitleDisplayMode(.inline)
+                        }
+                        .padding(.bottom, 5)
+                    }
                 } else {
                     fortunePromptView(action: viewModel.didTapGetFortuneButtonInHomeView)
                 }
