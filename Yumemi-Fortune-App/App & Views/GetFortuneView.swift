@@ -1,23 +1,41 @@
 import SwiftUI
+import Pow
 
 @MainActor
-struct GetFortuneView: View {
-    @State private var viewModel: GetFortuneViewModel
+struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: View {
+    @State private var viewModel: GetFortuneViewModel<FortuneFetcherObject>
     @Environment(\.dismiss) private var dismiss
 
-    init(user: User) {
-        self._viewModel = .init(wrappedValue: .init(user: user))
+    init(user: User, fortuneFetcher: FortuneFetcherObject = FortuneFetcher(.mock(for: .fortuneAPI))) {
+        self._viewModel = .init(wrappedValue: .init(user: user, fortuneFetcher: fortuneFetcher))
     }
 
     var body: some View {
-        if let todayFortune = viewModel.user.fortuneResultList.first(where: { $0.key == .today })?.value {
-            VStack {
-                Text("今日のラッキー都道府県は\(todayFortune.compatiblePrefecture)です！")
-                Button("戻る", action: dismiss.callAsFunction)
+        VStack(spacing: .zero) {
+            if viewModel.isShowingWaveTextView == true {
+                WaveTextView("今日のラッキー都道府県は…")
             }
-        } else {
-            Button("今日の占いを取得", action: viewModel.didTapGetFortuneButton)
+            if viewModel.isShowingCompatiblePrefectureText == true {
+                if let compatiblePrefecture = viewModel.user.todayFortune?.compatiblePrefecture {
+                    Text(compatiblePrefecture + "です！")
+                        .font(.system(size: 40))
+                        .fontWeight(.semibold)
+                        .transition(.identity.animation(.linear(duration: 1).delay(2)).combined(with: .movingParts.anvil))
+                        .overlay(alignment: .bottom) {
+                            if viewModel.isShowingDismissButton == true {
+                                Button("前の画面に戻る", action: dismiss.callAsFunction)
+                                    .offset(y: 30.0)
+                            }
+                        }
+                } else {
+                    VStack(spacing: nil) {
+                        Text("エラーが発生しました。前の画面に戻ってからもう一度お試しください。")
+                        Button("前の画面に戻る", action: dismiss.callAsFunction)
+                    }
+                }
+            }
         }
+        .task { await viewModel.onAppearAction() }
     }
 }
 
