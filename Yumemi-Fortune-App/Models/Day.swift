@@ -5,6 +5,22 @@ struct Day: Codable, Comparable, Hashable {
 
     let year, month, day: Int
 
+    /// 日本語で表現した``Day``を返す。
+    ///
+    var japaneseFormatted: String {
+        "\(year)年\(month)月\(day)日"
+    }
+
+    /// 自身を`Date`に変換したものを返す。変換に失敗した場合は`nil`を返す。
+    ///
+    var asDate: Date? {
+        var calendar = Calendar(identifier: .gregorian)
+        guard let timeZone = TimeZone(identifier: "Asia/Tokyo") else { return nil }
+        calendar.timeZone = timeZone
+
+        return calendar.date(from: .init(year: year, month: month, day: day))
+    }
+
     /// 初期化時に発生することのあるエラー。
     ///
     enum InitializeError: Swift.Error {

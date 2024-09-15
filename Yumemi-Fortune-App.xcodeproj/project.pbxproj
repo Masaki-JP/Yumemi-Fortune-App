@@ -7,9 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C40A3E72C9584560079A02D /* FortuneResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3E62C9584560079A02D /* FortuneResultView.swift */; };
+		4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */; };
+		4C40A3EC2C95873D0079A02D /* GetFortuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */; };
+		4C40A3EE2C9588A60079A02D /* ProfileRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */; };
+		4C40A3F02C9588CB0079A02D /* ProfileRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */; };
+		4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3F12C958AB20079A02D /* SettingListViewModel.swift */; };
+		4C40A3F42C958ACB0079A02D /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3F32C958ACB0079A02D /* SettingListView.swift */; };
+		4C40A3FA2C958C810079A02D /* FortunePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3F92C958C810079A02D /* FortunePromptView.swift */; };
+		4C40A3FC2C958D930079A02D /* FortuneResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3FB2C958D930079A02D /* FortuneResultListView.swift */; };
+		4C40A3FE2C958DA70079A02D /* FortuneResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3FD2C958DA70079A02D /* FortuneResultListViewModel.swift */; };
+		4C40A4002C9590F60079A02D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A3FF2C9590F60079A02D /* HomeViewModel.swift */; };
+		4C40A4022C9591120079A02D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4012C9591120079A02D /* HomeView.swift */; };
+		4C40A4042C95918B0079A02D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4032C95918B0079A02D /* ContentView.swift */; };
+		4C40A4062C9591CE0079A02D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4052C9591CE0079A02D /* RootView.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
+		4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */; };
+		4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660F2C960FE50074FCCD /* WaveTextView.swift */; };
+		4CE466172C9611210074FCCD /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE466162C9611210074FCCD /* Pow */; };
 		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
-		4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA22C82E6CE0066C71C /* ContentView.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
 		4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */; };
 		4CFC3ABC2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ABB2C82E6D00066C71C /* Yumemi_Fortune_AppUITests.swift */; };
@@ -23,9 +39,7 @@
 		4CFC3ADE2C82E8D50066C71C /* FortuneResult+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADD2C82E8D50066C71C /* FortuneResult+.swift */; };
 		4CFC3AE02C82E8ED0066C71C /* FortuneFetcher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3ADF2C82E8ED0066C71C /* FortuneFetcher+.swift */; };
 		4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE12C82E9050066C71C /* URLSession+.swift */; };
-		4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */; };
 		4CFC3AE72C82EA320066C71C /* FortuneFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE62C82EA320066C71C /* FortuneFetcherTests.swift */; };
-		4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */; };
 		4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AEB2C82FFDA0066C71C /* Day+.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +61,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C40A3E62C9584560079A02D /* FortuneResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultView.swift; sourceTree = "<group>"; };
+		4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFortuneViewModel.swift; sourceTree = "<group>"; };
+		4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFortuneView.swift; sourceTree = "<group>"; };
+		4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterViewModel.swift; sourceTree = "<group>"; };
+		4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterView.swift; sourceTree = "<group>"; };
+		4C40A3F12C958AB20079A02D /* SettingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewModel.swift; sourceTree = "<group>"; };
+		4C40A3F32C958ACB0079A02D /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
+		4C40A3F92C958C810079A02D /* FortunePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortunePromptView.swift; sourceTree = "<group>"; };
+		4C40A3FB2C958D930079A02D /* FortuneResultListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortuneResultListView.swift; sourceTree = "<group>"; };
+		4C40A3FD2C958DA70079A02D /* FortuneResultListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FortuneResultListViewModel.swift; path = "Yumemi-Fortune-App/ViewModels/FortuneResultListViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		4C40A3FF2C9590F60079A02D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4C40A4012C9591120079A02D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4C40A4032C95918B0079A02D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C40A4052C9591CE0079A02D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumRollPlayer.swift; sourceTree = "<group>"; };
+		4CE4660F2C960FE50074FCCD /* WaveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTextView.swift; sourceTree = "<group>"; };
 		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppApp.swift; sourceTree = "<group>"; };
-		4CFC3AA22C82E6CE0066C71C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CFC3AA42C82E6D00066C71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4CFC3AAD2C82E6D00066C71C /* Yumemi-Fortune-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yumemi-Fortune-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,9 +95,7 @@
 		4CFC3ADD2C82E8D50066C71C /* FortuneResult+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FortuneResult+.swift"; sourceTree = "<group>"; };
 		4CFC3ADF2C82E8ED0066C71C /* FortuneFetcher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FortuneFetcher+.swift"; sourceTree = "<group>"; };
 		4CFC3AE12C82E9050066C71C /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
-		4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultView.swift; sourceTree = "<group>"; };
 		4CFC3AE62C82EA320066C71C /* FortuneFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetcherTests.swift; sourceTree = "<group>"; };
-		4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4CFC3AEB2C82FFDA0066C71C /* Day+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE466172C9611210074FCCD /* Pow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +125,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C40A3E82C9584E60079A02D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4C40A3FF2C9590F60079A02D /* HomeViewModel.swift */,
+				4C40A3FD2C958DA70079A02D /* FortuneResultListViewModel.swift */,
+				4C40A3F12C958AB20079A02D /* SettingListViewModel.swift */,
+				4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */,
+				4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4CE4660C2C960A1A0074FCCD /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		4CFC3A942C82E6CE0066C71C = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				4CFC3ACF2C82E7A50066C71C /* App & Views */,
-				4CFC3ACD2C82E79A0066C71C /* ViewModels */,
+				4C40A3E82C9584E60079A02D /* ViewModels */,
 				4CFC3ACC2C82E7950066C71C /* Models */,
 				4CFC3ACB2C82E7910066C71C /* Utilities */,
+				4CE4660C2C960A1A0074FCCD /* Audio */,
 				4CFC3ACA2C82E78C0066C71C /* Extentions */,
 				4CFC3AA42C82E6D00066C71C /* Assets.xcassets */,
 				4CFC3AA62C82E6D00066C71C /* Preview Content */,
@@ -186,20 +235,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		4CFC3ACD2C82E79A0066C71C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				4CFC3AE82C82F2BF0066C71C /* ContentViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		4CFC3ACF2C82E7A50066C71C /* App & Views */ = {
 			isa = PBXGroup;
 			children = (
 				4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */,
-				4CFC3AA22C82E6CE0066C71C /* ContentView.swift */,
-				4CFC3AE32C82E9300066C71C /* FortuneResultView.swift */,
+				4C40A4052C9591CE0079A02D /* RootView.swift */,
+				4C40A4032C95918B0079A02D /* ContentView.swift */,
+				4C40A3E62C9584560079A02D /* FortuneResultView.swift */,
+				4C40A4012C9591120079A02D /* HomeView.swift */,
+				4C40A3FB2C958D930079A02D /* FortuneResultListView.swift */,
+				4C40A3F32C958ACB0079A02D /* SettingListView.swift */,
+				4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */,
+				4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */,
+				4C40A3F92C958C810079A02D /* FortunePromptView.swift */,
+				4CE4660F2C960FE50074FCCD /* WaveTextView.swift */,
 			);
 			path = "App & Views";
 			sourceTree = "<group>";
@@ -238,6 +287,9 @@
 			dependencies = (
 			);
 			name = "Yumemi-Fortune-App";
+			packageProductDependencies = (
+				4CE466162C9611210074FCCD /* Pow */,
+			);
 			productName = "Yumemi-Fortune-App";
 			productReference = 4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +362,9 @@
 				Base,
 			);
 			mainGroup = 4CFC3A942C82E6CE0066C71C;
+			packageReferences = (
+				4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */,
+			);
 			productRefGroup = 4CFC3A9E2C82E6CE0066C71C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -352,20 +407,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CFC3AA32C82E6CE0066C71C /* ContentView.swift in Sources */,
-				4CFC3AE92C82F2BF0066C71C /* ContentViewModel.swift in Sources */,
+				4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */,
+				4C40A3EC2C95873D0079A02D /* GetFortuneView.swift in Sources */,
+				4C40A4042C95918B0079A02D /* ContentView.swift in Sources */,
 				4CFC3AD12C82E8000066C71C /* FortuneResult.swift in Sources */,
 				4CFC3ADA2C82E87E0066C71C /* FortuneFetcherStub.swift in Sources */,
-				4CFC3AE42C82E9300066C71C /* FortuneResultView.swift in Sources */,
+				4C40A3F42C958ACB0079A02D /* SettingListView.swift in Sources */,
 				4CFC3AD32C82E81A0066C71C /* Day.swift in Sources */,
+				4C40A4002C9590F60079A02D /* HomeViewModel.swift in Sources */,
 				4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */,
 				4CFC3ADC2C82E8950066C71C /* FortuneFetcher.swift in Sources */,
 				4CA5495E2C9472CD00D435F7 /* User.swift in Sources */,
+				4C40A3F02C9588CB0079A02D /* ProfileRegisterView.swift in Sources */,
+				4C40A3E72C9584560079A02D /* FortuneResultView.swift in Sources */,
 				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
 				4CFC3ADE2C82E8D50066C71C /* FortuneResult+.swift in Sources */,
 				4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */,
+				4C40A3EE2C9588A60079A02D /* ProfileRegisterViewModel.swift in Sources */,
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
+				4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */,
+				4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */,
+				4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */,
 				4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */,
+				4C40A3FE2C958DA70079A02D /* FortuneResultListViewModel.swift in Sources */,
+				4C40A3FC2C958D930079A02D /* FortuneResultListView.swift in Sources */,
+				4C40A4062C9591CE0079A02D /* RootView.swift in Sources */,
+				4C40A4022C9591120079A02D /* HomeView.swift in Sources */,
+				4C40A3FA2C958C810079A02D /* FortunePromptView.swift in Sources */,
 				4CFC3AE02C82E8ED0066C71C /* FortuneFetcher+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EmergeTools/Pow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CE466162C9611210074FCCD /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = Pow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CFC3A952C82E6CE0066C71C /* Project object */;
 }

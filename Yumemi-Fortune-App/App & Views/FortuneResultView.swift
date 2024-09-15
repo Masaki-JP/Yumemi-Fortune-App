@@ -9,19 +9,38 @@ struct FortuneResultView: View {
 
     var body: some View {
         List {
-            prefectureRow
-            capitalRow
-            citizenDayRow
-            hasCoastLineRow
-            logoImageRow
-                .frame(maxWidth: .infinity)
+            Section {
+                prefectureRow
+                capitalRow
+                citizenDayRow
+                hasCoastLineRow
+            } header: {
+                Text("占い結果")
+            }
+            Section {
+                Text(fortuneResult.briefWithoutSource)
+            } header: {
+                Text("都道府県の概要")
+            } footer: {
+                if let briefSource = fortuneResult.briefSource {
+                    Text(briefSource)
+                        .font(.caption)
+                }
+            }
+            Section {
+                logoImageRow.frame(maxWidth: .infinity)
+            } header: {
+                Text("都道府県の形")
+            } footer: {
+                Text("※画像元: 日本地図の無料イラスト素材集")
+                    .font(.caption)
+            }
         }
-        .navigationTitle("占い結果")
     }
 
     var prefectureRow: some View {
         HStack(spacing: 0) {
-            Text("相性のいい都道府県：")
+            Text("ラッキー都道府県：")
             Spacer()
             Text(fortuneResult.compatiblePrefecture)
         }
