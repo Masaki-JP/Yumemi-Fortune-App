@@ -22,6 +22,9 @@
 		4C40A4042C95918B0079A02D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4032C95918B0079A02D /* ContentView.swift */; };
 		4C40A4062C9591CE0079A02D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4052C9591CE0079A02D /* RootView.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
+		4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */; };
+		4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660F2C960FE50074FCCD /* WaveTextView.swift */; };
+		4CE466172C9611210074FCCD /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE466162C9611210074FCCD /* Pow */; };
 		4CFC3AA12C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */; };
 		4CFC3AA52C82E6D00066C71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA42C82E6D00066C71C /* Assets.xcassets */; };
 		4CFC3AA82C82E6D00066C71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC3AA72C82E6D00066C71C /* Preview Assets.xcassets */; };
@@ -73,6 +76,8 @@
 		4C40A4032C95918B0079A02D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C40A4052C9591CE0079A02D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumRollPlayer.swift; sourceTree = "<group>"; };
+		4CE4660F2C960FE50074FCCD /* WaveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTextView.swift; sourceTree = "<group>"; };
 		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yumemi_Fortune_AppApp.swift; sourceTree = "<group>"; };
 		4CFC3AA42C82E6D00066C71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE466172C9611210074FCCD /* Pow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +137,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		4CE4660C2C960A1A0074FCCD /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		4CFC3A942C82E6CE0066C71C = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +172,7 @@
 				4C40A3E82C9584E60079A02D /* ViewModels */,
 				4CFC3ACC2C82E7950066C71C /* Models */,
 				4CFC3ACB2C82E7910066C71C /* Utilities */,
+				4CE4660C2C960A1A0074FCCD /* Audio */,
 				4CFC3ACA2C82E78C0066C71C /* Extentions */,
 				4CFC3AA42C82E6D00066C71C /* Assets.xcassets */,
 				4CFC3AA62C82E6D00066C71C /* Preview Content */,
@@ -233,6 +248,7 @@
 				4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */,
 				4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */,
 				4C40A3F92C958C810079A02D /* FortunePromptView.swift */,
+				4CE4660F2C960FE50074FCCD /* WaveTextView.swift */,
 			);
 			path = "App & Views";
 			sourceTree = "<group>";
@@ -271,6 +287,9 @@
 			dependencies = (
 			);
 			name = "Yumemi-Fortune-App";
+			packageProductDependencies = (
+				4CE466162C9611210074FCCD /* Pow */,
+			);
 			productName = "Yumemi-Fortune-App";
 			productReference = 4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */;
 			productType = "com.apple.product-type.application";
@@ -343,6 +362,9 @@
 				Base,
 			);
 			mainGroup = 4CFC3A942C82E6CE0066C71C;
+			packageReferences = (
+				4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */,
+			);
 			productRefGroup = 4CFC3A9E2C82E6CE0066C71C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */,
 				4C40A3EC2C95873D0079A02D /* GetFortuneView.swift in Sources */,
 				4C40A4042C95918B0079A02D /* ContentView.swift in Sources */,
 				4CFC3AD12C82E8000066C71C /* FortuneResult.swift in Sources */,
@@ -404,6 +427,7 @@
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
 				4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */,
 				4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */,
+				4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */,
 				4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */,
 				4C40A3FE2C958DA70079A02D /* FortuneResultListViewModel.swift in Sources */,
 				4C40A3FC2C958D930079A02D /* FortuneResultListView.swift in Sources */,
@@ -742,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EmergeTools/Pow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CE466162C9611210074FCCD /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CE466152C9611210074FCCD /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = Pow;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CFC3A952C82E6CE0066C71C /* Project object */;
 }

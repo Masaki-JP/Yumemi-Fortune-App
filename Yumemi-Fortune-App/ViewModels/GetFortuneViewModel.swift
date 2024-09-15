@@ -1,30 +1,38 @@
-import Foundation
+import SwiftUI
 
+// 要リファクタ
 @MainActor @Observable
-final class GetFortuneViewModel {
-    let user: User
+final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & Sendable> {
+    private(set) var isShowingWaveTextView = true
+    private(set) var isShowingCompatiblePrefectureText = false
+    private(set) var isShowingDismissButton = false
 
-    init(user: User) {
+    let user: User
+    private let fortuneFetcher: FortuneFetcherObject
+    private let drumRollPlayer = DrumRollPlayer()
+
+    init(user: User, fortuneFetcher: FortuneFetcherObject = FortuneFetcher(.mock(for: .fortuneAPI))) {
         self.user = user
+        self.fortuneFetcher = fortuneFetcher
     }
 
-    func didTapGetFortuneButton() {
-        guard user.fortuneResultList.contains(where: { $0.key == .today }) == false else {
-            print("すでに占い済み"); return
-        }
+    func onAppearAction() async {
+        guard let fortuneResult = try? await fortuneFetcher.fetch(
+            name: user.name,
+            birthday: user.birthday,
+            bloodType: user.bloodType
+        ) else { return }
 
-        Task {
-            let fortuneFetcher = FortuneFetcher(.mock(for: .fortuneAPI))
+        drumRollPlayer.play()
 
-            guard let fortuneResult = try? await fortuneFetcher.fetch(
-                name: user.name,
-                birthday: user.birthday,
-                bloodType: user.bloodType
-            ) else {
-                print("占い結果の取得に失敗。"); return
-            }
+        try? await Task.sleep(for: .seconds(5.5))
+        withAnimation { isShowingWaveTextView = false }
 
-            user.addFortuneResult(fortuneResult)
-        }
+        try? await Task.sleep(for: .seconds(0.5))
+        withAnimation { isShowingCompatiblePrefectureText = true }
+        user.addFortuneResult(fortuneResult)
+
+        try? await Task.sleep(for: .seconds(2.0))
+        withAnimation { isShowingDismissButton = true }
     }
 }
