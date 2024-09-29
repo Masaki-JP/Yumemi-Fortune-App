@@ -1,51 +1,60 @@
 import SwiftUI
+import SwiftData
 
 @MainActor
 struct NameEditView: View {
-    private let originName: String
-    private let didTapSaveButton: (_ newName: String, _ dismissAction: (() -> Void)?) -> Void
-
-    @State private var newName: String
+    @State private var viewModel: NameEditViewModel
     @Environment(\.dismiss) private var dismiss
-
+    
     init(
-        originName: String,
-        didTapSaveButton: @escaping (_ newName: String, _ dismissAction: (() -> Void)?) -> Void
+        user: User,
+        modelContext: ModelContext
     ) {
-        self.originName = originName
-        self.didTapSaveButton = didTapSaveButton
-
-        self._newName = .init(wrappedValue: originName)
+        self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext))
     }
-
+    
     var body: some View {
         Form {
             Section {
                 HStack(spacing: 0) {
-                    TextField("例：田中　太郎", text: $newName)
+                    TextField("例：田中　太郎", text: $viewModel.newName)
                     Spacer()
                     Image(systemName: "x.circle.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 20)
                         .foregroundStyle(.gray)
-                        .onTapGesture { newName.removeAll() }
+                        .onTapGesture(perform: viewModel.didTapXCircleMark)
                 }
             } header: {
                 Text("新しい名前を入力")
             }
         }
+        .alert(
+            "予期せぬエラーが発生しました。",
+            isPresented: $viewModel.isShowingUnexpectedErrorAlert,
+            actions: {}
+        )
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("保存") {
-                    didTapSaveButton(newName, dismiss.callAsFunction)
+                    viewModel.didTapSaveButton(onCompleted: dismiss.callAsFunction)
                 }
-                .disabled(newName.isEmpty || originName == newName)
+                .disabled(viewModel.isSaveButtonDisabled)
             }
         }
     }
 }
 
+private struct NameEditViewWrapper: View {
+    let user = User(name: "Naruto", birthday: .today, bloodType: .a)
+    @Environment(\.modelContext) private var modelContext
+    
+    var body: some View {
+        NameEditView(user: user, modelContext: modelContext)
+    }
+}
+
 #Preview {
-    NameEditView(originName: "Naruto", didTapSaveButton: {_, _ in })
+    NameEditViewWrapper()
 }
