@@ -6,7 +6,7 @@ final class ProfileRegisterViewModel {
     var name = "ナルト"
     var birthday = Date.now
     var bloodType: BloodType? = .a
-
+    var isShowingUnknownErrorAlert = false
     let modelContext: ModelContext
 
     init(modelContext: ModelContext) {
@@ -14,14 +14,13 @@ final class ProfileRegisterViewModel {
     }
 
     func didTapRegisterButton() {
-        guard let bloodType else { print("💥💥💥"); return; }
-
-        let user = User(
-            name: name,
-            birthday: .init(birthday),
-            bloodType: bloodType
-        )
-
-        modelContext.insert(user)
+        guard let bloodType else { isShowingUnknownErrorAlert = true; return }
+        do {
+            let user = User(name: name, birthday: .init(birthday), bloodType: bloodType)
+            modelContext.insert(user)
+            try modelContext.save()
+        } catch {
+            isShowingUnknownErrorAlert = true
+        }
     }
 }

@@ -4,6 +4,7 @@ import SwiftData
 @MainActor
 struct HomeView: View {
     @State private var viewModel: HomeViewModel
+    @Environment(\.modelContext) private var modelContext
 
     init(user: User, modelContext: ModelContext) {
         self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext))
@@ -38,7 +39,7 @@ struct HomeView: View {
             .navigationTitle("ホーム")
             .toolbarTitleDisplayMode(.inlineLarge)
             .fullScreenCover(isPresented: $viewModel.isShowingGetFortuneView) {
-                GetFortuneView(user: viewModel.user)
+                GetFortuneView(user: viewModel.user, modelContext: modelContext)
             }
         }
     }

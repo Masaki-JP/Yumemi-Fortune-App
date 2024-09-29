@@ -4,6 +4,7 @@ import SwiftData
 @MainActor
 struct SettingListView: View {
     @State private var viewModel: SettingListViewModel
+    @Environment(\.modelContext) private var modelContext
 
     init(user: User, modelContext: ModelContext) {
         self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext))
@@ -20,8 +21,8 @@ struct SettingListView: View {
             .toolbarTitleDisplayMode(.inlineLarge)
             .navigationDestination(isPresented: $viewModel.isEditingName) {
                 NameEditView(
-                    originName: viewModel.user.name,
-                    didTapSaveButton: viewModel.didTapSaveButton
+                    user: viewModel.user,
+                    modelContext: modelContext
                 )
                 .navigationTitle("編集モード")
                 .navigationBarTitleDisplayMode(.inline)
@@ -35,6 +36,11 @@ struct SettingListView: View {
             } message: {
                 Text("全てのデータを削除しますか？")
             }
+            .alert(
+                "予期せぬエラーが発生しました。",
+                isPresented: $viewModel.isShowingUnexpectedErrorAlert,
+                actions: {}
+            )
         }
     }
 
@@ -74,52 +80,6 @@ struct SettingListView: View {
             }
         } header: {
             Text("血液型")
-        }
-    }
-}
-
-@MainActor
-struct NameEditView: View {
-    private let originName: String
-    private let didTapSaveButton: (_ newName: String, _ dismissAction: (() -> Void)?) -> Void
-
-    @State private var newName: String
-    @Environment(\.dismiss) private var dismiss
-
-    init(
-        originName: String,
-        didTapSaveButton: @escaping (_ newName: String, _ dismissAction: (() -> Void)?) -> Void
-    ) {
-        self.originName = originName
-        self.didTapSaveButton = didTapSaveButton
-
-        self._newName = .init(wrappedValue: originName)
-    }
-
-    var body: some View {
-        Form {
-            Section {
-                HStack(spacing: 0) {
-                    TextField("例：田中　太郎", text: $newName)
-                    Spacer()
-                    Image(systemName: "x.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 20)
-                        .foregroundStyle(.gray)
-                        .onTapGesture { newName.removeAll() }
-                }
-            } header: {
-                Text("新しい名前を入力")
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("保存") {
-                    didTapSaveButton(newName, dismiss.callAsFunction)
-                }
-                .disabled(newName.isEmpty || originName == newName)
-            }
         }
     }
 }
