@@ -19,9 +19,12 @@ struct SettingListView: View {
             .navigationTitle("ユーザー設定")
             .toolbarTitleDisplayMode(.inlineLarge)
             .navigationDestination(isPresented: $viewModel.isEditingName) {
-                NameEditView(viewModel: $viewModel)
-                    .navigationTitle("編集モード")
-                    .navigationBarTitleDisplayMode(.inline)
+                NameEditView(
+                    originName: viewModel.user.name,
+                    didTapSaveButton: viewModel.didTapSaveButton
+                )
+                .navigationTitle("編集モード")
+                .navigationBarTitleDisplayMode(.inline)
             }
             .safeAreaInset(edge: .bottom) {
                 Button("全てのデータを削除", role: .destructive, action: viewModel.didTapAccountDeleteButton)
@@ -77,28 +80,34 @@ struct SettingListView: View {
 
 @MainActor
 struct NameEditView: View {
-    @Binding private var viewModel: SettingListViewModel
+    private let originName: String
+    private let didTapSaveButton: (_ newName: String, _ dismissAction: (() -> Void)?) -> Void
 
-    @State private var text: String
+    @State private var newName: String
     @Environment(\.dismiss) private var dismiss
 
-    init(viewModel: Binding<SettingListViewModel>) {
-        self._viewModel = viewModel
-        self._text = .init(wrappedValue: viewModel.wrappedValue.user.name)
+    init(
+        originName: String,
+        didTapSaveButton: @escaping (_ newName: String, _ dismissAction: (() -> Void)?) -> Void
+    ) {
+        self.originName = originName
+        self.didTapSaveButton = didTapSaveButton
+
+        self._newName = .init(wrappedValue: originName)
     }
 
     var body: some View {
         Form {
             Section {
                 HStack(spacing: 0) {
-                    TextField("例：田中　太郎", text: $text)
+                    TextField("例：田中　太郎", text: $newName)
                     Spacer()
                     Image(systemName: "x.circle.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 20)
                         .foregroundStyle(.gray)
-                        .onTapGesture { text.removeAll() }
+                        .onTapGesture { newName.removeAll() }
                 }
             } header: {
                 Text("新しい名前を入力")
@@ -107,9 +116,9 @@ struct NameEditView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("保存") {
-                    viewModel.didTapSaveButton(name: text, onCompletion: dismiss.callAsFunction)
+                    didTapSaveButton(newName, dismiss.callAsFunction)
                 }
-                .disabled(text.isEmpty || viewModel.user.name == text)
+                .disabled(newName.isEmpty || originName == newName)
             }
         }
     }

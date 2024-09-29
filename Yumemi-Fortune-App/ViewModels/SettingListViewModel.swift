@@ -30,9 +30,9 @@ final class SettingListViewModel {
         isEditingName = true
     }
 
-    func didTapSaveButton(name: String, onCompletion completionHandler: () -> Void) {
-        user.updateName(to: name)
-        completionHandler()
+    func didTapSaveButton(newName: String, dismissAction: (() -> Void)? = nil) {
+        user.updateName(to: newName)
+        dismissAction?()
     }
 
     func didTapAccountDeleteButton() {
