@@ -11,6 +11,8 @@ final class SettingListViewModel {
     var isEditingName = false
     var isShowingDeleteConfirmation = false
 
+    var isShowingUnexpectedErrorAlert = false
+
     var birthdayBinding: Binding<Date>? {
         guard let birthdayDate = user.birthday.asDate else { return nil }
 
@@ -30,16 +32,16 @@ final class SettingListViewModel {
         isEditingName = true
     }
 
-    func didTapSaveButton(newName: String, dismissAction: (() -> Void)? = nil) {
-        user.updateName(to: newName)
-        dismissAction?()
-    }
-
     func didTapAccountDeleteButton() {
         isShowingDeleteConfirmation = true
     }
 
     func didTapAccountDeleteButtonInAlert() {
-        modelContext.delete(user)
+        do {
+            modelContext.delete(user)
+            try modelContext.save()
+        } catch {
+            isShowingUnexpectedErrorAlert = true
+        }
     }
 }

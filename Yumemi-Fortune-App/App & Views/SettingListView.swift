@@ -36,6 +36,11 @@ struct SettingListView: View {
             } message: {
                 Text("全てのデータを削除しますか？")
             }
+            .alert(
+                "予期せぬエラーが発生しました。",
+                isPresented: $viewModel.isShowingUnexpectedErrorAlert,
+                actions: {}
+            )
         }
     }
 
