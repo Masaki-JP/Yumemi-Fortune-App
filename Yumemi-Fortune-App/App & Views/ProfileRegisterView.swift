@@ -20,6 +20,11 @@ struct ProfileRegisterView: View {
                 Picker("血液型", selection: $viewModel.bloodType, content: pickerContent)
             }
             .navigationTitle("ユーザー情報")
+            .alert(
+                "予期せぬエラーが発生しました。",
+                isPresented: $viewModel.isShowingUnknownErrorAlert,
+                actions: {}
+            )
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("登録", action: viewModel.didTapRegisterButton)
