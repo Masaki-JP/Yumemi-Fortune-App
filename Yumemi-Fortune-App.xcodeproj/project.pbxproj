@@ -22,6 +22,7 @@
 		4C40A4042C95918B0079A02D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4032C95918B0079A02D /* ContentView.swift */; };
 		4C40A4062C9591CE0079A02D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4052C9591CE0079A02D /* RootView.swift */; };
 		4CA4FD612CA9AF30001B08B7 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */; };
+		4CA4FD632CA9B2DB001B08B7 /* NameEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
 		4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */; };
 		4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660F2C960FE50074FCCD /* WaveTextView.swift */; };
@@ -77,6 +78,7 @@
 		4C40A4032C95918B0079A02D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C40A4052C9591CE0079A02D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
+		4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditViewModel.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumRollPlayer.swift; sourceTree = "<group>"; };
 		4CE4660F2C960FE50074FCCD /* WaveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTextView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				4C40A3FF2C9590F60079A02D /* HomeViewModel.swift */,
 				4C40A3FD2C958DA70079A02D /* FortuneResultListViewModel.swift */,
 				4C40A3F12C958AB20079A02D /* SettingListViewModel.swift */,
+				4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */,
 				4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */,
 				4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */,
 			);
@@ -413,6 +416,7 @@
 				4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */,
 				4C40A3EC2C95873D0079A02D /* GetFortuneView.swift in Sources */,
 				4C40A4042C95918B0079A02D /* ContentView.swift in Sources */,
+				4CA4FD632CA9B2DB001B08B7 /* NameEditViewModel.swift in Sources */,
 				4CFC3AD12C82E8000066C71C /* FortuneResult.swift in Sources */,
 				4CFC3ADA2C82E87E0066C71C /* FortuneFetcherStub.swift in Sources */,
 				4C40A3F42C958ACB0079A02D /* SettingListView.swift in Sources */,
