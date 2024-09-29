@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 import Pow
 
 @MainActor
@@ -6,8 +7,12 @@ struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: 
     @State private var viewModel: GetFortuneViewModel<FortuneFetcherObject>
     @Environment(\.dismiss) private var dismiss
 
-    init(user: User, fortuneFetcher: FortuneFetcherObject = FortuneFetcher(.mock(for: .fortuneAPI))) {
-        self._viewModel = .init(wrappedValue: .init(user: user, fortuneFetcher: fortuneFetcher))
+    init(
+        user: User,
+        modelContext: ModelContext,
+        fortuneFetcher: FortuneFetcherObject = FortuneFetcher(.mock(for: .fortuneAPI))
+    ) {
+        self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext, fortuneFetcher: fortuneFetcher))
     }
 
     var body: some View {
@@ -36,19 +41,25 @@ struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: 
             }
         }
         .task { await viewModel.onAppearAction() }
+        .alert(
+            "予期せぬエラーが発生しました。",
+            isPresented: $viewModel.isShowingUnknownErrorAlert,
+            actions: {}
+        )
     }
 }
 
 private struct GetFortuneViewWrapper: View {
     private let user = User(name: "Naruto", birthday: .sample, bloodType: .a)
     @State private var isShowingGetFortuneView = true
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         Button("占い取得画面に遷移") {
             isShowingGetFortuneView = true
         }
         .fullScreenCover(isPresented: $isShowingGetFortuneView) {
-            GetFortuneView(user: user)
+            GetFortuneView(user: user, modelContext: modelContext)
         }
     }
 }
