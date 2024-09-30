@@ -47,7 +47,7 @@ struct FortuneResultListViewWrapper1: View {
         name: "Naruto",
         birthday: try! .init(year: 2000, month: 1, day: 1),
         bloodType: .a,
-        fortuneResults: [
+        fortuneResultList: [
             try! .init(year: 2020, month: 1, day: 1) : .sample1,
             try! .init(year: 2020, month: 1, day: 2) : .sample2,
             try! .init(year: 2020, month: 1, day: 3) : .sample3,
@@ -65,7 +65,7 @@ struct FortuneResultListViewWrapper2: View {
         name: "Naruto",
         birthday: .today,
         bloodType: .a,
-        fortuneResults: [:]
+        fortuneResultList: [:]
     )
     @Environment(\.modelContext) private var modelContext
 

@@ -50,7 +50,7 @@ private struct HomeViewWrapper_Case1: View {
         name: "Naruto",
         birthday: .today,
         bloodType: .a,
-        fortuneResults: [.today: .sample1]
+        fortuneResultList: [.today: .sample1]
     )
 
     var body: some View {
