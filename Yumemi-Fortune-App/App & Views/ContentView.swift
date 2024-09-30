@@ -1,8 +1,14 @@
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    let user: User
+    private let user: User
+    private var modelContext: ModelContext
+
+    init(user: User, modelContext: ModelContext) {
+        self.user = user
+        self.modelContext = modelContext
+    }
 
     var body: some View {
         TabView {
@@ -16,6 +22,15 @@ struct ContentView: View {
     }
 }
 
+private struct ContentViewWrapper: View {
+    private let user = User(name: "Naruto", birthday: .sample, bloodType: .a)
+    @Environment(\.modelContext) private var modelContext
+
+    var body: some View {
+        ContentView(user: user, modelContext: modelContext)
+    }
+}
+
 #Preview {
-    ContentView(user: .init(name: "Naruto", birthday: .today, bloodType: .a))
+    ContentViewWrapper()
 }

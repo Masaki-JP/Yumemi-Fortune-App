@@ -8,7 +8,7 @@ struct RootView: View {
     var body: some View {
         switch users.count {
         case 1:
-            ContentView(user: users.first!)
+            ContentView(user: users.first!, modelContext: modelContext)
         case 0:
             ProfileRegisterView(modelContext: modelContext)
         default:
