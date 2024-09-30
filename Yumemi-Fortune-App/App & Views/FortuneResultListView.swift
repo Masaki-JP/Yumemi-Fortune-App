@@ -4,7 +4,6 @@ import SwiftData
 @MainActor
 struct FortuneResultListView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: View {
     @State private var viewModel: FortuneResultListViewModel<FortuneFetcherObject>
-    @Environment(\.modelContext) private var modelContext
 
     init(
         user: User,
@@ -42,7 +41,7 @@ struct FortuneResultListView<FortuneFetcherObject: FortuneFetcherProtocol & Send
                 }
             }
             .fullScreenCover(isPresented: $viewModel.isShowingGetFortuneResultView) {
-                GetFortuneView(user: viewModel.user, modelContext: modelContext)
+                GetFortuneView(user: viewModel.user, modelContext: viewModel.modexContext)
             }
             .overlay {
                 if viewModel.user.fortuneResultList.isEmpty {

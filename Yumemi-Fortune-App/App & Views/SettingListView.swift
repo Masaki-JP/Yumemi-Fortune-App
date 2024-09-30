@@ -4,7 +4,6 @@ import SwiftData
 @MainActor
 struct SettingListView: View {
     @State private var viewModel: SettingListViewModel
-    @Environment(\.modelContext) private var modelContext
 
     init(user: User, modelContext: ModelContext) {
         self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext))
@@ -22,7 +21,7 @@ struct SettingListView: View {
             .navigationDestination(isPresented: $viewModel.isEditingName) {
                 NameEditView(
                     user: viewModel.user,
-                    modelContext: modelContext
+                    modelContext: viewModel.modelContext
                 )
                 .navigationTitle("編集モード")
                 .navigationBarTitleDisplayMode(.inline)

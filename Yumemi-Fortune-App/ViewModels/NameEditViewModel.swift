@@ -4,7 +4,7 @@ import SwiftData
 @MainActor @Observable
 final class NameEditViewModel {
     let user: User
-    private let modelContext: ModelContext
+    let modelContext: ModelContext
 
     let originName: String
     var newName: String
