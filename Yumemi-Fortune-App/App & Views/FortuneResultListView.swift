@@ -42,15 +42,42 @@ struct FortuneResultListView: View {
     }
 }
 
-struct FortuneResultListViewWrapper: View {
+struct FortuneResultListViewWrapper1: View {
+    private let user = User(
+        name: "Naruto",
+        birthday: try! .init(year: 2000, month: 1, day: 1),
+        bloodType: .a,
+        fortuneResults: [
+            try! .init(year: 2020, month: 1, day: 1) : .sample1,
+            try! .init(year: 2020, month: 1, day: 2) : .sample2,
+            try! .init(year: 2020, month: 1, day: 3) : .sample3,
+        ]
+    )
     @Environment(\.modelContext) private var modelContext
-    let user = User(name: "Naruto", birthday: .today, bloodType: .a)
 
     var body: some View {
         FortuneResultListView(user: user, modelContext: modelContext)
     }
 }
 
-#Preview {
-    FortuneResultListViewWrapper()
+struct FortuneResultListViewWrapper2: View {
+    private let user = User(
+        name: "Naruto",
+        birthday: .today,
+        bloodType: .a,
+        fortuneResults: [:]
+    )
+    @Environment(\.modelContext) private var modelContext
+
+    var body: some View {
+        FortuneResultListView(user: user, modelContext: modelContext)
+    }
+}
+
+#Preview("Case1") {
+    FortuneResultListViewWrapper1()
+}
+
+#Preview("Case2") {
+    FortuneResultListViewWrapper2()
 }
