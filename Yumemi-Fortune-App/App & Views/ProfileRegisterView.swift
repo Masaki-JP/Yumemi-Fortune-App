@@ -22,12 +22,13 @@ struct ProfileRegisterView: View {
             .navigationTitle("ユーザー情報")
             .alert(
                 "予期せぬエラーが発生しました。",
-                isPresented: $viewModel.isShowingUnknownErrorAlert,
+                isPresented: $viewModel.isShowingUnexpectedErrorAlert,
                 actions: {}
             )
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("登録", action: viewModel.didTapRegisterButton)
+                        .disabled(viewModel.isRegisterButtonDisabled)
                 }
                 ToolbarItem(placement: .keyboard) {
                     Text("完了")
@@ -62,6 +63,6 @@ struct ProfileRegisterViewWrapper: View {
     }
 }
 
-#Preview(body: {
+#Preview {
     ProfileRegisterViewWrapper()
-})
+}
