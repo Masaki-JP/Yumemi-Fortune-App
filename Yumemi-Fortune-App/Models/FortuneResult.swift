@@ -20,7 +20,7 @@ struct FortuneResult: Codable, Hashable {
     /// ソースを除いた相性のいい都道府県の概要。
     var briefWithoutSource: String {
         if brief.hasSuffix("\n" + briefSourceString) {
-            .init(brief.dropLast(briefSourceString.count + 2))
+            .init(brief.dropLast(briefSourceString.count + 1))
         } else {
             brief
         }
