@@ -11,7 +11,7 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
     var isShowingUnknownErrorAlert = false
 
     let user: User
-    private let modelContext: ModelContext
+    let modelContext: ModelContext
 
     private let fortuneFetcher: FortuneFetcherObject
     private let drumRollPlayer = DrumRollPlayer()
