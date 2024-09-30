@@ -23,11 +23,11 @@ extension FortuneResult {
 
     /// ``FortuneResult``のサンプル。
     ///
-    /// - 都道府県：静岡県
-    /// - 首都：静岡市
-    /// - 県民日：8月21日
+    /// - 都道府県：兵庫県
+    /// - 首都：神戸市
+    /// - 県民日：なし
     /// - 海岸の有無：有り
-    /// - ロゴURL：[https://japan-map.com/wp-content/uploads/shizuoka.png](https://japan-map.com/wp-content/uploads/shizuoka.png)
+    /// - ロゴURL：[https://japan-map.com/wp-content/uploads/hyogo.png](https://japan-map.com/wp-content/uploads/hyogo.png)
     ///
     static var sample2: Self {
         .init(
