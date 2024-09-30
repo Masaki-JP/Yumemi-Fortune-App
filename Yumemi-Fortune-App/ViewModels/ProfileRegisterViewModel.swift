@@ -3,9 +3,9 @@ import SwiftData
 
 @MainActor @Observable
 final class ProfileRegisterViewModel {
-    var name = "ナルト"
+    var name = ""
     var birthday = Date.now
-    var bloodType: BloodType? = .a
+    var bloodType: BloodType? = nil
     var isShowingUnknownErrorAlert = false
     let modelContext: ModelContext
 
