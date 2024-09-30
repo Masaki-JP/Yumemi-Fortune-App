@@ -28,6 +28,7 @@ struct ProfileRegisterView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("登録", action: viewModel.didTapRegisterButton)
+                        .disabled(viewModel.isRegisterButtonDisabled)
                 }
                 ToolbarItem(placement: .keyboard) {
                     Text("完了")

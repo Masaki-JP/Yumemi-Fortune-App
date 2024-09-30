@@ -9,6 +9,10 @@ final class ProfileRegisterViewModel {
     var isShowingUnknownErrorAlert = false
     let modelContext: ModelContext
 
+    var isRegisterButtonDisabled: Bool {
+        !(name.isEmpty == false && bloodType != nil)
+    }
+
     init(modelContext: ModelContext) {
         self.modelContext = modelContext
     }
