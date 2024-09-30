@@ -11,11 +11,11 @@ final class User {
         fortuneResultList.first { $0.key == .today }?.value
     }
 
-    init(name: String, birthday: Day, bloodType: BloodType, fortuneResults: [Day: FortuneResult] = .init()) {
+    init(name: String, birthday: Day, bloodType: BloodType, fortuneResultList: [Day: FortuneResult] = .init()) {
         self.name = name
         self.birthday = birthday
         self.bloodType = bloodType
-        self.fortuneResultList = fortuneResults
+        self.fortuneResultList = fortuneResultList
     }
 
     func updateName(to name: String) {
