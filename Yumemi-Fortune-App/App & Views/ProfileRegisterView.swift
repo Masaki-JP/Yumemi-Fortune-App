@@ -62,6 +62,6 @@ struct ProfileRegisterViewWrapper: View {
     }
 }
 
-#Preview(body: {
+#Preview {
     ProfileRegisterViewWrapper()
-})
+}

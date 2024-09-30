@@ -15,6 +15,7 @@ final class ProfileRegisterViewModel {
 
     func didTapRegisterButton() {
         guard let bloodType else { isShowingUnknownErrorAlert = true; return }
+
         do {
             let user = User(name: name, birthday: .init(birthday), bloodType: bloodType)
             modelContext.insert(user)
