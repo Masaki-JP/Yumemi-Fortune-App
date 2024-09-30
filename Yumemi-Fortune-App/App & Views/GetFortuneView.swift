@@ -10,7 +10,7 @@ struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: 
     init(
         user: User,
         modelContext: ModelContext,
-        fortuneFetcher: FortuneFetcherObject = FortuneFetcher(.mock(for: .fortuneAPI))
+        fortuneFetcher: FortuneFetcherObject = FortuneFetcher()
     ) {
         self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext, fortuneFetcher: fortuneFetcher))
     }
@@ -59,7 +59,7 @@ private struct GetFortuneViewWrapper: View {
             isShowingGetFortuneView = true
         }
         .fullScreenCover(isPresented: $isShowingGetFortuneView) {
-            GetFortuneView(user: user, modelContext: modelContext)
+            GetFortuneView(user: user, modelContext: modelContext, fortuneFetcher: FortuneFetcher(.mock(for: .fortuneAPI)))
         }
     }
 }

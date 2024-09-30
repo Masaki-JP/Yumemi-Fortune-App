@@ -16,7 +16,7 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
     private let fortuneFetcher: FortuneFetcherObject
     private let drumRollPlayer = DrumRollPlayer()
 
-    init(user: User, modelContext: ModelContext, fortuneFetcher: FortuneFetcherObject = FortuneFetcher(.mock(for: .fortuneAPI))) {
+    init(user: User, modelContext: ModelContext, fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
         self.user = user
         self.modelContext = modelContext
         self.fortuneFetcher = fortuneFetcher
