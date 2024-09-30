@@ -2,21 +2,11 @@ import SwiftUI
 import SwiftData
 
 @MainActor
-struct FortuneResultListView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: View {
-    @State private var viewModel: FortuneResultListViewModel<FortuneFetcherObject>
+struct FortuneResultListView: View {
+    @State private var viewModel: FortuneResultListViewModel
 
-    init(
-        user: User,
-        modelContext: ModelContext,
-        fortuneFetcher: FortuneFetcherObject = FortuneFetcher()
-    ) {
-        self._viewModel = .init(
-            wrappedValue: .init(
-                user: user,
-                modexContext: modelContext,
-                fortuneFetcher: fortuneFetcher
-            )
-        )
+    init(user: User, modelContext: ModelContext) {
+        self._viewModel = .init(wrappedValue: .init(user: user, modexContext: modelContext))
     }
 
     var body: some View {
