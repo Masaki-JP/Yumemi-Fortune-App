@@ -245,14 +245,14 @@
 			children = (
 				4CFC3AA02C82E6CE0066C71C /* Yumemi_Fortune_AppApp.swift */,
 				4C40A4052C9591CE0079A02D /* RootView.swift */,
+				4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */,
 				4C40A4032C95918B0079A02D /* ContentView.swift */,
-				4C40A3E62C9584560079A02D /* FortuneResultView.swift */,
 				4C40A4012C9591120079A02D /* HomeView.swift */,
 				4C40A3FB2C958D930079A02D /* FortuneResultListView.swift */,
 				4C40A3F32C958ACB0079A02D /* SettingListView.swift */,
 				4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */,
-				4C40A3EF2C9588CB0079A02D /* ProfileRegisterView.swift */,
 				4C40A3EB2C95873D0079A02D /* GetFortuneView.swift */,
+				4C40A3E62C9584560079A02D /* FortuneResultView.swift */,
 				4C40A3F92C958C810079A02D /* FortunePromptView.swift */,
 				4CE4660F2C960FE50074FCCD /* WaveTextView.swift */,
 			);
