@@ -21,7 +21,7 @@ final class HomeViewModel {
     ///
     /// フルスクリーンで``GetFortuneView``を表示する。
     ///
-    func didTapGetFortuneButtonInHomeView() {
+    func didTapGetFortuneButton() {
         isShowingGetFortuneView = true
     }
 }
