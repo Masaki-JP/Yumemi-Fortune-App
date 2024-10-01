@@ -32,7 +32,7 @@ struct HomeView: View {
                         .padding(.bottom, 5)
                     }
                 } else {
-                    fortunePromptView(action: viewModel.didTapGetFortuneButtonInHomeView)
+                    fortunePromptView(action: viewModel.didTapGetFortuneButton)
                 }
             }
             .navigationTitle("ホーム")

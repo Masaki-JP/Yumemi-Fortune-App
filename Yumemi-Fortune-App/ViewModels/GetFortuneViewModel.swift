@@ -25,7 +25,7 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
 
     /// 予期せぬエラーの発生時のアラートの表示フラグ。
     ///
-    var isShowingUnknownErrorAlert = false
+    var isShowingUnexpectedErrorAlert = false
 
     init(user: User, modelContext: ModelContext, fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
         self.user = user
@@ -62,7 +62,7 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
             withAnimation { isShowingDismissButton = true }
         } catch {
             /// 例外が投げられた時はアラートを表示する。
-            isShowingUnknownErrorAlert = true
+            isShowingUnexpectedErrorAlert = true
         }
     }
 }

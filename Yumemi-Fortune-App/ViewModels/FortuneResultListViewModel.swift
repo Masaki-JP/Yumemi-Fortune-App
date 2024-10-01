@@ -6,15 +6,15 @@ import SwiftData
 @MainActor @Observable
 final class FortuneResultListViewModel {
     let user: User
-    let modexContext: ModelContext
+    let modelContext: ModelContext
 
     /// ``GetFortuneView``の表示フラグ。
     ///
-    var isShowingGetFortuneResultView = false
+    var isShowingGetFortuneView = false
 
-    init(user: User, modexContext: ModelContext) {
+    init(user: User, modelContext: ModelContext) {
         self.user = user
-        self.modexContext = modexContext
+        self.modelContext = modelContext
     }
 
     /// 「占う」ボタンを押された時の処理。
@@ -22,6 +22,6 @@ final class FortuneResultListViewModel {
     /// フルスクリーンで``GetFortuneView``を表示する。
     ///
     func didTapGetFortuneButton() {
-        isShowingGetFortuneResultView = true
+        isShowingGetFortuneView = true
     }
 }
