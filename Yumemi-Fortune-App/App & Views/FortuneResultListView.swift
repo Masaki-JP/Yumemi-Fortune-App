@@ -6,7 +6,7 @@ struct FortuneResultListView: View {
     @State private var viewModel: FortuneResultListViewModel
 
     init(user: User, modelContext: ModelContext) {
-        self._viewModel = .init(wrappedValue: .init(user: user, modexContext: modelContext))
+        self._viewModel = .init(wrappedValue: .init(user: user, modelContext: modelContext))
     }
 
     var body: some View {
@@ -31,7 +31,7 @@ struct FortuneResultListView: View {
                 }
             }
             .fullScreenCover(isPresented: $viewModel.isShowingGetFortuneView) {
-                GetFortuneView(user: viewModel.user, modelContext: viewModel.modexContext)
+                GetFortuneView(user: viewModel.user, modelContext: viewModel.modelContext)
             }
             .overlay {
                 if viewModel.user.fortuneResultList.isEmpty {
