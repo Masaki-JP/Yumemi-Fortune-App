@@ -6,9 +6,15 @@ final class ProfileRegisterViewModel {
     var name = ""
     var birthday = Date.now
     var bloodType: BloodType? = nil
-    var isShowingUnexpectedErrorAlert = false
+
     let modelContext: ModelContext
 
+    /// 予期せぬエラー発生時のアラートを表示フラグ。
+    ///
+    var isShowingUnexpectedErrorAlert = false
+
+    /// 「登録」ボタンの無効化フラグ。
+    ///
     var isRegisterButtonDisabled: Bool {
         !(name.isEmpty == false && bloodType != nil)
     }
@@ -17,6 +23,10 @@ final class ProfileRegisterViewModel {
         self.modelContext = modelContext
     }
 
+    /// 「登録」ボタンが押された時の処理。
+    ///
+    /// ``User``の生成及び永続化を行う。失敗した場合は、予期せぬエラー発生時のアラートを表示する。
+    ///
     func didTapRegisterButton() {
         guard let bloodType else { isShowingUnexpectedErrorAlert = true; return }
 
