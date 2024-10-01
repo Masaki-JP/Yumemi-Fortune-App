@@ -1,5 +1,7 @@
 import Foundation
 
+/// ``FortuneFetcherProtocol/fetch(name:birthday:bloodType:)``メソッドの実行時に発生することのあるエラー。
+///
 enum FortuneFetchError: Error {
     case noName
     case tooLongName

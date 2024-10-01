@@ -11,5 +11,5 @@ protocol FortuneFetcherProtocol {
     ///   - bloodType: ユーザーの血液型を指定する。
     /// - Returns: 取得した``FortuneResult``を返す。
     ///
-    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneResult
+    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws(FortuneFetchError) -> FortuneResult
 }
