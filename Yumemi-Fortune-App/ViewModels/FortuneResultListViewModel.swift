@@ -10,7 +10,7 @@ final class FortuneResultListViewModel {
 
     /// ``GetFortuneView``の表示フラグ。
     ///
-    var isShowingGetFortuneResultView = false
+    var isShowingGetFortuneView = false
 
     init(user: User, modexContext: ModelContext) {
         self.user = user
@@ -22,6 +22,6 @@ final class FortuneResultListViewModel {
     /// フルスクリーンで``GetFortuneView``を表示する。
     ///
     func didTapGetFortuneButton() {
-        isShowingGetFortuneResultView = true
+        isShowingGetFortuneView = true
     }
 }

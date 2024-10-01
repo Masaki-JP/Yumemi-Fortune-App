@@ -30,7 +30,7 @@ struct FortuneResultListView: View {
                     }
                 }
             }
-            .fullScreenCover(isPresented: $viewModel.isShowingGetFortuneResultView) {
+            .fullScreenCover(isPresented: $viewModel.isShowingGetFortuneView) {
                 GetFortuneView(user: viewModel.user, modelContext: viewModel.modexContext)
             }
             .overlay {
