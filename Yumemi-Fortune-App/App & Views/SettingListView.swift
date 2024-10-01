@@ -30,7 +30,7 @@ struct SettingListView: View {
                 Button("全てのデータを削除", role: .destructive, action: viewModel.didTapAccountDeleteButton)
                     .padding(.bottom)
             }
-            .alert("確認", isPresented: $viewModel.isShowingDeleteConfirmation) {
+            .alert("確認", isPresented: $viewModel.isShowingAccountDeleteConfirmation) {
                 Button("削除する", role: .destructive, action: viewModel.didTapAccountDeleteButtonInAlert)
             } message: {
                 Text("全てのデータを削除しますか？")

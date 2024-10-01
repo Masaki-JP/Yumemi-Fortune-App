@@ -14,7 +14,7 @@ final class SettingListViewModel {
 
     /// アカウント削除時の確認ダイアログの表示フラグ。
     ///
-    var isShowingDeleteConfirmation = false
+    var isShowingAccountDeleteConfirmation = false
 
     /// 予期せぬエラー発生時のアラートの表示フラグ。
     ///
@@ -54,7 +54,7 @@ final class SettingListViewModel {
     /// アカウント削除の確認ダイアログを表示する。
     ///
     func didTapAccountDeleteButton() {
-        isShowingDeleteConfirmation = true
+        isShowingAccountDeleteConfirmation = true
     }
 
     /// アカウント削除の確認ダイアログの「削除する」ボタンが押された時の処理。
