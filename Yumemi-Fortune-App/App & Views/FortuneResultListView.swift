@@ -1,7 +1,6 @@
 import SwiftUI
 import SwiftData
 
-@MainActor
 struct FortuneResultListView: View {
     @State private var viewModel: FortuneResultListViewModel
 
