@@ -1,7 +1,6 @@
 import SwiftUI
 import SwiftData
 
-@MainActor
 struct SettingListView: View {
     @State private var viewModel: SettingListViewModel
 

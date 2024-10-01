@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftData
 import Pow
 
-@MainActor
 struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: View {
     @State private var viewModel: GetFortuneViewModel<FortuneFetcherObject>
     @Environment(\.dismiss) private var dismiss

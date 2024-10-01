@@ -1,7 +1,6 @@
 import SwiftUI
 import SwiftData
 
-@MainActor
 struct HomeView: View {
     @State private var viewModel: HomeViewModel
 

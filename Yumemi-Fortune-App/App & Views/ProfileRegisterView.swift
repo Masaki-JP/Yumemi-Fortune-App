@@ -1,7 +1,6 @@
 import SwiftUI
 import SwiftData
 
-@MainActor
 struct ProfileRegisterView: View {
     @State private var viewModel: ProfileRegisterViewModel
     @FocusState private var isFocusedTextField

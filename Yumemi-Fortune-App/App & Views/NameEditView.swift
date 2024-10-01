@@ -1,7 +1,6 @@
 import SwiftUI
 import SwiftData
 
-@MainActor
 struct NameEditView: View {
     @State private var viewModel: NameEditViewModel
     @Environment(\.dismiss) private var dismiss
