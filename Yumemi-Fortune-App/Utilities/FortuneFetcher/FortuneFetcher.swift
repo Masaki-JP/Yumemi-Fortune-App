@@ -24,20 +24,6 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         let today: Day
     }
 
-    /// ``fetch(name:birthday:bloodType:)``メソッドの実行時に発生することのあるエラー。
-    ///
-    enum FetchError: Swift.Error {
-        case noName
-        case tooLongName
-        case invalidBirthday
-        case urlInitializeFailure
-        case encodeFailure
-        case possibleNetworkError
-        case unexpectedResponse
-        case decodeFailure
-        case unexpectedError(_ messege: String)
-    }
-
     /// ``FortuneResult``を取得するメソッド。
     ///
     /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetcher/FetchError``のみで。
