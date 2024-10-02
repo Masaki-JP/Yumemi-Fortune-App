@@ -44,7 +44,6 @@ struct Day: Codable, Comparable, Hashable {
     /// ``Day``のイニシャライザ。
     ///
     /// `Date`から``Day``を生成する。
-    /// このイニシャライザが投げる可能性のあるエラーは現状``Day/InitializeError``のみ。
     ///
     /// - Parameter date: ``Day``に変換する`Date`。
     ///
