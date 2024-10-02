@@ -45,7 +45,7 @@ struct HomeView: View {
 
 private struct HomeViewWrapper_Case1: View {
     @Environment(\.modelContext) private var modelContext
-    let user = User(
+    let user = try! User(
         name: "Naruto",
         birthday: .today,
         bloodType: .a,
@@ -59,7 +59,7 @@ private struct HomeViewWrapper_Case1: View {
 
 private struct HomeViewWrapper_Case2: View {
     @Environment(\.modelContext) private var modelContext
-    let user = User(name: "Naruto", birthday: .today, bloodType: .a)
+    let user = try! User(name: "Naruto", birthday: .today, bloodType: .a)
 
     var body: some View {
         HomeView(user: user, modelContext: modelContext)

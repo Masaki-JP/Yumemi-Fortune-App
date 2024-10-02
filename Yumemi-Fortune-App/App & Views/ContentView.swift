@@ -23,7 +23,7 @@ struct ContentView: View {
 }
 
 private struct ContentViewWrapper: View {
-    private let user = User(name: "Naruto", birthday: .sample, bloodType: .a)
+    private let user = try! User(name: "Naruto", birthday: .sample, bloodType: .a)
     @Environment(\.modelContext) private var modelContext
 
     var body: some View {

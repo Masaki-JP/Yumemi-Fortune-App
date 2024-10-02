@@ -21,9 +21,11 @@
 		4C40A4022C9591120079A02D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4012C9591120079A02D /* HomeView.swift */; };
 		4C40A4042C95918B0079A02D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4032C95918B0079A02D /* ContentView.swift */; };
 		4C40A4062C9591CE0079A02D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A4052C9591CE0079A02D /* RootView.swift */; };
+		4C4551E02CADD83B007D6D81 /* UserInitializeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4551DF2CADD83B007D6D81 /* UserInitializeError.swift */; };
 		4CA4FD612CA9AF30001B08B7 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */; };
 		4CA4FD632CA9B2DB001B08B7 /* NameEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
+		4CCC74EA2CAC9AFA0088346E /* FortuneFetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC74E92CAC9AFA0088346E /* FortuneFetchError.swift */; };
 		4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */; };
 		4CE466102C960FE50074FCCD /* WaveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4660F2C960FE50074FCCD /* WaveTextView.swift */; };
 		4CE466172C9611210074FCCD /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE466162C9611210074FCCD /* Pow */; };
@@ -77,9 +79,11 @@
 		4C40A4012C9591120079A02D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C40A4032C95918B0079A02D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C40A4052C9591CE0079A02D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4C4551DF2CADD83B007D6D81 /* UserInitializeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInitializeError.swift; sourceTree = "<group>"; };
 		4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
 		4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditViewModel.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CCC74E92CAC9AFA0088346E /* FortuneFetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetchError.swift; sourceTree = "<group>"; };
 		4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumRollPlayer.swift; sourceTree = "<group>"; };
 		4CE4660F2C960FE50074FCCD /* WaveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTextView.swift; sourceTree = "<group>"; };
 		4CFC3A9D2C82E6CE0066C71C /* Yumemi-Fortune-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yumemi-Fortune-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		4CCC74E82CAC9AE20088346E /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC74E92CAC9AFA0088346E /* FortuneFetchError.swift */,
+				4C4551DF2CADD83B007D6D81 /* UserInitializeError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		4CE4660C2C960A1A0074FCCD /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 				4CFC3ACC2C82E7950066C71C /* Models */,
 				4CFC3ACB2C82E7910066C71C /* Utilities */,
 				4CE4660C2C960A1A0074FCCD /* Audio */,
+				4CCC74E82CAC9AE20088346E /* Errors */,
 				4CFC3ACA2C82E78C0066C71C /* Extentions */,
 				4CFC3AA42C82E6D00066C71C /* Assets.xcassets */,
 				4CFC3AA62C82E6D00066C71C /* Preview Content */,
@@ -428,11 +442,13 @@
 				4C40A3F02C9588CB0079A02D /* ProfileRegisterView.swift in Sources */,
 				4C40A3E72C9584560079A02D /* FortuneResultView.swift in Sources */,
 				4CFC3AD52C82E82F0066C71C /* BloodType.swift in Sources */,
+				4C4551E02CADD83B007D6D81 /* UserInitializeError.swift in Sources */,
 				4CFC3ADE2C82E8D50066C71C /* FortuneResult+.swift in Sources */,
 				4CFC3AEC2C82FFDA0066C71C /* Day+.swift in Sources */,
 				4C40A3EE2C9588A60079A02D /* ProfileRegisterViewModel.swift in Sources */,
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
 				4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */,
+				4CCC74EA2CAC9AFA0088346E /* FortuneFetchError.swift in Sources */,
 				4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */,
 				4CE4660E2C960A300074FCCD /* DrumRollPlayer.swift in Sources */,
 				4CFC3AD82C82E8680066C71C /* FortuneFetcherProtocol.swift in Sources */,

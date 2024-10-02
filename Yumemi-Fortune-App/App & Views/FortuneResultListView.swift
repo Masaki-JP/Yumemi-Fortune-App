@@ -42,7 +42,7 @@ struct FortuneResultListView: View {
 }
 
 struct FortuneResultListViewWrapper1: View {
-    private let user = User(
+    private let user = try! User(
         name: "Naruto",
         birthday: try! .init(year: 2000, month: 1, day: 1),
         bloodType: .a,
@@ -60,7 +60,7 @@ struct FortuneResultListViewWrapper1: View {
 }
 
 struct FortuneResultListViewWrapper2: View {
-    private let user = User(
+    private let user = try! User(
         name: "Naruto",
         birthday: .today,
         bloodType: .a,

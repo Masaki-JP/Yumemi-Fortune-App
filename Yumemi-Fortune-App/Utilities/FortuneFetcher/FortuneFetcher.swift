@@ -24,23 +24,9 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         let today: Day
     }
 
-    /// ``fetch(name:birthday:bloodType:)``メソッドの実行時に発生することのあるエラー。
-    ///
-    enum FetchError: Swift.Error {
-        case noName
-        case tooLongName
-        case invalidBirthday
-        case urlInitializeFailure
-        case encodeFailure
-        case possibleNetworkError
-        case unexpectedResponse
-        case decodeFailure
-        case unexpectedError(_ messege: String)
-    }
-
     /// ``FortuneResult``を取得するメソッド。
     ///
-    /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetcher/FetchError``のみで。
+    /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetchError``のみで。
     ///
     /// FortuneAPI: [https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune](https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune)
     ///
@@ -50,17 +36,17 @@ struct FortuneFetcher: FortuneFetcherProtocol {
     ///   - bloodType: ユーザーの血液型を指定する。
     /// - Returns: 取得した``FortuneResult``を返す。
     ///
-    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws -> FortuneResult {
+    func fetch(name: String, birthday: Day, bloodType: BloodType) async throws(FortuneFetchError) -> FortuneResult {
         /// 引数のバリデーション
-        guard name.isEmpty == false else { throw Self.FetchError.noName }
-        guard name.count < 100 else { throw Self.FetchError.tooLongName }
-        guard birthday <= Day.today else { throw Self.FetchError.invalidBirthday }
+        guard name.isEmpty == false else { throw .noName }
+        guard name.count < 100 else { throw .tooLongName }
+        guard birthday <= Day.today else { throw .invalidBirthday }
 
         /// URLインスタンスの作成
         let baseURLString = "https://ios-junior-engineer-codecheck.yumemi.jp"
         let endPointPathString = "/my_fortune"
         guard let url = URL(string: baseURLString + endPointPathString) else {
-            throw Self.FetchError.urlInitializeFailure
+            throw .urlInitializeFailure
         }
 
         /// RequestBodyの生成
@@ -68,7 +54,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
         /// RequestBodyからDataを生成
         guard let encodedJsonData = try? JSONEncoder().encode(requestBody) else {
-            throw Self.FetchError.encodeFailure
+            throw .encodeFailure
         }
 
         /// URLReuestの作成
@@ -76,18 +62,18 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
         /// DataとURLResponseの取得
         guard let (data, urlResponse) = try? await urlSession.data(for: request) else {
-            throw Self.FetchError.possibleNetworkError
+            throw .possibleNetworkError
         }
 
         /// 有効なレスポンスであるか確認
         guard let httpURLResponse = urlResponse as? HTTPURLResponse,
               (200...299).contains(httpURLResponse.statusCode) else {
-            throw Self.FetchError.unexpectedResponse
+            throw .unexpectedResponse
         }
 
         /// DataからFortuneResultを生成
         guard let fortuneResult = try? JSONDecoder().decode(FortuneResult.self, from: data) else {
-            throw Self.FetchError.decodeFailure
+            throw .decodeFailure
         }
 
         /// FortuneResultをリターン

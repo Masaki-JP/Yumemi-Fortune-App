@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 import SwiftData
 
 @MainActor @Observable
@@ -8,10 +8,19 @@ final class ProfileRegisterViewModel {
     var bloodType: BloodType? = nil
 
     let modelContext: ModelContext
-
-    /// 予期せぬエラー発生時のアラートを表示フラグ。
+    
+    /// エラー発生時のアラートの表示フラグとなる文字列。
     ///
-    var isShowingUnexpectedErrorAlert = false
+    private(set) var errorAlertMessage = ""
+
+    /// `errorAlertMessage`のバインディング。
+    ///
+    var errorAlertMessageBinding: Binding<Bool> {
+        .init(
+            get: { self.errorAlertMessage.isEmpty == false },
+            set: { if $0 == false { self.errorAlertMessage.removeAll() } }
+        )
+    }
 
     /// 「登録」ボタンの無効化フラグ。
     ///
@@ -28,14 +37,18 @@ final class ProfileRegisterViewModel {
     /// ``User``の生成及び永続化を行う。失敗した場合は、予期せぬエラー発生時のアラートを表示する。
     ///
     func didTapRegisterButton() {
-        guard let bloodType else { isShowingUnexpectedErrorAlert = true; return }
+        let unexpectedErrorAlertMessage = "予期せぬエラーが発生しました。"
+        guard let bloodType else { errorAlertMessage = unexpectedErrorAlertMessage; return }
 
         do {
-            let user = User(name: name, birthday: .init(birthday), bloodType: bloodType)
+            let user = try User(name: name, birthday: .init(birthday), bloodType: bloodType)
             modelContext.insert(user)
-            try modelContext.save()
+            guard let _ = try? modelContext.save() else { errorAlertMessage = "データの保存に失敗しました。"; return }
         } catch {
-            isShowingUnexpectedErrorAlert = true
+            errorAlertMessage = switch error {
+            case .noName: unexpectedErrorAlertMessage
+            case .tooLongName: "名前は100文字未満で設定してください。"
+            }
         }
     }
 }
