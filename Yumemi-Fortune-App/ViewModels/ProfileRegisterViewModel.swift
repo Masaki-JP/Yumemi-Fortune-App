@@ -31,7 +31,7 @@ final class ProfileRegisterViewModel {
         guard let bloodType else { isShowingUnexpectedErrorAlert = true; return }
 
         do {
-            let user = User(name: name, birthday: .init(birthday), bloodType: bloodType)
+            let user = try User(name: name, birthday: .init(birthday), bloodType: bloodType)
             modelContext.insert(user)
             try modelContext.save()
         } catch {

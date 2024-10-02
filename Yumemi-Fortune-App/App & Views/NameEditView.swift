@@ -46,7 +46,7 @@ struct NameEditView: View {
 }
 
 private struct NameEditViewWrapper: View {
-    let user = User(name: "Naruto", birthday: .today, bloodType: .a)
+    let user = try! User(name: "Naruto", birthday: .today, bloodType: .a)
     @Environment(\.modelContext) private var modelContext
     
     var body: some View {

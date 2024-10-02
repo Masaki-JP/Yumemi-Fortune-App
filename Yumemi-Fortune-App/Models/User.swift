@@ -11,7 +11,15 @@ final class User {
         fortuneResultList.first { $0.key == .today }?.value
     }
 
-    init(name: String, birthday: Day, bloodType: BloodType, fortuneResultList: [Day: FortuneResult] = .init()) {
+    init(
+        name: String,
+        birthday: Day,
+        bloodType: BloodType,
+        fortuneResultList: [Day: FortuneResult] = .init()
+    ) throws(UserInitializeError) {
+        guard name.isEmpty == false else { throw .noName }
+        guard name.count < 100 else { throw .tooLongName }
+
         self.name = name
         self.birthday = birthday
         self.bloodType = bloodType

@@ -49,7 +49,7 @@ struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: 
 }
 
 private struct GetFortuneViewWrapper: View {
-    private let user = User(name: "Naruto", birthday: .sample, bloodType: .a)
+    private let user = try! User(name: "Naruto", birthday: .sample, bloodType: .a)
     @State private var isShowingGetFortuneView = true
     @Environment(\.modelContext) private var modelContext
 

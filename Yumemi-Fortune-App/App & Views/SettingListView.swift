@@ -84,7 +84,7 @@ struct SettingListView: View {
 
 private struct SettingListViewWrapper: View {
     @Environment(\.modelContext) private var modelContext
-    let user = User(name: "Naruto", birthday: .today, bloodType: .a)
+    let user = try! User(name: "Naruto", birthday: .today, bloodType: .a)
 
     var body: some View {
         SettingListView(user: user, modelContext: modelContext)
