@@ -20,8 +20,8 @@ struct ProfileRegisterView: View {
             }
             .navigationTitle("ユーザー情報")
             .alert(
-                "予期せぬエラーが発生しました。",
-                isPresented: $viewModel.isShowingUnexpectedErrorAlert,
+                viewModel.errorAlertMessage,
+                isPresented: viewModel.errorAlertMessageBinding,
                 actions: {}
             )
             .toolbar {
