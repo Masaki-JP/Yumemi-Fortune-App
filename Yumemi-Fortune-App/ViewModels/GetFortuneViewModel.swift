@@ -68,11 +68,17 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
             try? await Task.sleep(for: .seconds(2.0))
             withAnimation { isShowingDismissButton = true }
         } catch {
-            switch error { /// ``FortuneFetchError``
-            case .possibleNetworkError:
-                errorAlertMessage = "ネットワークエラーが発生しました。"
+            errorAlertMessage = switch error { /// ``FortuneFetchError``
+            case .networkConnectionLost: "ネットワーク接続が失われました。"
+            case.notConnectedToInternet: "ネットワークに接続されていません。"
+            case .requestTimeOut: "がタイムアウトしました。"
+            case .cannotFindHost: "ホストが見つかりませんでした。"
+            case .cannnotConnectToHost: "ホストに接続できませんでした。"
+            case .dataNotAllowed: "データ通信が許可されていません。"
+            case .requestCancelled: "キャンセルされました。"
+            case .anyNetworkError: "ネットワークエラーが発生しました。"
             case .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError(_):
-                errorAlertMessage = "予期せぬエラーが発生しました。"
+                "予期せぬエラーが発生しました。"
             }
         }
     }
