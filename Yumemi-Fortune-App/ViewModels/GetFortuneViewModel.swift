@@ -71,7 +71,7 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
             switch error { /// ``FortuneFetchError``
             case .possibleNetworkError:
                 errorAlertMessage = "ネットワークエラーが発生しました。"
-            case .noName, .tooLongName, .invalidBirthday, .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError(_):
+            case .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError(_):
                 errorAlertMessage = "予期せぬエラーが発生しました。"
             }
         }
