@@ -37,11 +37,6 @@ struct FortuneFetcher: FortuneFetcherProtocol {
     /// - Returns: 取得した``FortuneResult``を返す。
     ///
     func fetch(name: String, birthday: Day, bloodType: BloodType) async throws(FortuneFetchError) -> FortuneResult {
-        /// 引数のバリデーション
-        guard name.isEmpty == false else { throw .noName }
-        guard name.count < 100 else { throw .tooLongName }
-        guard birthday <= Day.today else { throw .invalidBirthday }
-
         /// URLインスタンスの作成
         let baseURLString = "https://ios-junior-engineer-codecheck.yumemi.jp"
         let endPointPathString = "/my_fortune"
