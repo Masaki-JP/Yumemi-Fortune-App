@@ -41,8 +41,8 @@ struct GetFortuneView<FortuneFetcherObject: FortuneFetcherProtocol & Sendable>: 
         }
         .task { await viewModel.onAppearAction() }
         .alert(
-            "予期せぬエラーが発生しました。",
-            isPresented: $viewModel.isShowingUnexpectedErrorAlert,
+            viewModel.errorAlertMessage,
+            isPresented: viewModel.errorAlertMessageBinding,
             actions: {}
         )
     }

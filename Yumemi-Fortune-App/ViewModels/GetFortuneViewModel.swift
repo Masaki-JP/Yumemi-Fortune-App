@@ -23,9 +23,18 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
     ///
     private(set) var isShowingDismissButton = false
 
-    /// 予期せぬエラーの発生時のアラートの表示フラグ。
+    /// エラー発生時のアラートの表示フラグとなる文字列。
     ///
-    var isShowingUnexpectedErrorAlert = false
+    private(set) var errorAlertMessage = ""
+
+    /// `errorAlertMessage`のバインディング。
+    ///
+    var errorAlertMessageBinding: Binding<Bool> {
+        .init(
+            get: { self.errorAlertMessage.isEmpty == false },
+            set: { if $0 == false { self.errorAlertMessage.removeAll() } }
+        )
+    }
 
     init(user: User, modelContext: ModelContext, fortuneFetcher: FortuneFetcherObject = FortuneFetcher()) {
         self.user = user
@@ -38,11 +47,7 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
     func onAppearAction() async {
         do {
             /// ``FortuneResult``の取得を行う。失敗時は早期リターンする。
-            guard let fortuneResult = try? await fortuneFetcher.fetch(
-                name: user.name,
-                birthday: user.birthday,
-                bloodType: user.bloodType
-            ) else { return }
+            let fortuneResult = try await fortuneFetcher.fetch(name: user.name, birthday: user.birthday, bloodType: user.bloodType)
 
             /// ドラムロールの再生を開始する。
             drumRollPlayer.play()
@@ -55,14 +60,20 @@ final class GetFortuneViewModel<FortuneFetcherObject: FortuneFetcherProtocol & S
             try? await Task.sleep(for: .seconds(0.5))
             withAnimation { isShowingCompatiblePrefectureText = true }
             user.addFortuneResult(fortuneResult)
-            try modelContext.save()
+            guard let _ = try? modelContext.save() else {
+                errorAlertMessage = "予期せぬエラーが発生しました。"; return
+            }
 
             /// 2.0秒の遅延の後に「前の画面に戻る」ボタンを表示する。
             try? await Task.sleep(for: .seconds(2.0))
             withAnimation { isShowingDismissButton = true }
         } catch {
-            /// 例外が投げられた時はアラートを表示する。
-            isShowingUnexpectedErrorAlert = true
+            switch error { /// ``FortuneFetchError``
+            case .possibleNetworkError:
+                errorAlertMessage = "ネットワークエラーが発生しました。"
+            case .noName, .tooLongName, .invalidBirthday, .urlInitializeFailure, .encodeFailure, .unexpectedResponse, .decodeFailure, .unexpectedError(_):
+                errorAlertMessage = "予期せぬエラーが発生しました。"
+            }
         }
     }
 }
