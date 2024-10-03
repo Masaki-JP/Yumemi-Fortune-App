@@ -56,9 +56,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
         let request = makeURLRequest(url, httpBody: encodedJsonData)
 
         /// DataとURLResponseの取得
-        guard let (data, urlResponse) = try? await urlSession.data(for: request) else {
-            throw .possibleNetworkError
-        }
+        let (data, urlResponse) = try await _fetch(for: request)
 
         /// 有効なレスポンスであるか確認
         guard let httpURLResponse = urlResponse as? HTTPURLResponse,
@@ -73,6 +71,25 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
         /// FortuneResultをリターン
         return fortuneResult
+    }
+
+    private func _fetch(for urlRequest: URLRequest) async throws(FortuneFetchError) -> (Data, URLResponse) {
+        do {
+            return try await urlSession.data(for: urlRequest)
+        } catch let error as URLError {
+            switch error.code {
+            case .networkConnectionLost: throw .networkConnectionLost
+            case .notConnectedToInternet: throw .notConnectedToInternet
+            case .timedOut: throw .requestTimeOut
+            case .cannotFindHost: throw .cannotFindHost
+            case .cannotConnectToHost: throw .cannnotConnectToHost
+            case .dataNotAllowed: throw .dataNotAllowed
+            case .cancelled: throw .requestCancelled
+            default: throw .anyNetworkError
+            }
+        } catch {
+            throw .anyNetworkError
+        }
     }
 
     private func makeURLRequest(_ url: URL, httpBody: Data) -> URLRequest {
