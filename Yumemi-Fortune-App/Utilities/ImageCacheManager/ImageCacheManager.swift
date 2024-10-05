@@ -11,9 +11,9 @@ struct ImageCacheManager {
     ///
     /// - Parameters:
     ///   - data: 保存するデータを指定する。
-    ///   - url: 画像が保存されているURL（Webリソース）を指定する。
+    ///   - webResourceURL: 画像が保存されているURL（Webリソース）を指定する。
     ///
-    func save(data: Data, url: URL) throws(ImageCacheManagerSaveError) {
+    func save(data: Data, webResourceURL: URL) throws(ImageCacheManagerSaveError) {
         let cacheDirectoryURL: URL
 
         do throws(PrivateError) {
@@ -22,7 +22,7 @@ struct ImageCacheManager {
             throw error.asImageCacheManagerSaveError
         }
 
-        let fileURL = getFileURL(for: url, in: cacheDirectoryURL)
+        let fileURL = getFileURL(for: webResourceURL, in: cacheDirectoryURL)
 
         do {
             try data.write(to: fileURL)
@@ -33,10 +33,10 @@ struct ImageCacheManager {
     
     /// 画像が保存されているURL（Webリソース）をキーとして、データをロードする。
     ///
-    /// - Parameter url: 画像が保存されているURL（Webリソース）を指定する。
+    /// - Parameter webResourceURL: 画像が保存されているURL（Webリソース）を指定する。
     /// - Returns: ロードした画像データを返す。
     ///
-    func load(with url: URL) throws(ImageCacheManagerLoadError) -> Data {
+    func load(with webResourceURL: URL) throws(ImageCacheManagerLoadError) -> Data {
         let cacheDirectoryURL: URL
 
         do throws(PrivateError) {
@@ -45,7 +45,7 @@ struct ImageCacheManager {
             throw error.asImageCacheManagerLoadError
         }
 
-        let fileURL = getFileURL(for: url, in: cacheDirectoryURL)
+        let fileURL = getFileURL(for: webResourceURL, in: cacheDirectoryURL)
 
         do {
             return try Data.init(contentsOf: fileURL)
@@ -77,8 +77,8 @@ private extension ImageCacheManager {
         }
     }
 
-    func getFileURL(for url: URL, in directoryURL: URL) -> URL {
-        let hashedFileName = SHA256.hash(data: Data(url.absoluteString.utf8))
+    func getFileURL(for webResourceURL: URL, in directoryURL: URL) -> URL {
+        let hashedFileName = SHA256.hash(data: Data(webResourceURL.absoluteString.utf8))
             .map { String(format: "%02x", $0)  }
             .joined()
 
