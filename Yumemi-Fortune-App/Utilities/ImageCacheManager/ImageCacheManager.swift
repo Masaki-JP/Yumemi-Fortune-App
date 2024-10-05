@@ -4,9 +4,19 @@ import CryptoKit
 /// 画像データのキャッシュの管理を担うオブジェクト。
 ///  
 /// 画像が保存されているURL（Webリソース）をキーとして、キャッシュ管理を行う。
-/// 
-struct ImageCacheManager {
-    
+///
+/// >important: シングルトンインスタンスを通して使用する。
+///
+final actor ImageCacheManager {
+
+    /// ``ImageCacheManager``の共有インスタンス。
+    ///
+    static let shared = ImageCacheManager()
+
+    /// 外部からインスタンスを生成されないようにアクセスレベルをプライベートに設定している。
+    ///
+    private init() {}
+
     /// 画像が保存されているURL（Webリソース）をキーとして、指定されたデータをセーブする。
     ///
     /// - Parameters:
