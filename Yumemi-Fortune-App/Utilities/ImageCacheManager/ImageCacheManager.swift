@@ -1,8 +1,18 @@
 import Foundation
 import CryptoKit
 
+/// 画像データのキャッシュの管理を担うオブジェクト。
+///  
+/// 画像が保存されているURL（Webリソース）をキーとして、キャッシュ管理を行う。
+/// 
 struct ImageCacheManager {
-
+    
+    /// 画像が保存されているURL（Webリソース）をキーとして、指定されたデータをセーブする。
+    ///
+    /// - Parameters:
+    ///   - data: 保存するデータを指定する。
+    ///   - url: 画像が保存されているURL（Webリソース）を指定する。
+    ///
     func save(data: Data, url: URL) throws(ImageCacheManagerSaveError) {
         let cacheDirectoryURL: URL
 
@@ -20,7 +30,12 @@ struct ImageCacheManager {
             throw .saveFailture
         }
     }
-
+    
+    /// 画像が保存されているURL（Webリソース）をキーとして、データをロードする。
+    ///
+    /// - Parameter url: 画像が保存されているURL（Webリソース）を指定する。
+    /// - Returns: ロードした画像データを返す。
+    ///
     func load(with url: URL) throws(ImageCacheManagerLoadError) -> Data {
         let cacheDirectoryURL: URL
 
