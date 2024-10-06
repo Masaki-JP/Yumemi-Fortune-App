@@ -41,14 +41,29 @@ final class FortuneResultViewModel {
             }
         }
 
-        /// URLErrorのハンドリング
         print("画像データの取得します。")
-        guard let (data, _) = try? await URLSession.shared.data(from: fortuneResult.logoURL) else {
-            print("画像データの取得に失敗しました。処理を終了します。")
-            getPrefectureImageResult = .failure(.init())
-            return
+        let data: Data
+        do {
+            (data, _) = try await URLSession.shared.data(from: fortuneResult.logoURL)
+            print("画像データの取得に成功しました。処理を継続します。")
+        } catch let error as URLError {
+            let message: String? = switch error.code {
+            case .networkConnectionLost: "ネットワーク接続が失われました。"
+            case .notConnectedToInternet: "ネットワークに接続されていません。"
+            case .timedOut: "画像の取得中タイムアウトが発生しました。"
+            case .cannotFindHost: "ホストが見つかりませんでした。"
+            case .cannotConnectToHost: "ホストに接続できませんでした。"
+            case .dataNotAllowed: "データ通信は許可されていません。"
+            case .cancelled: "画像の取得がキャンセルされました。"
+            default: nil
+            }
+
+            getPrefectureImageResult = .failure(message == nil ? .init() : .init(message!))
+            print("画像データの取得に失敗しました。処理を終了します。"); return
+        } catch {
+            getPrefectureImageResult = .failure(.init());
+            print("画像データの取得に失敗しました。処理を終了します。"); return
         }
-        print("画像データの取得に成功しました。処理を継続します。")
 
         print("画像データの保存します。")
         do throws(ImageCacheManagerSaveError) {
