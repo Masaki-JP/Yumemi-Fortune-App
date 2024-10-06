@@ -39,7 +39,7 @@ final actor ImageCacheManager {
         do {
             try data.write(to: fileURL)
         } catch {
-            throw .saveFailture
+            throw .saveFailure
         }
     }
     
