@@ -79,10 +79,6 @@ struct FortuneResultView: View {
         }
     }
 
-    var briefRow: some View {
-        Text(viewModel.fortuneResult.brief)
-    }
-
     @ViewBuilder
     var logoImageRow: some View {
         switch viewModel.getPrefectureImageResult {
