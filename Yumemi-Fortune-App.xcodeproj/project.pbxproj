@@ -24,6 +24,7 @@
 		4C4551E02CADD83B007D6D81 /* UserInitializeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4551DF2CADD83B007D6D81 /* UserInitializeError.swift */; };
 		4C9FEAF92CB172A90049AFE8 /* ImageCacheManagerLoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9FEAF82CB172A90049AFE8 /* ImageCacheManagerLoadError.swift */; };
 		4C9FEAFB2CB172B80049AFE8 /* ImageCacheManagerSaveError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9FEAFA2CB172B80049AFE8 /* ImageCacheManagerSaveError.swift */; };
+		4C9FEAFD2CB1918B0049AFE8 /* FortuneResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9FEAFC2CB1918B0049AFE8 /* FortuneResultViewModel.swift */; };
 		4CA4FD612CA9AF30001B08B7 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */; };
 		4CA4FD632CA9B2DB001B08B7 /* NameEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */; };
 		4CA5495E2C9472CD00D435F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5495D2C9472CD00D435F7 /* User.swift */; };
@@ -84,6 +85,7 @@
 		4C4551DF2CADD83B007D6D81 /* UserInitializeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInitializeError.swift; sourceTree = "<group>"; };
 		4C9FEAF82CB172A90049AFE8 /* ImageCacheManagerLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerLoadError.swift; sourceTree = "<group>"; };
 		4C9FEAFA2CB172B80049AFE8 /* ImageCacheManagerSaveError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerSaveError.swift; sourceTree = "<group>"; };
+		4C9FEAFC2CB1918B0049AFE8 /* FortuneResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultViewModel.swift; sourceTree = "<group>"; };
 		4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
 		4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditViewModel.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */,
 				4C40A3ED2C9588A60079A02D /* ProfileRegisterViewModel.swift */,
 				4C40A3E92C9587170079A02D /* GetFortuneViewModel.swift */,
+				4C9FEAFC2CB1918B0049AFE8 /* FortuneResultViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				4C40A3EE2C9588A60079A02D /* ProfileRegisterViewModel.swift in Sources */,
 				4CFC3AE22C82E9050066C71C /* URLSession+.swift in Sources */,
 				4C9FEAFB2CB172B80049AFE8 /* ImageCacheManagerSaveError.swift in Sources */,
+				4C9FEAFD2CB1918B0049AFE8 /* FortuneResultViewModel.swift in Sources */,
 				4C40A3EA2C9587170079A02D /* GetFortuneViewModel.swift in Sources */,
 				4CCC74EA2CAC9AFA0088346E /* FortuneFetchError.swift in Sources */,
 				4C40A3F22C958AB20079A02D /* SettingListViewModel.swift in Sources */,
