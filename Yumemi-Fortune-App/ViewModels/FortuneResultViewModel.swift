@@ -42,7 +42,7 @@ final class FortuneResultViewModel {
         getPrefectureImageResult = nil
 
         /// キャッシュから画像データの取得し`UIImage`を生成できた場合、`getPrefectureImageResult`に成功として代入する。
-        if let prefectureImageData = await getPrefectureImageData(),
+        if let prefectureImageData = await getPrefectureImageDataFromCache(),
            let uiImage = UIImage(data: prefectureImageData) {
             getPrefectureImageResult = .success(uiImage); return
         }
@@ -74,7 +74,7 @@ final class FortuneResultViewModel {
 private extension FortuneResultViewModel {
 
     /// キャッシュから画像データを取得する。
-    func getPrefectureImageData() async -> Data? {
+    func getPrefectureImageDataFromCache() async -> Data? {
         do throws(ImageCacheManagerLoadError) {
             return try await ImageCacheManager.shared.load(with: fortuneResult.logoURL)
         } catch {
