@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct FortuneResultView: View {
-    private let fortuneResult: FortuneResult
+    private let viewModel: FortuneResultViewModel
 
     init(_ fortuneResult: FortuneResult) {
-        self.fortuneResult = fortuneResult
+        self.viewModel = .init(fortuneResult)
     }
 
     var body: some View {
@@ -17,16 +17,18 @@ struct FortuneResultView: View {
             } header: {
                 Text("占い結果")
             }
+
             Section {
-                Text(fortuneResult.briefWithoutSource)
+                Text(viewModel.fortuneResult.briefWithoutSource)
             } header: {
                 Text("都道府県の概要")
             } footer: {
-                if let briefSource = fortuneResult.briefSource {
+                if let briefSource = viewModel.fortuneResult.briefSource {
                     Text(briefSource)
                         .font(.caption)
                 }
             }
+
             Section {
                 logoImageRow.frame(maxWidth: .infinity)
             } header: {
@@ -36,13 +38,16 @@ struct FortuneResultView: View {
                     .font(.caption)
             }
         }
+        .task {
+            await viewModel.onAppearAction()
+        }
     }
 
     var prefectureRow: some View {
         HStack(spacing: 0) {
             Text("ラッキー都道府県：")
             Spacer()
-            Text(fortuneResult.compatiblePrefecture)
+            Text(viewModel.fortuneResult.compatiblePrefecture)
         }
     }
 
@@ -50,13 +55,13 @@ struct FortuneResultView: View {
         HStack(spacing: 0) {
             Text("首都：")
             Spacer()
-            Text(fortuneResult.capital)
+            Text(viewModel.fortuneResult.capital)
         }
     }
 
     @ViewBuilder
     var citizenDayRow: some View {
-        if let citizenDay = fortuneResult.citizenDay {
+        if let citizenDay = viewModel.fortuneResult.citizenDay {
             HStack(spacing: 0) {
                 Text("市民の日：")
                 Spacer()
@@ -70,31 +75,28 @@ struct FortuneResultView: View {
         HStack(spacing: 0) {
             Text("内陸県：")
             Spacer()
-            Text(fortuneResult.hasCoastLine == false ? "はい" : "いいえ")
+            Text(viewModel.fortuneResult.hasCoastLine == false ? "はい" : "いいえ")
         }
     }
 
     var briefRow: some View {
-        Text(fortuneResult.brief)
+        Text(viewModel.fortuneResult.brief)
     }
 
+    @ViewBuilder
     var logoImageRow: some View {
-        AsyncImage(
-            url: fortuneResult.logoURL,
-            transaction: .init(animation: .bouncy)
-        ) { asyncImagePhase in
-            switch asyncImagePhase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                image
-                    .resizable()
-                    .scaledToFit()
-            case .failure(let error):
-                Text(error.localizedDescription)
-            @unknown default:
-                fatalError()
-            }
+        switch viewModel.getPrefectureImageResult {
+        case .none:
+            ProgressView()
+        case .success(let uiImage):
+            Image(uiImage: uiImage)
+                .resizable().scaledToFit()
+        case .failure(let getPrefectureImageError):
+            ContentUnavailableView(
+                "エラー発生",
+                systemImage: "x.circle",
+                description: Text(getPrefectureImageError.message)
+            )
         }
     }
 }
