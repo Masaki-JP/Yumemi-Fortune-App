@@ -26,7 +26,7 @@ struct FortuneFetcher: FortuneFetcherProtocol {
 
     /// ``FortuneResult``を取得するメソッド。
     ///
-    /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは現状``FortuneFetchError``のみで。
+    /// FortuneAPIから``FortuneResult``を非同期で取得する。このメソッドが投げる可能性のあるエラーは``FortuneFetchError``のみ。
     ///
     /// FortuneAPI: [https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune](https://ios-junior-engineer-codecheck.yumemi.jp/my_fortune)
     ///

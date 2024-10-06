@@ -19,6 +19,8 @@ final actor ImageCacheManager {
 
     /// 画像が保存されているURL（Webリソース）をキーとして、指定されたデータをセーブする。
     ///
+    /// このメソッドが投げる可能性のあるエラーは``ImageCacheManagerSaveError``のみ。
+    ///
     /// - Parameters:
     ///   - data: 保存するデータを指定する。
     ///   - webResourceURL: 画像が保存されているURL（Webリソース）を指定する。
@@ -42,6 +44,8 @@ final actor ImageCacheManager {
     }
     
     /// 画像が保存されているURL（Webリソース）をキーとして、データをロードする。
+    ///
+    /// このメソッドが投げる可能性のあるエラーは``ImageCacheManagerLoadError``のみ。
     ///
     /// - Parameter webResourceURL: 画像が保存されているURL（Webリソース）を指定する。
     /// - Returns: ロードした画像データを返す。
