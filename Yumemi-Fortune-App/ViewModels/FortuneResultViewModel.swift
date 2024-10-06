@@ -19,33 +19,49 @@ final class FortuneResultViewModel {
     }
 
     func onAppearAction() async {
-        if case .success = getPrefectureImageResult { print("すでにUIImageの取得に成功しているためリターンします。"); return }
+        if case .success = getPrefectureImageResult { return }
         getPrefectureImageResult = nil
 
-        print("キャッシュの検索を開始します。")
-        do throws(ImageCacheManagerLoadError) {
-            let prefectureImageData = try await ImageCacheManager.shared.load(with: fortuneResult.logoURL)
-
-            if let uiImage = UIImage(data: prefectureImageData) {
-                getPrefectureImageResult = .success(uiImage)
-                print("キャッシュが見つかりました。値をセット後、処理を終了します。"); return
-            } else {
-                print("キャッシュは見つかりましたが、UIImageの生成に失敗しました。処理を継続します。")
-            }
-        } catch {
-            switch error {
-            case .noData:
-                print("指定されたURLの画像キャッシュは見つかりませんでした。処理を継続します。")
-            case .cacheDirectoryNotFound, .multipleCacheDirectoriesFound, .invalidData:
-                print("予期せぬエラーが発生しました。処理を継続します。")
-            }
+        if let prefectureImageData = await getPrefectureImageData(),
+           let uiImage = UIImage(data: prefectureImageData) {
+            getPrefectureImageResult = .success(uiImage); return
         }
 
-        print("画像データの取得します。")
-        let data: Data
+        let prefectureImageData: Data
+        switch await fetchPrefectureImageData() {
+        case .success(let data):
+            prefectureImageData = data
+        case .failure(let error):
+            getPrefectureImageResult = .failure(error); return
+        }
+
+        guard let uiImage = UIImage(data: prefectureImageData) else {
+            getPrefectureImageResult = .failure(.init("予期せぬエラーが発生しました。")); return
+        }
+
+        getPrefectureImageResult = .success(uiImage)
+
+        try? await ImageCacheManager.shared.save(data: prefectureImageData, webResourceURL: fortuneResult.logoURL)
+    }
+}
+
+extension FortuneResultViewModel {
+
+    private func getPrefectureImageData() async -> Data? {
+        do throws(ImageCacheManagerLoadError) {
+            return try await ImageCacheManager.shared.load(with: fortuneResult.logoURL)
+        } catch {
+            switch error {
+            case .noData: return nil
+            case .cacheDirectoryNotFound, .multipleCacheDirectoriesFound, .invalidData: return nil
+            }
+        }
+    }
+
+    private func fetchPrefectureImageData() async -> Result<Data, GetPrefectureImageError> {
         do {
-            (data, _) = try await URLSession.shared.data(from: fortuneResult.logoURL)
-            print("画像データの取得に成功しました。処理を継続します。")
+            let (data, _) = try await URLSession.shared.data(from: fortuneResult.logoURL)
+            return .success(data)
         } catch let error as URLError {
             let message: String? = switch error.code {
             case .networkConnectionLost: "ネットワーク接続が失われました。"
@@ -58,32 +74,9 @@ final class FortuneResultViewModel {
             default: nil
             }
 
-            getPrefectureImageResult = .failure(message == nil ? .init() : .init(message!))
-            print("画像データの取得に失敗しました。処理を終了します。"); return
+            return .failure(message == nil ? .init() : .init(message!))
         } catch {
-            getPrefectureImageResult = .failure(.init());
-            print("画像データの取得に失敗しました。処理を終了します。"); return
+            return .failure(.init())
         }
-
-        print("画像データの保存します。")
-        do throws(ImageCacheManagerSaveError) {
-            try await ImageCacheManager.shared.save(data: data, webResourceURL: fortuneResult.logoURL)
-            print("画像データの保存に成功しました。")
-        } catch {
-            switch error {
-            case .saveFailture:
-                print("画像データのセーブに失敗しました。")
-            case .cacheDirectoryNotFound, .multipleCacheDirectoriesFound:
-                print("予期せぬエラーが発生しました。")
-            }
-        }
-
-        print("取得した画像データからUIImageを生成します。")
-        guard let uiImage = UIImage(data: data) else {
-            print("UIImageの生成に失敗しました。")
-            getPrefectureImageResult = .failure(.init()); return
-        }
-        print("UIImageの生成に成功しました。値をセットします。")
-        getPrefectureImageResult = .success(uiImage)
     }
 }
