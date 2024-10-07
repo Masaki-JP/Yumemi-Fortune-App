@@ -14,6 +14,7 @@ struct SettingListView: View {
                 nameSectionContent
                 birthdaySectionContent
                 bloodTypeSectionContent
+                specialThanksSectionContent
             }
             .navigationTitle("ユーザー設定")
             .toolbarTitleDisplayMode(.inlineLarge)
@@ -78,6 +79,70 @@ struct SettingListView: View {
             }
         } header: {
             Text("血液型")
+        }
+    }
+
+    var specialThanksSectionContent: some View {
+        Section {
+            navigationLinkRow(
+                title: "イラストAC",
+                comment: "こちらで提供されている占い師の画像を使用させていただきました。",
+                links: [("Web Site", "https://www.ac-illust.com/main/detail.php?id=25205535&word=水晶占いをする女性占い師#goog_rewarded")]
+            )
+            navigationLinkRow(
+                title: "効果音ラボ",
+                comment: "こちらで提供されている効果音を占い取得時に使用させていただきました。",
+                links: [("Web Site",  "https://soundeffect-lab.info/sound/anime/")]
+            )
+            navigationLinkRow(
+                title: "Pow Animation",
+                comment: "こちらで提供されているアニメーションを占い取得時に使用させていただきました。",
+                links: [("Web Site",  "https://movingparts.io/pow"), ("GitHub",  "https://github.com/EmergeTools/Pow")]
+            )
+            navigationLinkRow(
+                title: "日本地図無料イラスト素材集",
+                comment: "こちらで提供されている都道府県の画像を使用させていただきました。",
+                links: [("Web Site",  "https://japan-map.com")]
+            )
+            navigationLinkRow(
+                title: "FortuneAPI",
+                comment: "OpenAPI Document",
+                links: [("Web Site",  "https://yumemi-inc.github.io/ios-junior-engineer-codecheck-backend/openapi.html")]
+            )
+        } header: {
+            Text("謝辞")
+        }
+    }
+
+
+    func navigationLinkRow(
+        title: String,
+        comment: String,
+        links: [(labelString: String, linkString: String)]
+    ) -> some View {
+        NavigationLink(title) {
+            List {
+                VStack(alignment: .leading, spacing: .zero) {
+                    Text(comment)
+                        .padding(.bottom)
+                    Grid(alignment: .leading) {
+                        ForEach(links, id: \.labelString) { link in
+                            GridRow {
+                                Text(link.labelString + ":")
+                                if let url = URL(string: link.linkString) {
+                                    Link(link.linkString, destination: url)
+                                } else {
+                                    Text(link.linkString)
+                                }
+                            }
+                            .lineLimit(1)
+                            .textScale(.secondary)
+                        }
+                    }
+                }
+            }
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
