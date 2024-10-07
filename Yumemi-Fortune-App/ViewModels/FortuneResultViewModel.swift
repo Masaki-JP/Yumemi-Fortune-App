@@ -64,14 +64,21 @@ final class FortuneResultViewModel {
         /// 生成した`UIImage`を`getPrefectureImageResult`に成功としてに代入する。
         getPrefectureImageResult = .success(uiImage)
 
-        /// 画像が保存されているURL（Webリソース）をキーとして、取得したデータをセーブする。
-        try? await ImageCacheManager.shared.save(data: prefectureImageData, webResourceURL: fortuneResult.logoURL)
+        /// 画像が保存されているURL（Webリソース）をキーとして、取得したデータを保存する。
+        saveToCache(data: prefectureImageData, webResourceURL: fortuneResult.logoURL)
     }
 }
 
 // MARK: - The following methods are private.
 
 private extension FortuneResultViewModel {
+
+    /// /// キャッシュに画像データを保存する。
+    func saveToCache(data: Data, webResourceURL: URL)  {
+        Task.detached {
+            try? await ImageCacheManager.shared.save(data: data, webResourceURL: webResourceURL)
+        }
+    }
 
     /// キャッシュから画像データを取得する。
     func getPrefectureImageDataFromCache() async -> Data? {
