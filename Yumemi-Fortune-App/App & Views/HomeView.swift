@@ -12,24 +12,7 @@ struct HomeView: View {
         NavigationStack {
             VStack {
                 if let todayFortune = viewModel.user.todayFortune {
-                    VStack(spacing: 5) {
-                        Text("今日のラッキー都道府県は")
-                        Image(.fortuneTeller)
-                            .resizable().scaledToFit()
-                            .frame(width: 250, height: 250)
-                        Text(todayFortune.compatiblePrefecture + "です！")
-                    }
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .overlay(alignment: .bottom) {
-                        NavigationLink("詳しい情報を見る") {
-                            FortuneResultView(todayFortune)
-                                .navigationTitle(Day.today.japaneseFormatted)
-                                .navigationBarTitleDisplayMode(.inline)
-                        }
-                        .padding(.bottom, 5)
-                    }
+                    todayFortuneResult(todayFortune)
                 } else {
                     fortunePromptView(action: viewModel.didTapGetFortuneButton)
                 }
@@ -40,6 +23,34 @@ struct HomeView: View {
                 GetFortuneView(user: viewModel.user, modelContext: viewModel.modelContext)
             }
         }
+    }
+
+    @ViewBuilder
+    func todayFortuneResult(_ todayFortune: FortuneResult) -> some View {
+        VStack(spacing: 15) {
+            Text("今日のラッキー都道府県は\n")
+                .font(.title)
+                .fontWeight(.semibold)
+            + Text(todayFortune.compatiblePrefecture)
+                .font(.largeTitle)
+                .fontWeight(.black)
+            +  Text("です！")
+                .font(.title)
+                .fontWeight(.semibold)
+
+            Image(.fortuneTeller)
+                .resizable().scaledToFit()
+                .frame(width: 250, height: 250)
+
+            NavigationLink("詳しい情報を見る") {
+                FortuneResultView(todayFortune)
+                    .navigationTitle(Day.today.japaneseFormatted)
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .fontWeight(.semibold)
+        }
+        .multilineTextAlignment(.center)
+        .lineSpacing(5.0)
     }
 }
 
