@@ -89,6 +89,7 @@
 		4CA4FD602CA9AF30001B08B7 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
 		4CA4FD622CA9B2DB001B08B7 /* NameEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditViewModel.swift; sourceTree = "<group>"; };
 		4CA5495D2C9472CD00D435F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CAADBFD2CB5EC16007B1083 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CCC74E92CAC9AFA0088346E /* FortuneFetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFetchError.swift; sourceTree = "<group>"; };
 		4CE4660D2C960A300074FCCD /* DrumRollPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumRollPlayer.swift; sourceTree = "<group>"; };
 		4CE4660F2C960FE50074FCCD /* WaveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveTextView.swift; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 		4CFC3A942C82E6CE0066C71C = {
 			isa = PBXGroup;
 			children = (
+				4CAADBFD2CB5EC16007B1083 /* README.md */,
 				4CFC3A9F2C82E6CE0066C71C /* Yumemi-Fortune-App */,
 				4CFC3AB02C82E6D00066C71C /* Yumemi-Fortune-AppTests */,
 				4CFC3ABA2C82E6D00066C71C /* Yumemi-Fortune-AppUITests */,
